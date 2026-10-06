@@ -1,0 +1,85 @@
+/* COVER (Page 1) — styles for this page only */
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 32px 16px 64px;
+}
+
+/* Slowly drifting background image */
+.cover__bg {
+  position: absolute;
+  inset: -4%;
+  background: url("../../../assets/images/backgrounds/cover-bg.png") center / cover no-repeat;
+  image-rendering: pixelated;
+  animation: drift 30s ease-in-out infinite alternate;
+}
+@keyframes drift {
+  from { transform: scale(1) translate(0, 0); }
+  to   { transform: scale(1.06) translate(-1.5%, 1%); }
+}
+
+/* Twinkling pixel sparkles (made by js/cover.js) */
+.cover__sparkles { position: absolute; inset: 0; pointer-events: none; }
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fff7b0;
+  box-shadow: 0 0 10px 3px rgba(255, 240, 150, 0.8);
+  opacity: 0;
+  animation: twinkle 3s steps(6) infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0; }
+  50%      { opacity: 1; }
+}
+
+/* Title box */
+.cover__box {
+  position: relative;
+  z-index: 2;
+  width: min(92vw, 860px);
+  padding: 32px 28px 28px;
+  text-align: center;
+}
+
+.cover__title {
+  font-family: var(--font-title);
+  font-size: clamp(22px, 5.2vw, 46px);
+  line-height: 1.35;
+  margin-bottom: 24px;
+}
+
+.cover__info {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  font-size: clamp(18px, 2.6vw, 24px);
+  line-height: 1.25;
+}
+.cover__col { flex: 1; }
+.cover__col:first-child { text-align: left; }
+.cover__col:last-child  { text-align: center; }
+
+/* Start button */
+.cover__start {
+  position: relative;
+  z-index: 2;
+  animation: glow 2s ease-in-out infinite;
+}
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(255, 245, 160, 0)); }
+  50%      { filter: drop-shadow(0 0 12px rgba(255, 245, 160, 0.95)); }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .cover__box { padding: 24px 16px 20px; }
+  .cover__info { flex-direction: column; gap: 12px; }
+  .cover__col:first-child,
+  .cover__col:last-child { text-align: center; }
+}
