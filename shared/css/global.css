@@ -86,3 +86,23 @@ body {
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* ===== ATLAS BACKGROUND (reusable by every page after the cover) =====
+   Add class "atlas-bg" to a page's <main class="page atlas-bg">.
+   To change the image later, edit ONLY the url() below. */
+:root {
+  --cyan: #4fd8ff;
+  --gold: #ffd24a;
+  --panel: rgba(8, 20, 48, 0.86);
+}
+.atlas-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(rgba(6, 14, 36, 0.62), rgba(6, 14, 36, 0.78)),
+    url("../../assets/images/backgrounds/cover-bg.png") center / cover no-repeat;
+  image-rendering: pixelated;
+}
+.atlas-bg > * { position: relative; z-index: 1; }
