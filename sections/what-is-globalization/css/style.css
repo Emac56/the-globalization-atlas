@@ -1,0 +1,303 @@
+/* SECTION 01 — styles for this page only.
+   Background and shared colors come from shared/css/global.css */
+
+:root { --deep: #0b1f4d; }
+
+.sec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 40px 16px 48px;
+}
+
+/* ---------- Header ---------- */
+.sec__header { width: min(100%, 960px); text-align: center; color: #fff; }
+.sec__kicker {
+  font-family: var(--font-title);
+  font-size: clamp(9px, 1.8vw, 12px);
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.sec__title {
+  font-family: var(--font-title);
+  font-size: clamp(18px, 4vw, 34px);
+  line-height: 1.4;
+  text-shadow: 4px 4px 0 #000;
+  margin-bottom: 14px;
+}
+.sec__num { color: var(--gold); margin-right: 6px; }
+.sec__counter {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: 10px;
+  background: rgba(18, 48, 110, 0.9);
+  border: 2px solid var(--cyan);
+  padding: 8px 10px;
+  margin-bottom: 16px;
+}
+.sec__subtitle {
+  font-size: clamp(22px, 3vw, 28px);
+  line-height: 1.2;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.draft-note {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 20px;
+  line-height: 1.1;
+  color: var(--ink);
+  background: var(--gold);
+  padding: 6px 10px;
+}
+
+/* ---------- Layout ---------- */
+.sec__content {
+  width: min(100%, 960px);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ---------- White pixel card (same look as cover + menu) ---------- */
+.card {
+  position: relative;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow:
+    0 -4px 0 0 var(--ink),
+    0 4px 0 0 var(--ink),
+    -4px 0 0 0 var(--ink),
+    4px 0 0 0 var(--ink),
+    0 10px 0 0 rgba(0, 0, 0, 0.35);
+}
+.card--big { padding: 28px 28px 30px; }
+.card__title {
+  font-family: var(--font-title);
+  font-size: clamp(13px, 2.2vw, 18px);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.card__text { font-size: 26px; line-height: 1.15; color: #222; max-width: 40em; }
+
+.block-title {
+  font-family: var(--font-title);
+  font-size: clamp(12px, 2vw, 16px);
+  color: #fff;
+  text-shadow: 3px 3px 0 #000;
+  margin-bottom: 8px;
+}
+.block-hint { font-size: 22px; color: #dbe9ff; text-shadow: 2px 2px 0 #000; margin-bottom: 20px; }
+
+/* ---------- 1. Definition: "In simple words" panel ---------- */
+.simple {
+  margin-top: 24px;
+  padding: 18px 20px;
+  background: var(--deep);
+  border: 4px solid var(--cyan);
+  border-left: 12px solid var(--gold);
+  color: #fff;
+}
+.simple__label {
+  font-family: var(--font-title);
+  font-size: 11px;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.simple__text { font-size: 28px; line-height: 1.15; }
+
+/* ---------- 2. Key characteristics ---------- */
+.traits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+
+.trait { transition: transform 0.12s steps(3), background 0.15s; }
+.trait:hover { transform: translateY(-4px); background: #fff6c8; }
+.trait.is-open { background: #fff6c8; }
+
+.trait__btn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px 18px 18px;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.trait__btn:focus-visible { outline: 3px dashed var(--gold); outline-offset: 8px; }
+.trait__tag {
+  font-family: var(--font-title);
+  font-size: 12px;
+  background: var(--gold);
+  padding: 6px 8px;
+}
+.trait__name { font-family: var(--font-title); font-size: 13px; line-height: 1.5; }
+.trait__desc { font-size: 24px; line-height: 1.1; color: #222; }
+.trait__toggle { font-family: var(--font-title); font-size: 10px; color: var(--navy); margin-top: 4px; }
+
+.trait__more {
+  margin: 0 18px 18px;
+  padding-top: 12px;
+  border-top: 4px dotted var(--navy);
+  font-size: 24px;
+  line-height: 1.1;
+  color: #222;
+  animation: reveal 0.2s steps(4) both;
+}
+@keyframes reveal { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+/* ---------- 3. Everyday example + chain ---------- */
+.example { font-size: 28px; margin-bottom: 24px; }
+.example strong {
+  font-family: var(--font-title);
+  font-size: 15px;
+  background: var(--gold);
+  padding: 4px 8px;
+  margin-left: 6px;
+}
+.example__note { font-size: 20px; color: #555; margin-left: 6px; }
+
+/* Everyday moment: one center box with 4 small tags (NOT a step-by-step chain) */
+.moment {
+  background: var(--deep);
+  border: 4px solid var(--cyan);
+  padding: 28px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.moment__root {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  color: #fff;
+  background: var(--navy);
+  border: 4px solid var(--gold);
+}
+.moment__icon {
+  width: 22px;
+  height: 22px;
+  background: var(--gold);
+  box-shadow: 6px 6px 0 0 rgba(0, 0, 0, 0.4);
+  animation: blink 2.4s steps(2) infinite;
+}
+@keyframes blink { 50% { opacity: 0.45; } }
+.moment__name { font-family: var(--font-title); font-size: 12px; line-height: 1.5; }
+
+.moment__stem { width: 4px; height: 24px; background: var(--cyan); }
+
+.moment__tags {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+/* horizontal bar connecting the tags */
+.moment__tags::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12.5%;
+  right: 12.5%;
+  height: 4px;
+  background: var(--cyan);
+}
+.tag {
+  position: relative;
+  margin-top: 24px;
+  padding: 14px 8px;
+  font: inherit;
+  color: #fff;
+  background: var(--navy);
+  border: 4px solid var(--cyan);
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.12s steps(3), background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+/* short line from the bar down to each tag */
+.tag::before {
+  content: "";
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  margin-left: -2px;
+  width: 4px;
+  height: 24px;
+  background: var(--cyan);
+}
+.tag:hover { transform: translateY(-3px); }
+.tag:focus-visible { outline: 3px dashed var(--gold); outline-offset: 4px; }
+.tag__label { display: block; font-family: var(--font-title); font-size: 10px; line-height: 1.5; }
+.tag__sub { display: block; font-size: 20px; color: #bcd6ff; margin-top: 4px; }
+.tag.is-active { background: var(--gold); color: var(--ink); border-color: #fff; }
+.tag.is-active .tag__sub { color: #333; }
+
+.moment__caption {
+  margin-top: 18px;
+  min-height: 2.4em;
+  font-size: 26px;
+  line-height: 1.15;
+  color: #222;
+}
+
+/* ---------- 4. Why it counts ---------- */
+.why { padding: 24px 28px 26px; }
+.why::before {
+  content: "";
+  position: absolute;
+  left: -4px; top: -4px; bottom: -4px;
+  width: 14px;
+  background: var(--gold);
+  border: 4px solid var(--ink);
+}
+.why__title { font-family: var(--font-title); font-size: clamp(11px, 1.8vw, 14px); line-height: 1.5; margin: 0 0 12px 12px; }
+.why .card__text { margin-left: 12px; }
+
+/* ---------- Navigation ---------- */
+.sec__nav {
+  width: min(100%, 960px);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.nav-btn { display: inline-block; text-decoration: none; font-size: 12px; line-height: 1.5; text-align: center; padding: 16px 28px; }
+
+/* ---------- Page load / leave ---------- */
+.sec__header, .sec__content > * { animation: rise 0.35s steps(5) both; }
+.sec__content > *:nth-child(2) { animation-delay: 0.08s; }
+.sec__content > *:nth-child(3) { animation-delay: 0.16s; }
+.sec__content > *:nth-child(4) { animation-delay: 0.24s; }
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.sec.is-leaving { opacity: 0; transition: opacity 0.2s linear; }
+
+/* ---------- Tablet ---------- */
+@media (max-width: 860px) {
+  .traits { grid-template-columns: 1fr; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+  .sec { padding: 28px 16px 40px; gap: 24px; }
+  .sec__content { gap: 32px; }
+  .card--big { padding: 22px 16px 24px; }
+  .card__text, .simple__text { font-size: 26px; }
+
+  /* tags become 2 x 2, connector lines hidden */
+  .moment { padding: 22px 12px 18px; }
+  .moment__stem, .moment__tags::before, .tag::before { display: none; }
+  .moment__root { margin-bottom: 16px; }
+  .moment__tags { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .tag { margin-top: 0; padding: 16px 8px; min-height: 64px; }
+
+  .sec__nav { flex-direction: column-reverse; }
+  .nav-btn { width: 100%; padding: 18px 16px; }
+}
