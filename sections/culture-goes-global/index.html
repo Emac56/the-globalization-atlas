@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Culture Goes Global | My Globalization Atlas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../shared/css/global.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- CULTURE GOES GLOBAL (draft / placeholder content) -->
+  <main class="page atlas-bg sec" id="secPage">
+
+    <!-- Header -->
+    <header class="sec__header">
+      <p class="sec__kicker">My Globalization Atlas</p>
+      <h1 class="sec__title">Culture Goes Global</h1>
+      <p class="sec__counter">06 / 10</p>
+      <p class="sec__quote">Culture does not stay in one place. Follow how it travels, and how it changes along the way.</p>
+      <p class="draft-tag">Draft topic: K-Pop &mdash; details to be researched</p>
+    </header>
+
+    <div class="sec__content">
+
+      <!-- CULTURE CONNECTION MAP -->
+      <section class="route-card" aria-labelledby="routeTitle">
+        <h2 class="block-title" id="routeTitle">Culture Connection Map</h2>
+        <p class="block-hint">Select a stop to see how K-pop travels and changes.</p>
+
+        <div class="route" id="route" style="--i: 0">
+          <div class="route__track" aria-hidden="true">
+            <span class="route__fill"></span>
+            <span class="route__marker"></span>
+          </div>
+
+          <button class="stop" type="button" data-stage="0">
+            <span class="stop__icon">01</span>
+            <span class="stop__label">South Korea</span>
+          </button>
+          <button class="stop" type="button" data-stage="1">
+            <span class="stop__icon">02</span>
+            <span class="stop__label">K-Pop</span>
+          </button>
+          <button class="stop" type="button" data-stage="2">
+            <span class="stop__icon">03</span>
+            <span class="stop__label">Social Media</span>
+          </button>
+          <button class="stop" type="button" data-stage="3">
+            <span class="stop__icon">04</span>
+            <span class="stop__label">Filipino Fans</span>
+          </button>
+          <button class="stop" type="button" data-stage="4">
+            <span class="stop__icon">05</span>
+            <span class="stop__label">Local Cover Groups</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- MAP INFORMATION PANEL (text comes from js/script.js) -->
+      <section class="card info" id="info" aria-live="polite">
+        <div class="info__top">
+          <span class="info__stage" id="infoStage">Stop 01 / 05</span>
+          <span class="info__ph">Placeholder</span>
+        </div>
+        <div class="info__body" id="infoBody">
+          <h2 class="info__title" id="infoTitle">South Korea</h2>
+          <p class="info__text" id="infoText"></p>
+
+          <div class="change">
+            <p class="change__label">How the culture looks here: <span id="changeForm">Original</span></p>
+            <div class="change__meter" aria-hidden="true">
+              <span class="change__seg"></span>
+              <span class="change__seg"></span>
+              <span class="change__seg"></span>
+              <span class="change__seg"></span>
+              <span class="change__seg"></span>
+            </div>
+            <p class="change__ends" aria-hidden="true"><span>Original</span><span>Local</span></p>
+          </div>
+        </div>
+        <div class="info__nav">
+          <button class="pixel-btn small-btn" type="button" id="prevBtn">&larr; Prev</button>
+          <button class="pixel-btn small-btn" type="button" id="nextStageBtn">Next &rarr;</button>
+        </div>
+      </section>
+
+      <!-- THE QUESTIONS — replace each .part__value when the research is ready -->
+      <section aria-labelledby="qaTitle">
+        <h2 class="block-title" id="qaTitle">K-Pop: Seven Questions</h2>
+        <p class="block-hint">Draft answers to be added after research.</p>
+
+        <div class="qa">
+          <article class="part">
+            <p class="part__label"><span class="part__num">01</span> What is it?</p>
+            <p class="part__value">[Draft &mdash; to be researched]</p>
+          </article>
+
+          <article class="part">
+            <p class="part__label"><span class="part__num">02</span> Where did it start?</p>
+            <p class="part__value">[Draft &mdash; to be researched]</p>
+          </article>
+
+          <article class="part">
+            <p class="part__label"><span class="part__num">03</span> How did it spread?</p>
+            <p class="part__value">[Draft &mdash; to be researched]</p>
+          </article>
+
+          <article class="part">
+            <p class="part__label"><span class="part__num">04</span> How did it reach Filipinos?</p>
+            <p class="part__value">[Draft &mdash; to be researched]</p>
+          </article>
+
+          <article class="part">
+            <p class="part__label"><span class="part__num">05</span> How did Filipinos adopt or adapt it?</p>
+            <p class="part__value">[Draft &mdash; to be researched]</p>
+          </article>
+
+          <article class="part">
+            <p class="part__label"><span class="part__num">06</span> More similar, more diverse, or both?</p>
+            <p class="part__value">[Draft &mdash; to be researched]</p>
+          </article>
+
+          <article class="part part--wide">
+            <p class="part__label"><span class="part__num">07</span> Evidence</p>
+            <p class="part__value">[Draft &mdash; to be researched]</p>
+          </article>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Bottom navigation: PREVIOUS | ATLAS MENU | NEXT -->
+    <nav class="sec__nav" aria-label="Section navigation">
+      <a class="pixel-btn nav-btn" href="../globalization-and-the-philippines/index.html">&larr; Previous</a>
+      <a class="pixel-btn nav-btn nav-btn--menu" href="../menu/index.html" id="menuBtn">Atlas Menu</a>
+      <a class="pixel-btn nav-btn" href="../benefits-and-challenges/index.html">Next &rarr;</a>
+    </nav>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
