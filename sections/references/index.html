@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>References | My Globalization Atlas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../shared/css/global.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- REFERENCES (draft / placeholder content — real sources are added after the research is finalized) -->
+  <main class="page atlas-bg sec" id="secPage">
+
+    <header class="sec__header">
+      <p class="sec__kicker">My Globalization Atlas</p>
+      <h1 class="sec__title">References</h1>
+      <p class="sec__counter">11 / 11</p>
+      <p class="sec__quote">The source archive of the atlas: every credible source used to research and build it.</p>
+      <p class="draft-tag">Draft content &mdash; sources to be added</p>
+    </header>
+
+    <div class="sec__content">
+
+      <!-- APA 7 PATTERN -->
+      <section class="pattern" aria-labelledby="patternTitle">
+        <h2 class="pattern__title" id="patternTitle">APA 7 pattern</h2>
+        <p class="pattern__line">Organization Name. (Year). <em>Title of source</em>. Publisher/Website. URL</p>
+      </section>
+
+      <!-- TOOLBAR: category filter + expand/collapse -->
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Filter sources by category">
+          <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip" type="button" data-filter="ph" aria-pressed="false">Philippine</button>
+          <button class="chip" type="button" data-filter="intl" aria-pressed="false">International</button>
+          <button class="chip" type="button" data-filter="acad" aria-pressed="false">Academic / Other</button>
+        </div>
+        <div class="toolbar__row">
+          <p class="toolbar__count" id="count" aria-live="polite">Showing 15 of 15 source slots</p>
+          <button class="chip chip--ghost" type="button" id="toggleAll" aria-pressed="false">Expand all</button>
+        </div>
+      </div>
+
+      <!-- SOURCE CARDS: each .src is one reference slot.
+           Copy a whole <article class="src"> block to add more sources in a category. -->
+      <div class="cats" id="cats">
+      <section class="cat cat--ph" data-cat="ph" aria-labelledby="cat-ph">
+        <h2 class="cat__title" id="cat-ph">Philippine Sources<span class="cat__count">4</span></h2>
+        <div class="grid">
+        <article class="src" data-cat="ph">
+          <div class="src__top">
+            <span class="src__type">Government agency</span>
+            <span class="src__year">[Year]</span>
+          </div>
+          <h3 class="src__org">Philippine Statistics Authority (PSA)</h3>
+          <p class="src__title is-placeholder">[Title of source]</p>
+          <!-- When the real URL is ready, replace the span with:
+               <a class="src__link" href="THE-REAL-URL" target="_blank" rel="noopener noreferrer">Open source &#8599;</a> -->
+          <span class="src__link is-empty">URL to be added</span>
+          <button class="src__toggle" type="button" aria-expanded="false" aria-controls="apa-ph1">
+            <span>APA 7 reference</span><span class="src__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="src__apa" id="apa-ph1" hidden>
+            <p class="apa__ref">Philippine Statistics Authority. ([Year]). <em>[Title of source]</em>. [Publisher/Website]. [URL]</p>
+            <dl class="apa__fields">
+              <div><dt>Author / Organization</dt><dd>Philippine Statistics Authority</dd></div>
+              <div><dt>Publication date</dt><dd>[Year]</dd></div>
+              <div><dt>Title</dt><dd>[Title of source]</dd></div>
+              <div><dt>Website / Publisher</dt><dd>[Publisher/Website]</dd></div>
+              <div><dt>URL</dt><dd>[URL to be added]</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="src" data-cat="ph">
+          <div class="src__top">
+            <span class="src__type">Government agency</span>
+            <span class="src__year">[Year]</span>
+          </div>
+          <h3 class="src__org">Department of Trade and Industry (DTI)</h3>
+          <p class="src__title is-placeholder">[Title of source]</p>
+          <!-- When the real URL is ready, replace the span with:
+               <a class="src__link" href="THE-REAL-URL" target="_blank" rel="noopener noreferrer">Open source &#8599;</a> -->
+          <span class="src__link is-empty">URL to be added</span>
+          <button class="src__toggle" type="button" aria-expanded="false" aria-controls="apa-ph2">
+            <span>APA 7 reference</span><span class="src__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="src__apa" id="apa-ph2" hidden>
+            <p class="apa__ref">Department of Trade and Industry. ([Year]). <em>[Title of source]</em>. [Publisher/Website]. [URL]</p>
+            <dl class="apa__fields">
+              <div><dt>Author / Organization</dt><dd>Department of Trade and Industry</dd></div>
+              <div><dt>Publication date</dt><dd>[Year]</dd></div>
+              <div><dt>Title</dt><dd>[Title of source]</dd></div>
+              <div><dt>Website / Publisher</dt><dd>[Publisher/Website]</dd></div>
+              <div><dt>URL</dt><dd>[URL to be added]</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="src" data-cat="ph">
+          <div class="src__top">
+            <span class="src__type">Government agency</span>
+            <span class="src__year">[Year]</span>
+          </div>
+          <h3 class="src__org">Department of Foreign Affairs (DFA)</h3>
+          <p class="src__title is-placeholder">[Title of source]</p>
+          <!-- When the real URL is ready, replace the span with:
+               <a class="src__link" href="THE-REAL-URL" target="_blank" rel="noopener noreferrer">Open source &#8599;</a> -->
+          <span class="src__link is-empty">URL to be added</span>
+          <button class="src__toggle" type="button" aria-expanded="false" aria-controls="apa-ph3">
+            <span>APA 7 reference</span><span class="src__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="src__apa" id="apa-ph3" hidden>
+            <p class="apa__ref">Department of Foreign Affairs. ([Year]). <em>[Title of source]</em>. [Publisher/Website]. [URL]</p>
+            <dl class="apa__fields">
+              <div><dt>Author / Organization</dt><dd>Department of Foreign Affairs</dd></div>
+              <div><dt>Publication date</dt><dd>[Year]</dd></div>
+              <div><dt>Title</dt><dd>[Title of source]</dd></div>
+              <div><dt>Website / Publisher</dt><dd>[Publisher/Website]</dd></div>
+              <div><dt>URL</dt><dd>[URL to be added]</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="src" data-cat="ph">
+          <div class="src__top">
+            <span class="src__type">Government agency</span>
+            <span class="src__year">[Year]</span>
+          </div>
+          <h3 class="src__org">[Other Philippine Government Agency]</h3>
+          <p class="src__title is-placeholder">[Title of source]</p>
+          <!-- When the real URL is ready, replace the span with:
+               <a class="src__link" href="THE-REAL-URL" target="_blank" rel="noopener noreferrer">Open source &#8599;</a> -->
+          <span class="src__link is-empty">URL to be added</span>
+          <button class="src__toggle" type="button" aria-expanded="false" aria-controls="apa-ph4">
+            <span>APA 7 reference</span><span class="src__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="src__apa" id="apa-ph4" hidden>
+            <p class="apa__ref">[Agency Name]. ([Year]). <em>[Title of source]</em>. [Publisher/Website]. [URL]</p>
+            <dl class="apa__fields">
+              <div><dt>Author / Organization</dt><dd>[Agency Name]</dd></div>
+              <div><dt>Publication date</dt><dd>[Year]</dd></div>
+              <div><dt>Title</dt><dd>[Title of source]</dd></div>
+              <div><dt>Website / Publisher</dt><dd>[Publisher/Website]</dd></div>
+              <div><dt>URL</dt><dd>[URL to be added]</dd></div>
+            </dl>
+          </div>
+        </article>
+        </div>
+      </section>
+      <section class="cat cat--intl" data-cat="intl" aria-labelledby="cat-intl">
+        <h2 class="cat__title" id="cat-intl">International Sources<span class="cat__count">7</span></h2>
+        <div class="grid">
+        <article class="src" data-cat="intl">
+          <div class="src__top">
+            <span class="src__type">International organization</span>
+            <span class="src__year">[Year]</span>
+          </div>
+          <h3 class="src__org">World Bank</h3>
+          <p class="src__title is-placeholder">[Title of source]</p>
+          <!-- When the real URL is ready, replace the span with:
+               <a class="src__link" href="THE-REAL-URL" target="_blank" rel="noopener noreferrer">Open source &#8599;</a> -->
+          <span class="src__link is-empty">URL to be added</span>
+          <button class="src__toggle" type="button" aria-expanded="false" aria-controls="apa-intl1">
+            <span>APA 7 reference</span><span class="src__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="src__apa" id="apa-intl1" hidden>
+            <p class="apa__ref">World Bank. ([Year]). <em>[Title of source]</em>. [Publisher/Website]. [URL]</p>
+            <dl class="apa__fields">
+              <div><dt>Author / Organization</dt><dd>World Bank</dd></div>
+              <div><dt>Publication date</dt><dd>[Year]</dd></div>
+              <div><dt>Title</dt><dd>[Title of source]</dd></div>
+              <div><dt>Website / Publisher</dt><dd>[Publisher/Website]</dd></div>
+              <div><dt>URL</dt><dd>[URL to be added]</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="src" data-cat="intl">
+          <div class="src__top">
+            <span class="src__type">International organization</span>
+            <span class="src__year">[Year]</span>
+          </div>
+          <h3 class="src__org">International Monetary Fund (IMF)</h3>
+          <p class="src__title is-placeholder">[Title of source]</p>
+          <!-- When the real URL is ready, replace the span with:
+               <a class="src__link" href="THE-REAL-URL" target="_blank" rel="noopener noreferrer">Open source &#8599;</a> -->
+          <span class="src__link is-empty">URL to be added</span>
+          <button class="src__toggle" type="button" aria-expanded="false" aria-controls="apa-intl2">
+            <span>APA 7 reference</span><span class="src__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="src__apa" id="apa-intl2" hidden>
+            <p class="apa__ref">International Monetary Fund. ([Year]). <em>[Title of source]</em>. [Publisher/Website]. [URL]</p>
+            <dl class="apa__fields">
+              <div><dt>Author / Organization</dt><dd>International Monetary Fund</dd></div>
+              <div><dt>Publication date</dt><dd>[Year]</dd></div>
+              <div><dt>Title</dt><dd>[Title of source]</dd></div>
+              <div><dt>Website / Publisher</dt><dd>[Publisher/Website]</dd></div>
+              <div><dt>URL</dt><dd>[URL to be added]</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="src" data-cat="intl">
+          <div class="src__top">
+            <span class="src__type">International organization</span>
+            <span class="src__year">[Year]</span>
+          </div>
+          <h3 class="src__org">World Trade Organization (WTO)</h3>
+          <p class="src__title is-placeholder">[Title of source]</p>
+          <!-- When the real URL is ready, replace the span with:
+               <a class="src__link" href="THE-REAL-URL" target="_blank" rel="noopener noreferrer">Open source &#8599;</a> -->
+          <span class="src__link is-empty">URL to be added</span>
+          <button class="src__toggle" type="button" aria-expanded="false" aria-controls="apa-intl3">
+            <span>APA 7 reference</span><span class="src__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="src__apa" id="apa-intl3" hidden>
+            <p class="apa__ref">World Trade Organization. ([Year]). <em>[Title of source]</em>. [Publisher/Website]. [URL]</p>
+            <dl class="apa__fields">
+              <div><dt>Author / Organization</dt><dd>World Trade Organization</dd></div>
+              <div><dt>Publication date</dt><dd>[Year]</dd></div>
+              <div><dt>Title</dt><dd>[Title of source]</dd></div>
+              <div><dt>Website / Publisher</dt><dd>[Publisher/Website]</dd></div>
+              <div><dt>URL</dt><dd>[URL to be added]</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="src" data-cat="intl">
+          <div class="src__top">
+            <span class="src__type">International organization</span>
+            <span class="src__year">[Year]</span>
+          </div>
+          <h3 class="src__org">United Nations (UN)</h3>
+          <p class="src__title is-placeholder">[Title of source]</p>
+          <!-- When the real URL is ready, replace the span with:
+               <a class="src__link" href="THE-REAL-URL" target="_blank" rel="noopener noreferrer">Open source &#8599;</a> -->
+          <span class="src__link is-empty">URL to be added</span>
+          <button class="src__toggle" type="button" aria-expanded="false" aria-controls="apa-intl4">
+            <span>APA 7 reference</span><span class="src__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="src__apa" id="apa-intl4" hidden>
+            <p class="apa__ref">United Nations. ([Year]). <em>[Title of source]</em>. [Publisher/Website]. [URL]</p>
+            <dl class="apa__fields">
+              <div><dt>Author / Organization</dt><dd>United Nations</dd></div>
+              <div><dt>Publication date</dt><dd>[Year]</dd></div>
+              <div><dt>Title</dt><dd>[Title of source]</dd></div>
+              <div><dt>Website / Publisher</dt><dd>[Publisher/Website]</dd></div>
+              <div><dt>URL</dt><dd>[URL to be added]</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="src" data-cat="intl">
+          <div class="src__top">
+            <span class="src__type">International organization</span>
+            <span class="src__year">[Year]</span>
+          </div>
+          <h3 class="src__org">International Labour Organization (ILO)</h3>
+          <p class="src__title is-placeholder">[Title of source]</p>
+          <!-- When the real URL is ready, replace the span with:
+               <a class="src__link" href="THE-REAL-URL" target="_blank" rel="noopener noreferrer">Open source &#8599;</a> -->
+          <span class="src__link is-empty">URL to be added</span>
+          <button class="src__toggle" type="button" aria-expanded="false" aria-controls="apa-intl5">
+            <span>APA 7 reference</span><span class="src__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="src__apa" id="apa-intl5" hidden>
+            <p class="apa__ref">International Labour Organization. ([Year]). <em>[Title of source]</em>. [Publisher/Website]. [URL]</p>
+            <dl class="apa__fields">
+              <div><dt>Author / Organization</dt><dd>International Labour Organization</dd></div>
+              <div><dt>Publication date</dt><dd>[Year]</dd></div>
+              <div><dt>Title</dt><dd>[Title of source]</dd></div>
+              <div><dt>Website / Publisher</dt><dd>[Publisher/Website]</dd></div>
+              <div><dt>URL</dt><dd>[URL to be added]</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="src" data-cat="intl">
+          <div class="src__top">
+            <span class="src__type">Regional organization</span>
+            <span class="src__year">[Year]</span>
+          </div>
+          <h3 class="src__org">Asian Development Bank (ADB)</h3>
+          <p class="src__title is-placeholder">[Title of source]</p>
+          <!-- When the real URL is ready, replace the span with:
+               <a class="src__link" href="THE-REAL-URL" target="_blank" rel="noopener noreferrer">Open source &#8599;</a> -->
+          <span class="src__link is-empty">URL to be added</span>
+          <button class="src__toggle" type="button" aria-expanded="false" aria-controls="apa-intl6">
+            <span>APA 7 reference</span><span class="src__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="src__apa" id="apa-intl6" hidden>
+            <p class="apa__ref">Asian Development Bank. ([Year]). <em>[Title of source]</em>. [Publisher/Website]. [URL]</p>
+            <dl class="apa__fields">
+              <div><dt>Author / Organization</dt><dd>Asian Development Bank</dd></div>
+              <div><dt>Publication date</dt><dd>[Year]</dd></div>
+              <div><dt>Title</dt><dd>[Title of source]</dd></div>
+              <div><dt>Website / Publisher</dt><dd>[Publisher/Website]</dd></div>
+              <div><dt>URL</dt><dd>[URL to be added]</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="src" data-cat="intl">
+          <div class="src__top">
+            <span class="src__type">Regional organization</span>
+            <span class="src__year">[Year]</span>
+          </div>
+          <h3 class="src__org">ASEAN</h3>
+          <p class="src__title is-placeholder">[Title of source]</p>
+          <!-- When the real URL is ready, replace the span with:
+               <a class="src__link" href="THE-REAL-URL" target="_blank" rel="noopener noreferrer">Open source &#8599;</a> -->
+          <span class="src__link is-empty">URL to be added</span>
+          <button class="src__toggle" type="button" aria-expanded="false" aria-controls="apa-intl7">
+            <span>APA 7 reference</span><span class="src__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="src__apa" id="apa-intl7" hidden>
+            <p class="apa__ref">ASEAN. ([Year]). <em>[Title of source]</em>. [Publisher/Website]. [URL]</p>
+            <dl class="apa__fields">
+              <div><dt>Author / Organization</dt><dd>ASEAN</dd></div>
+              <div><dt>Publication date</dt><dd>[Year]</dd></div>
+              <div><dt>Title</dt><dd>[Title of source]</dd></div>
+              <div><dt>Website / Publisher</dt><dd>[Publisher/Website]</dd></div>
+              <div><dt>URL</dt><dd>[URL to be added]</dd></div>
+            </dl>
+          </div>
+        </article>
+        </div>
+      </section>
+      <section class="cat cat--acad" data-cat="acad" aria-labelledby="cat-acad">
+        <h2 class="cat__title" id="cat-acad">Academic / Other Credible Sources<span class="cat__count">4</span></h2>
+        <div class="grid">
+        <article class="src" data-cat="acad">
+          <div class="src__top">
+            <span class="src__type">University</span>
+            <span class="src__year">[Year]</span>
+          </div>
+          <h3 class="src__org">[University Name]</h3>
+          <p class="src__title is-placeholder">[Title of source]</p>
+          <!-- When the real URL is ready, replace the span with:
+               <a class="src__link" href="THE-REAL-URL" target="_blank" rel="noopener noreferrer">Open source &#8599;</a> -->
+          <span class="src__link is-empty">URL to be added</span>
+          <button class="src__toggle" type="button" aria-expanded="false" aria-controls="apa-acad1">
+            <span>APA 7 reference</span><span class="src__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="src__apa" id="apa-acad1" hidden>
+            <p class="apa__ref">[Author, A. A.]. ([Year]). [Title of source]. [University / Publisher]. [URL]</p>
+            <dl class="apa__fields">
+              <div><dt>Author / Organization</dt><dd>[Author, A. A.]</dd></div>
+              <div><dt>Publication date</dt><dd>[Year]</dd></div>
+              <div><dt>Title</dt><dd>[Title of source]</dd></div>
+              <div><dt>Website / Publisher</dt><dd>[Publisher/Website]</dd></div>
+              <div><dt>URL</dt><dd>[URL to be added]</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="src" data-cat="acad">
+          <div class="src__top">
+            <span class="src__type">Academic journal</span>
+            <span class="src__year">[Year]</span>
+          </div>
+          <h3 class="src__org">[Journal Article Author(s)]</h3>
+          <p class="src__title is-placeholder">[Title of source]</p>
+          <!-- When the real URL is ready, replace the span with:
+               <a class="src__link" href="THE-REAL-URL" target="_blank" rel="noopener noreferrer">Open source &#8599;</a> -->
+          <span class="src__link is-empty">URL to be added</span>
+          <button class="src__toggle" type="button" aria-expanded="false" aria-controls="apa-acad2">
+            <span>APA 7 reference</span><span class="src__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="src__apa" id="apa-acad2" hidden>
+            <p class="apa__ref">[Author, A. A., &amp; Author, B. B.]. ([Year]). [Title of article]. [Journal Name], [Volume]([Issue]), [Pages]. [DOI or URL]</p>
+            <dl class="apa__fields">
+              <div><dt>Author / Organization</dt><dd>[Author, A. A., &amp; Author, B. B.]</dd></div>
+              <div><dt>Publication date</dt><dd>[Year]</dd></div>
+              <div><dt>Title</dt><dd>[Title of source]</dd></div>
+              <div><dt>Website / Publisher</dt><dd>[Publisher/Website]</dd></div>
+              <div><dt>URL</dt><dd>[URL to be added]</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="src" data-cat="acad">
+          <div class="src__top">
+            <span class="src__type">Research paper</span>
+            <span class="src__year">[Year]</span>
+          </div>
+          <h3 class="src__org">[Research Paper Author(s)]</h3>
+          <p class="src__title is-placeholder">[Title of source]</p>
+          <!-- When the real URL is ready, replace the span with:
+               <a class="src__link" href="THE-REAL-URL" target="_blank" rel="noopener noreferrer">Open source &#8599;</a> -->
+          <span class="src__link is-empty">URL to be added</span>
+          <button class="src__toggle" type="button" aria-expanded="false" aria-controls="apa-acad3">
+            <span>APA 7 reference</span><span class="src__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="src__apa" id="apa-acad3" hidden>
+            <p class="apa__ref">[Author, A. A.]. ([Year]). [Title of paper]. [Publisher / Repository]. [URL]</p>
+            <dl class="apa__fields">
+              <div><dt>Author / Organization</dt><dd>[Author, A. A.]</dd></div>
+              <div><dt>Publication date</dt><dd>[Year]</dd></div>
+              <div><dt>Title</dt><dd>[Title of source]</dd></div>
+              <div><dt>Website / Publisher</dt><dd>[Publisher/Website]</dd></div>
+              <div><dt>URL</dt><dd>[URL to be added]</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="src" data-cat="acad">
+          <div class="src__top">
+            <span class="src__type">News organization</span>
+            <span class="src__year">[Year]</span>
+          </div>
+          <h3 class="src__org">[Established News Organization]</h3>
+          <p class="src__title is-placeholder">[Title of source]</p>
+          <!-- When the real URL is ready, replace the span with:
+               <a class="src__link" href="THE-REAL-URL" target="_blank" rel="noopener noreferrer">Open source &#8599;</a> -->
+          <span class="src__link is-empty">URL to be added</span>
+          <button class="src__toggle" type="button" aria-expanded="false" aria-controls="apa-acad4">
+            <span>APA 7 reference</span><span class="src__sign" aria-hidden="true">+</span>
+          </button>
+          <div class="src__apa" id="apa-acad4" hidden>
+            <p class="apa__ref">[Author, A. A. / News Organization]. ([Year]). [Title of article]. [News Organization]. [URL]</p>
+            <dl class="apa__fields">
+              <div><dt>Author / Organization</dt><dd>[Author, A. A. / News Organization]</dd></div>
+              <div><dt>Publication date</dt><dd>[Year]</dd></div>
+              <div><dt>Title</dt><dd>[Title of source]</dd></div>
+              <div><dt>Website / Publisher</dt><dd>[Publisher/Website]</dd></div>
+              <div><dt>URL</dt><dd>[URL to be added]</dd></div>
+            </dl>
+          </div>
+        </article>
+        </div>
+      </section>
+      </div>
+
+    </div>
+
+    <nav class="sec__nav" aria-label="Section navigation">
+      <a class="pixel-btn nav-btn" href="../group-reflection/index.html">&larr; Previous</a>
+      <a class="pixel-btn nav-btn nav-btn--menu" href="../menu/index.html">Atlas Menu</a>
+      <a class="pixel-btn nav-btn" href="../../index.html">Finish Atlas &rarr;</a>
+    </nav>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
