@@ -1,0 +1,204 @@
+/* GROUP REFLECTION — styles for this page only.
+   Shared colors, fonts and buttons come from shared/css/global.css */
+
+:root { --deep: #0b1f4d; }
+
+[hidden] { display: none !important; }
+
+/* Atlas background (the existing image: assets/images/backgrounds/cover-bg.png) */
+.atlas-bg::before {
+  background:
+    linear-gradient(rgba(6, 14, 36, 0.62), rgba(6, 14, 36, 0.78)),
+    url("../../../assets/images/backgrounds/cover-bg.png") center / cover no-repeat;
+}
+
+.sec { display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 40px 16px 48px; }
+
+/* ---------- Header ---------- */
+.sec__header { width: min(100%, 960px); text-align: center; color: #fff; }
+.sec__kicker { font-family: var(--font-title); font-size: clamp(9px, 1.8vw, 12px); color: var(--gold); margin-bottom: 14px; }
+.sec__title {
+  font-family: var(--font-title);
+  font-size: clamp(22px, 5vw, 40px);
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 0 #000;
+  margin-bottom: 14px;
+}
+.sec__counter {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: 10px;
+  background: rgba(18, 48, 110, 0.9);
+  border: 2px solid var(--cyan);
+  padding: 8px 10px;
+  margin-bottom: 16px;
+}
+.sec__quote { max-width: 30em; margin: 0 auto; font-size: clamp(22px, 3vw, 28px); line-height: 1.2; text-shadow: 2px 2px 0 #000; }
+.draft-tag {
+  display: inline-block;
+  margin-top: 16px;
+  font-family: var(--font-title);
+  font-size: 9px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--gold);
+  padding: 8px 10px;
+}
+
+/* ---------- Layout ---------- */
+.sec__content { width: min(100%, 960px); display: flex; flex-direction: column; gap: 36px; }
+
+/* ---------- Question cards ---------- */
+.cards { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+.card {
+  background: var(--deep);
+  border: 4px solid var(--cyan);
+  box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.35);
+  transition: border-color 0.15s;
+}
+.card.is-open { border-color: var(--gold); }
+.card.is-seen:not(.is-open) .card__num { background: var(--cyan); color: var(--ink); }
+
+.card__head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0;
+  text-align: left;
+  font-family: var(--font-text);
+  color: #fff;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.card__head:hover { background: #12306e; }
+.card__head:focus-visible { outline: 3px dashed var(--gold); outline-offset: -8px; }
+.card__num {
+  flex: none;
+  align-self: stretch;
+  display: flex; align-items: center; justify-content: center;
+  min-width: 64px;
+  font-family: var(--font-title);
+  font-size: 14px;
+  color: var(--gold);
+  background: rgba(255, 255, 255, 0.08);
+  border-right: 4px solid var(--ink);
+}
+.card.is-open .card__num { background: var(--gold); color: var(--ink); }
+.card__q { flex: 1; min-width: 0; padding: 16px 0; font-size: 28px; line-height: 1.1; }
+.card__sign { flex: none; padding-right: 18px; font-family: var(--font-title); font-size: 16px; color: var(--cyan); }
+
+/* ---------- Opened card: avatar + dialogue ---------- */
+.card__panel { padding: 8px 20px 22px; border-top: 4px solid var(--ink); }
+.card__panel:not([hidden]) { animation: open 0.22s steps(4) both; }
+@keyframes open { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+/* member switcher: only shown when a question has more than one answer */
+.members { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 6px; }
+.member-btn {
+  font-family: var(--font-title);
+  font-size: 9px;
+  line-height: 1.5;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 3px solid var(--cyan);
+  padding: 10px 12px;
+  min-height: 44px;
+  cursor: pointer;
+}
+.member-btn.is-active { background: var(--gold); color: var(--ink); border-color: #fff; }
+.member-btn:focus-visible { outline: 3px dashed var(--gold); outline-offset: 3px; }
+
+.scene { display: flex; align-items: flex-start; gap: 22px; margin-top: 18px; }
+.scene > * { animation: pop 0.25s steps(4) both; }
+.scene .dialogue { animation-delay: 0.12s; }
+@keyframes pop { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+.speaker { flex: none; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.avatar {
+  position: relative;
+  width: 96px; height: 96px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  background: #17357a;
+  border: 4px solid var(--ink);
+  box-shadow: 0 0 0 4px var(--cyan);
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; }
+/* placeholder pixel figure — hidden once a real avatar image is set */
+.avatar__ph { position: absolute; inset: 0; }
+.avatar__ph::before, .avatar__ph::after { content: ""; position: absolute; left: 50%; transform: translateX(-50%); background: var(--cyan); border: 4px solid var(--ink); }
+.avatar__ph::before { top: 16px; width: 36px; height: 36px; }
+.avatar__ph::after { bottom: -4px; width: 64px; height: 30px; }
+.speaker__name { font-family: var(--font-title); font-size: 9px; line-height: 1.6; text-transform: uppercase; color: var(--gold); overflow-wrap: anywhere; }
+
+.dialogue {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  padding: 16px 18px 18px;
+  color: var(--ink);
+  background: #fff;
+  border: 4px solid var(--ink);
+  box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.35);
+}
+/* little pointer toward the avatar */
+.dialogue::before { content: ""; position: absolute; left: -12px; top: 26px; width: 16px; height: 16px; background: #fff; border-left: 4px solid var(--ink); border-bottom: 4px solid var(--ink); transform: rotate(45deg); }
+.dialogue__label { font-family: var(--font-title); font-size: 9px; line-height: 1.6; text-transform: uppercase; color: #12306e; margin-bottom: 8px; }
+.dialogue__text { font-size: 28px; line-height: 1.15; }
+.dialogue__msg { margin-top: 10px; padding-top: 10px; border-top: 2px dashed #9bb3d9; font-size: 24px; line-height: 1.15; color: #333; }
+.is-placeholder { color: #5a6b8c; }
+
+/* voice-over hook: only appears when an answer has an audio file */
+.voice { margin-top: 12px; font-size: 11px; padding: 12px 16px; }
+
+/* ---------- Takeaway ---------- */
+.takeaway {
+  padding: 22px 24px 26px;
+  text-align: center;
+  color: #fff;
+  background: var(--deep);
+  border: 4px solid var(--cyan);
+  border-top: 12px solid var(--gold);
+  box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.35);
+  transition: border-color 0.3s;
+}
+.takeaway.is-complete { border-color: var(--gold); }
+.takeaway__title { font-family: var(--font-title); font-size: clamp(14px, 2.6vw, 20px); line-height: 1.5; text-transform: uppercase; color: var(--gold); text-shadow: 3px 3px 0 #000; margin-bottom: 16px; }
+.takeaway__value { max-width: 28em; margin: 0 auto; padding: 18px 14px; font-size: 30px; line-height: 1.15; background: rgba(255, 255, 255, 0.08); border: 2px dashed var(--cyan); }
+
+/* ---------- Navigation ---------- */
+.sec__nav { width: min(100%, 960px); display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.nav-btn { display: inline-block; text-decoration: none; font-size: 12px; line-height: 1.5; text-align: center; padding: 16px 28px; }
+.sec.is-leaving { opacity: 0; transition: opacity 0.2s linear; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+  .sec { padding: 28px 16px 40px; gap: 24px; }
+  .sec__content { gap: 28px; }
+
+  .card__num { min-width: 48px; font-size: 12px; }
+  .card__q { font-size: 25px; padding: 14px 0; }
+  .card__sign { padding-right: 12px; }
+  .card__head { gap: 12px; }
+  .card__panel { padding: 6px 14px 18px; }
+
+  /* avatar on top, dialogue underneath */
+  .scene { flex-direction: column; align-items: stretch; gap: 20px; }
+  .speaker { width: auto; flex-direction: row; justify-content: flex-start; text-align: left; }
+  .avatar { width: 72px; height: 72px; }
+  .avatar__ph::before { top: 10px; width: 28px; height: 28px; }
+  .avatar__ph::after { width: 48px; height: 22px; }
+  .dialogue::before { left: 26px; top: -12px; border-bottom: 0; border-top: 4px solid var(--ink); }
+  .dialogue__text { font-size: 26px; }
+
+  .takeaway { padding: 18px 14px 22px; }
+  .takeaway__value { font-size: 26px; }
+
+  .sec__nav { flex-direction: column-reverse; }
+  .nav-btn { width: 100%; padding: 18px 16px; }
+}
