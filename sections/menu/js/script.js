@@ -19,7 +19,7 @@ document.querySelectorAll(".card, #backBtn").forEach((link) => {
   });
 });
 
-// 2) Keyboard: press 1–9 to open a section, Esc to go back to the cover
+// 2) Keyboard: press 1–9 (or 0 for the 10th) to open a section, Esc to go back to the cover
 document.addEventListener("keydown", (e) => {
   if (e.ctrlKey || e.metaKey || e.altKey) return;
 
@@ -34,3 +34,6 @@ document.addEventListener("keydown", (e) => {
 
 // 3) Restore page if user comes back with the browser Back button
 window.addEventListener("pageshow", () => page.classList.remove("is-leaving"));
+
+
+
