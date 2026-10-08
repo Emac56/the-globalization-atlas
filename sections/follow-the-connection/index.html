@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Follow the Connection | My Globalization Atlas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../shared/css/global.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- FOLLOW THE CONNECTION (draft / placeholder content) -->
+  <main class="page atlas-bg sec" id="secPage">
+
+    <!-- Header -->
+    <header class="sec__header">
+      <p class="sec__kicker">My Globalization Atlas</p>
+      <h1 class="sec__title">Follow the Connection</h1>
+      <p class="sec__counter">03 / 10</p>
+      <p class="sec__quote">Every product has a journey. Follow the connection from its starting materials to the Filipino consumer.</p>
+      <p class="draft-tag">Draft content &mdash; product to be selected</p>
+    </header>
+
+    <div class="sec__content">
+
+      <!-- GLOBAL PRODUCT JOURNEY (route) -->
+      <section class="route-card" aria-labelledby="routeTitle">
+        <h2 class="block-title" id="routeTitle">Global product journey</h2>
+        <p class="block-hint">Select a stage to see its details.</p>
+
+        <div class="route" id="route" style="--i: 0">
+          <div class="route__track" aria-hidden="true">
+            <span class="route__fill"></span>
+            <span class="route__marker"></span>
+          </div>
+
+          <button class="stop" type="button" data-stage="0">
+            <span class="stop__icon">01</span>
+            <span class="stop__label">Raw Materials</span>
+          </button>
+          <button class="stop" type="button" data-stage="1">
+            <span class="stop__icon">02</span>
+            <span class="stop__label">Production</span>
+          </button>
+          <button class="stop" type="button" data-stage="2">
+            <span class="stop__icon">03</span>
+            <span class="stop__label">Manufacturing / Assembly</span>
+          </button>
+          <button class="stop" type="button" data-stage="3">
+            <span class="stop__icon">04</span>
+            <span class="stop__label">Transportation</span>
+          </button>
+          <button class="stop" type="button" data-stage="4">
+            <span class="stop__icon">05</span>
+            <span class="stop__label">Market</span>
+          </button>
+          <button class="stop" type="button" data-stage="5">
+            <span class="stop__icon">06</span>
+            <span class="stop__label">Filipino Consumer</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- MAIN INFORMATION PANEL (text comes from js/script.js) -->
+      <section class="card info" id="info" aria-live="polite">
+        <div class="info__top">
+          <span class="info__stage" id="infoStage">Stage 01 / 06</span>
+          <span class="info__ph">Placeholder</span>
+        </div>
+        <div class="info__body" id="infoBody">
+          <h2 class="info__title" id="infoTitle">Raw Materials</h2>
+          <p class="info__text" id="infoText"></p>
+        </div>
+        <div class="info__nav">
+          <button class="pixel-btn small-btn" type="button" id="prevBtn">&larr; Prev</button>
+          <button class="pixel-btn small-btn" type="button" id="nextStageBtn">Next &rarr;</button>
+        </div>
+      </section>
+
+      <!-- CONNECTION NOTES — replace each .note__value when the research is ready -->
+      <section class="card notes" aria-labelledby="notesTitle">
+        <h2 class="notes__title" id="notesTitle">Connection Notes</h2>
+        <div class="notes__grid">
+          <div class="note">
+            <p class="note__label">Materials</p>
+            <p class="note__value">[To be researched]</p>
+          </div>
+          <div class="note">
+            <p class="note__label">Countries Involved</p>
+            <p class="note__value">[To be researched]</p>
+          </div>
+          <div class="note">
+            <p class="note__label">Transportation</p>
+            <p class="note__value">[To be researched]</p>
+          </div>
+          <div class="note">
+            <p class="note__label">Market</p>
+            <p class="note__value">[To be researched]</p>
+          </div>
+          <div class="note">
+            <p class="note__label">Global Connection</p>
+            <p class="note__value">[To be explained]</p>
+          </div>
+          <div class="note">
+            <p class="note__label">Possible Challenges</p>
+            <p class="note__value">[To be researched]</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sec__nav" aria-label="Section navigation">
+      <a class="pixel-btn nav-btn" href="../menu/" id="backBtn">&larr; Back to Atlas</a>
+    </nav>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
