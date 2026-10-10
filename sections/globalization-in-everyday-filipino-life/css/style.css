@@ -204,6 +204,12 @@
 .shot__search { font-size: 20px; line-height: 1.05; }
 .shot__file { font-size: 18px; line-height: 1; color: var(--cyan); overflow-wrap: anywhere; }
 
+/* Photo source link under each photo (same look as Follow the Connection) */
+.shot__credit { margin-top: 12px; font-size: 18px; line-height: 1.1; color: #666; }
+.shot__credit a { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; padding: 4px 0; overflow-wrap: anywhere; }
+.shot__credit a:hover { color: #000; }
+.shot__credit a:focus-visible { outline: 3px dashed var(--navy); outline-offset: 3px; }
+
 /* ---------- Bottom navigation: now shared (shared/css/global.css + shared/js/nav.js) ---------- */
 
 /* ---------- Load / leave ---------- */
