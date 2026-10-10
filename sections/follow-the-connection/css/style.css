@@ -239,6 +239,10 @@
 .shot__icon { color: var(--cyan); }
 .shot__msg { font-family: var(--font-title); font-size: 10px; line-height: 1.6; color: var(--gold); text-transform: uppercase; }
 .shot__search { font-size: 20px; line-height: 1.05; }
+.shot__credit { margin-top: 12px; font-size: 18px; line-height: 1.1; color: #666; }
+.shot__credit a { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; padding: 4px 0; overflow-wrap: anywhere; }
+.shot__credit a:hover { color: #000; }
+.shot__credit a:focus-visible { outline: 3px dashed var(--navy); outline-offset: 3px; }
 .shot__file { font-size: 18px; line-height: 1; color: var(--cyan); overflow-wrap: anywhere; }
 .info__body.swap { animation: swap 0.3s steps(5) both; }
 @keyframes swap { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: none; } }
