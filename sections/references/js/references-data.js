@@ -4,9 +4,10 @@
    opened straight from a file.
 
    HOW IT WORKS
-   - "sources" holds each source ONCE, with the pieces needed for an APA 7 reference.
-   - "sections" lists the project sections (in Atlas order). Each section lists the
-     sources it uses, and what each source is used for in THAT section.
+   - "sources" holds each source ONCE: author, date, title, URL (plus a series number if the
+     source shows one).
+   - "sections" lists the project sections (in Atlas order). Each section lists the ids of
+     the sources it uses.
    - The page sorts every section alphabetically by author, builds the APA 7 reference,
      and makes the URL clickable. Do not type the reference by hand.
    - If one source is used by several sections, it appears in full under the first
@@ -14,8 +15,8 @@
 
    HOW TO ADD A SOURCE
    1. Add it to "sources" (new unique id). Fill ONLY what the source really shows.
-      No date shown -> date: "n.d." (and add retrieved: "Month Day, Year").
-   2. Add { id, usedFor, limits } to the "sources" array of the right section below.
+      No date shown -> date: "n.d."
+   2. Add { id: "..." } to the "sources" array of the right section below.
    Never guess an author, date, DOI or URL. */
 
 window.ATLAS_REFERENCES = {
@@ -26,8 +27,28 @@ window.ATLAS_REFERENCES = {
 
   sources: {
 
+    "abscbn-2023-vietnam": {
+      author: "ABS-CBN News",
+      date: "2023, July 3",
+      title: "Jollibee says it now has 158 stores in Vietnam",
+      url: "https://www.abs-cbn.com/business/07/03/23/jollibee-says-it-now-has-158-stores-in-vietnam"
+    },
+
+    "jollibee-la-beverly": {
+      author: "Jollibee",
+      date: "n.d.",
+      title: "Jollibee - Fried Chicken, Burgers & Pies - 3821 Beverly Blvd",
+      url: "https://locations.jollibeefoods.com/usa/ca/los-angeles/3821-beverly-blvd"
+    },
+
+    "jollibee-mississauga-boyer": {
+      author: "Jollibee",
+      date: "n.d.",
+      title: "Jollibee - Fried Chicken, Burgers & Pies - 800 Boyer Blvd",
+      url: "https://locations.jollibeefoods.com/ca/on/mississauga/800-boyer-blvd"
+    },
+
     "imf-2002-framework": {
-      type: "International organization",
       author: "International Monetary Fund",   // corporate author (page says "By IMF Staff")
       date: "2002, March",                      // shown on the source page
       title: "Globalization: A framework for IMF involvement",
@@ -36,32 +57,24 @@ window.ATLAS_REFERENCES = {
     },
 
     "jollibee-2021-expansion": {
-      type: "Company news",
       author: "Jollibee Group",
       date: "2021, October 5",                  // dateline: MANILA, Philippines. 5 October 2021
       // Title as printed on the page (note the comma before "and Asia").
       title: "Jollibee Group continues expansion across Europe, Middle East, and Asia with 11 new stores",
       url: "https://www.jollibeegroup.com/news/jollibee-group-continues-expansion-across-europe-middle-east-and-asia-with-11-new-stores/"
-      // TO CONFIRM: the page is not labelled "press release". If your teacher wants it,
-      // add descriptor: "[Press release]" here.
     },
 
     "worldbank-2020-wdr": {
-      type: "International organization",
       author: "World Bank",
       date: "2020",
       title: "World development report 2020: Trading for development in the age of global value chains",
-      url: "https://www.worldbank.org/en/publication/wdr2020",
-      // Verified on the World Bank Open Knowledge Repository record (shown in the details panel).
-      doi: "https://doi.org/10.1596/978-1-4648-1457-0"
+      url: "https://www.worldbank.org/en/publication/wdr2020"
     },
 
     "wto-what-is-the-wto": {
-      type: "International organization",
       author: "World Trade Organization",
       date: "n.d.",                             // no publication date shown on the page
       title: "What is the WTO?",
-      retrieved: "October 10, 2026",            // TO CONFIRM: set to the date YOU open the page
       url: "https://www.wto.org/english/thewto_e/whatis_e/whatis_e.htm"
     }
   },
@@ -75,26 +88,13 @@ window.ATLAS_REFERENCES = {
       title: "What is Globalization?",
       short: "What is Globalization?",
       sources: [
-        {
-          id: "wto-what-is-the-wto",
-          usedFor: "Global Trade: describes the WTO as the global organization that deals with the rules of trade between nations and helps producers, exporters, and importers do business.",
-          limits: "The copy of the page that was checked still showed 2013 figures and a former Director-General, so do not use it for current WTO facts such as budget, membership, or leadership."
-        },
-        {
-          id: "imf-2002-framework",
-          usedFor: "Definition: describes globalization as an increasingly free flow of ideas, people, goods, services, and capital that links economies and societies.",
-          limits: "Written in 2002 from an economic point of view. It does not discuss digital communication directly and is not a source for current statistics."
-        },
-        {
-          id: "jollibee-2021-expansion",
-          usedFor: "Everyday example: a Philippine-based restaurant brand opening branches abroad (UK, Spain, Qatar, Saudi Arabia, Hong Kong) and serving local customers there.",
-          limits: "Does not mention the United States, Canada, or Vietnam, so it cannot support anything specific about the three photo placeholders. A separate source is needed for those branches."
-        },
-        {
-          id: "worldbank-2020-wdr",
-          usedFor: "Global Trade: explains that global value chains now account for almost half of world trade, linking countries through international production and trade.",
-          limits: "Focused on trade and global value chains. It is not a source for the movement of people or for digital communication."
-        }
+        { id: "wto-what-is-the-wto" },
+        { id: "imf-2002-framework" },
+        { id: "jollibee-2021-expansion" },
+        { id: "worldbank-2020-wdr" },
+        { id: "abscbn-2023-vietnam" },
+        { id: "jollibee-la-beverly" },
+        { id: "jollibee-mississauga-boyer" }
       ]
     },
     { id: "follow-the-connection",                    title: "Follow the Connection",                    short: "Follow the Connection",     sources: [] },

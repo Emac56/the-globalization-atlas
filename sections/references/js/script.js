@@ -2,7 +2,7 @@
 // Reads js/references-data.js, then draws the reference list grouped by project section.
 // Navigation uses plain HTML links (shared/js/nav.js). This file handles:
 //   1) building the APA 7 references (alphabetical, clickable URLs)
-//   2) the section filter  3) the expandable "Source details" panels
+//   2) the section filter
 
 (function () {
   "use strict";
@@ -11,11 +11,9 @@
   var catsEl = document.getElementById("cats");
   var filtersEl = document.getElementById("filters");
   var countEl = document.getElementById("count");
-  var toggleAll = document.getElementById("toggleAll");
 
   if (!DATA || !DATA.sources || !DATA.sections) {
     catsEl.innerHTML = '<p class="empty">The reference list could not be loaded.</p>';
-    toggleAll.hidden = true;
     return;
   }
 
@@ -60,14 +58,6 @@
     return p;
   }
 
-  function field(label, valueNode) {
-    var wrap = el("div");
-    wrap.appendChild(el("dt", null, label));
-    var dd = el("dd");
-    dd.appendChild(valueNode);
-    wrap.appendChild(dd);
-    return wrap;
-  }
   function textNode(t) { return document.createTextNode(t); }
 
   // ---------- where does each source live? (first section that uses it) ----------
@@ -77,52 +67,14 @@
   });
 
   var totalSources = Object.keys(home).length;
-  var uid = 0;
 
   // ---------- one full source card ----------
   function buildCard(sec, usage) {
     var s = DATA.sources[usage.id];
-    uid += 1;
-    var panelId = "details-" + uid;
 
     var card = el("article", "src");
     card.id = "src-" + usage.id;
-
-    var top = el("div", "src__top");
-    top.appendChild(el("span", "src__type", s.type));
-    top.appendChild(el("span", "src__year", s.date));
-    card.appendChild(top);
-
     card.appendChild(buildApa(s));
-
-    var btn = el("button", "src__toggle");
-    btn.type = "button";
-    btn.setAttribute("aria-expanded", "false");
-    btn.setAttribute("aria-controls", panelId);
-    btn.appendChild(el("span", null, "Source details"));
-    var sign = el("span", "src__sign", "+");
-    sign.setAttribute("aria-hidden", "true");
-    btn.appendChild(sign);
-    card.appendChild(btn);
-
-    var panel = el("div", "src__apa");
-    panel.id = panelId;
-    panel.hidden = true;
-    var dl = el("dl", "apa__fields");
-    if (usage.usedFor) dl.appendChild(field("Used in this section for", textNode(usage.usedFor)));
-    if (usage.limits) dl.appendChild(field("Keep in mind", textNode(usage.limits)));
-    if (s.doi) {
-      var d = el("a", "apa__url", s.doi);
-      d.href = s.doi; d.target = "_blank"; d.rel = "noopener noreferrer";
-      dl.appendChild(field("DOI (verified)", d));
-    }
-    panel.appendChild(dl);
-    card.appendChild(panel);
-
-    btn.addEventListener("click", function () {
-      setOpen(card, !card.classList.contains("is-open"));
-      syncToggleAll();
-    });
     return card;
   }
 
@@ -193,34 +145,6 @@
     visibleSections.forEach(function (sec) { addChip(sec.short || sec.title, sec.id); });
   }
 
-  // ---------- open / close ----------
-  function setOpen(card, open) {
-    var btn = card.querySelector(".src__toggle");
-    var panel = card.querySelector(".src__apa");
-    card.classList.toggle("is-open", open);
-    btn.setAttribute("aria-expanded", String(open));
-    btn.querySelector(".src__sign").textContent = open ? "\u2013" : "+";
-    panel.hidden = !open;
-  }
-
-  function visibleCards() {
-    return document.querySelectorAll(".cat:not(.is-hidden) .src");
-  }
-
-  function syncToggleAll() {
-    var list = visibleCards();
-    var allOpen = list.length > 0 && Array.prototype.every.call(list, function (c) { return c.classList.contains("is-open"); });
-    toggleAll.textContent = allOpen ? "Collapse all" : "Expand all";
-    toggleAll.setAttribute("aria-pressed", String(allOpen));
-    toggleAll.hidden = list.length === 0;
-  }
-
-  toggleAll.addEventListener("click", function () {
-    var open = toggleAll.getAttribute("aria-pressed") !== "true";
-    Array.prototype.forEach.call(visibleCards(), function (c) { setOpen(c, open); });
-    syncToggleAll();
-  });
-
   function applyFilter(key) {
     var shown = 0;
     Array.prototype.forEach.call(cats, function (cat) {
@@ -234,7 +158,6 @@
       c.setAttribute("aria-pressed", String(on));
     });
     countEl.textContent = "Showing " + shown + " of " + totalSources + (totalSources === 1 ? " source" : " sources");
-    syncToggleAll();
   }
 
   applyFilter("all");

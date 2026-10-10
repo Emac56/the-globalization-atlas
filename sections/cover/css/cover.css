@@ -13,7 +13,7 @@
 .cover__bg {
   position: absolute;
   inset: -4%;
-  background: url("../../../assets/images/backgrounds/cover-bg.png") center / cover no-repeat;
+  background: url("../../../assets/images/backgrounds/cover-bg.webp") center / cover no-repeat;
   image-rendering: pixelated;
   animation: drift 30s ease-in-out infinite alternate;
 }
