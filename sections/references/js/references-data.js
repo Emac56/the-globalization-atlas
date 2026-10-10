@@ -27,6 +27,54 @@ window.ATLAS_REFERENCES = {
 
   sources: {
 
+    "mcdonalds-corp-history": {
+      author: "McDonald’s Corporation",
+      title: "Our History",
+      url: "https://corporate.mcdonalds.com/corpmcd/our-company/who-we-are/our-history.html"
+    },
+
+    "mcdonalds-ph-story": {
+      author: "McDonald’s Philippines",
+      title: "Our Story",
+      url: "https://www.mcdonalds.com.ph/our-story"
+    },
+
+    "uniqlo-ph-information": {
+      author: "UNIQLO Philippines",
+      title: "Information",
+      url: "https://www.uniqlo.com/ph/en/information"
+    },
+
+    "fastretailing-southeast-asia": {
+      author: "Fast Retailing",
+      title: "Southeast Asia",
+      url: "https://www.fastretailing.com/eng/group/strategy/southeastasia.html"
+    },
+
+    "sanchez-korean-turn": {
+      author: "Louie Jon A. Sánchez",
+      title: "“The ‘Korean Turn’ in Philippine Popular Culture”",
+      url: "https://doi.org/10.22801/svn.2024.16.1.15"
+    },
+
+    "worldbank-digital-ph": {
+      author: "World Bank",
+      title: "Digital Transformation in the Philippines",
+      url: "https://www.worldbank.org/en/news/press-release/2024/11/12/world-bank-helps-boost-digital-transformation-in-ph"
+    },
+
+    "dmw-top10-destinations": {
+      author: "Department of Migrant Workers",
+      title: "Deployed Land-based Overseas Filipino Workers by Top 10 Destinations, 2024 vs. 2025",
+      url: "https://dmw.gov.ph/archives/v1/resources/dsms/DMW/Externals/2025/Statistics/2024%20vs%202025/TAB%207%20-%20Deployed%20Landbased%20Overseas%20Filipino%20Workers%20by%20Top%2010%20Destinations_Total,%20New%20Hires%20&%20Rehires%20(2024%20vs%202025).pdf"
+    },
+
+    "bsp-ofw-remittances": {
+      author: "Bangko Sentral ng Pilipinas",
+      title: "OFW Remittances",
+      url: "https://www.bsp.gov.ph/statistics/external/ofw.aspx"
+    },
+
     "wits-2024-cocoa-exports-malaysia": {
       author: "World Bank WITS",
       title: "Cocoa bean exports to Malaysia, 2024",
@@ -154,7 +202,21 @@ window.ATLAS_REFERENCES = {
         { id: "icco-2024-august-statistics" }
       ]
     },
-    { id: "globalization-in-everyday-filipino-life",  title: "Globalization in Everyday Filipino Life",  short: "Everyday Filipino Life",    sources: [] },
+    {
+      id: "globalization-in-everyday-filipino-life",
+      title: "Globalization in Everyday Filipino Life",
+      short: "Everyday Filipino Life",
+      sources: [
+        { id: "mcdonalds-corp-history" },
+        { id: "mcdonalds-ph-story" },
+        { id: "uniqlo-ph-information" },
+        { id: "fastretailing-southeast-asia" },
+        { id: "sanchez-korean-turn" },
+        { id: "worldbank-digital-ph" },
+        { id: "dmw-top10-destinations" },
+        { id: "bsp-ofw-remittances" }
+      ]
+    },
     { id: "globalization-and-the-philippines",        title: "Globalization and the Philippines",        short: "The Philippines",           sources: [] },
     { id: "culture-goes-global",                      title: "Culture Goes Global",                      short: "Culture Goes Global",       sources: [] },
     { id: "benefits-and-challenges",                  title: "Benefits and Challenges",                  short: "Benefits & Challenges",     sources: [] },
