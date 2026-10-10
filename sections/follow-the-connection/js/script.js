@@ -1,8 +1,8 @@
 // FOLLOW THE CONNECTION — script for this page only.
 // Basic navigation is a plain HTML link. JS handles the stage selection.
 
-// Stage text and image placeholders live in index.html (one <article class="stage"> per stage).
-// This script only shows the selected stage.
+// Stage text and images live in index.html (one <article class="stage"> per stage).
+// This script shows the selected stage and swaps in a placeholder when a photo file is missing.
 
 const route = document.getElementById("route");
 const stops = document.querySelectorAll(".stop");
@@ -64,6 +64,21 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") selectStage(current + 1);
 });
 
+
+// Missing photos: if an <img> cannot load, mark its frame so the CSS shows the
+// "Add your photo here" placeholder (the <img> stays in the HTML, just not visible).
+function checkImage(img) {
+  const frame = img.closest(".shot__frame");
+  const mark = () => frame.classList.add("is-missing");
+  if (img.complete) {
+    if (img.naturalWidth === 0) mark();
+  } else {
+    img.addEventListener("error", mark);
+  }
+  // photo added later while the page is open and reloaded: loads normally, nothing to do
+  img.addEventListener("load", () => frame.classList.remove("is-missing"));
+}
+document.querySelectorAll(".shot__frame img").forEach(checkImage);
 
 selectStage(0);
 

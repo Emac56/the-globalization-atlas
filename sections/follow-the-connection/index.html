@@ -79,17 +79,12 @@
           <span class="info__stage" id="infoStage">Stage 01 / 06</span>
         </div>
 
-        <!-- Six EMPTY image placeholders (one per stage). No photos are included.
-             HOW TO ADD A PHOTO LATER:
-               1. Save the photo in assets/images/follow-the-connection/ with the filename in that stage's comment.
-               2. Paste the <img> line from the comment INSIDE the matching <div class="shot__frame">.
-               3. Delete the comment. The photo covers the empty frame automatically. -->
+        <!-- Each stage has a real <img>. If its file is missing, js/script.js shows a simple
+             "Add your photo here" placeholder instead of a broken image.
+             TO ADD A PHOTO: save it in assets/images/follow-the-connection/ using the filename
+             shown in the placeholder. It appears automatically (no code change needed). -->
         <div class="info__body" id="infoBody">
 
-          <!-- STAGE 01 PLACEHOLDER: cocoa-farming
-               Image search: "cocoa farmers harvesting cocoa pods in Côte d’Ivoire"
-               Future file: ../../assets/images/follow-the-connection/cocoa-farming.jpg
-               Paste inside the frame: <img src="../../assets/images/follow-the-connection/cocoa-farming.jpg" alt="Cocoa farmers harvesting cocoa pods" loading="lazy" /> -->
           <article class="stage" data-stage="0">
             <div class="stage__text">
               <h2 class="info__title">Raw Materials</h2>
@@ -98,15 +93,19 @@
                 <li>Cocoa beans are grown and exported to Malaysia.</li>
               </ul>
             </div>
-            <figure class="stage__shot" data-placeholder="cocoa-farming">
-              <div class="shot__frame" role="img" aria-label="Empty image placeholder: Cocoa farmers harvesting cocoa pods"></div>
+            <figure class="stage__shot">
+              <div class="shot__frame">
+                <img src="../../assets/images/follow-the-connection/cocoa-farming.jpg" alt="Harvested cocoa pods, one cut open to show white pulp, with cocoa beans and green leaves" />
+                <div class="shot__empty">
+                  <svg class="shot__icon" viewBox="0 0 32 32" width="40" height="40" aria-hidden="true" focusable="false"><rect x="3" y="5" width="26" height="22" fill="none" stroke="currentColor" stroke-width="3"/><rect x="8" y="9" width="5" height="5" fill="currentColor"/><path d="M5 25 L13 16 L18 21 L22 17 L27 25 Z" fill="currentColor"/></svg>
+                  <p class="shot__msg">Add your photo here</p>
+                  <p class="shot__search">Search: Cocoa farming and harvested cocoa beans in Côte d’Ivoire.</p>
+                  <p class="shot__file">Save as: cocoa-farming.jpg</p>
+                </div>
+              </div>
             </figure>
           </article>
 
-          <!-- STAGE 02 PLACEHOLDER: cocoa-production
-               Image search: "cocoa beans being ground in a Malaysian factory"
-               Future file: ../../assets/images/follow-the-connection/cocoa-production.jpg
-               Paste inside the frame: <img src="../../assets/images/follow-the-connection/cocoa-production.jpg" alt="Cocoa beans being processed and ground" loading="lazy" /> -->
           <article class="stage" data-stage="1" hidden>
             <div class="stage__text">
               <h2 class="info__title">Production</h2>
@@ -115,15 +114,19 @@
                 <li>Cocoa beans are processed and ground.</li>
               </ul>
             </div>
-            <figure class="stage__shot" data-placeholder="cocoa-production">
-              <div class="shot__frame" role="img" aria-label="Empty image placeholder: Cocoa beans being processed and ground"></div>
+            <figure class="stage__shot">
+              <div class="shot__frame">
+                <img src="../../assets/images/follow-the-connection/cocoa-processing.jpg" alt="Cocoa beans being processed and ground in a factory" />
+                <div class="shot__empty">
+                  <svg class="shot__icon" viewBox="0 0 32 32" width="40" height="40" aria-hidden="true" focusable="false"><rect x="3" y="5" width="26" height="22" fill="none" stroke="currentColor" stroke-width="3"/><rect x="8" y="9" width="5" height="5" fill="currentColor"/><path d="M5 25 L13 16 L18 21 L22 17 L27 25 Z" fill="currentColor"/></svg>
+                  <p class="shot__msg">Add your photo here</p>
+                  <p class="shot__search">Search: Cocoa beans being processed and ground in a factory.</p>
+                  <p class="shot__file">Save as: cocoa-processing.jpg</p>
+                </div>
+              </div>
             </figure>
           </article>
 
-          <!-- STAGE 03 PLACEHOLDER: chocolate-manufacturing
-               Image search: "chocolate manufacturing factory production line"
-               Future file: ../../assets/images/follow-the-connection/chocolate-manufacturing.jpg
-               Paste inside the frame: <img src="../../assets/images/follow-the-connection/chocolate-manufacturing.jpg" alt="Chocolate products being made in a factory" loading="lazy" /> -->
           <article class="stage" data-stage="2" hidden>
             <div class="stage__text">
               <h2 class="info__title">Manufacturing</h2>
@@ -132,15 +135,19 @@
                 <li>Cocoa ingredients are made into chocolate products.</li>
               </ul>
             </div>
-            <figure class="stage__shot" data-placeholder="chocolate-manufacturing">
-              <div class="shot__frame" role="img" aria-label="Empty image placeholder: Chocolate products being made in a factory"></div>
+            <figure class="stage__shot">
+              <div class="shot__frame">
+                <img src="../../assets/images/follow-the-connection/chocolate-manufacturing.jpg" alt="Chocolate products being made in a factory" />
+                <div class="shot__empty">
+                  <svg class="shot__icon" viewBox="0 0 32 32" width="40" height="40" aria-hidden="true" focusable="false"><rect x="3" y="5" width="26" height="22" fill="none" stroke="currentColor" stroke-width="3"/><rect x="8" y="9" width="5" height="5" fill="currentColor"/><path d="M5 25 L13 16 L18 21 L22 17 L27 25 Z" fill="currentColor"/></svg>
+                  <p class="shot__msg">Add your photo here</p>
+                  <p class="shot__search">Search: Chocolate products being manufactured in a factory.</p>
+                  <p class="shot__file">Save as: chocolate-manufacturing.jpg</p>
+                </div>
+              </div>
             </figure>
           </article>
 
-          <!-- STAGE 04 PLACEHOLDER: chocolate-transportation
-               Image search: "cargo containers shipping goods internationally"
-               Future file: ../../assets/images/follow-the-connection/chocolate-transportation.jpg
-               Paste inside the frame: <img src="../../assets/images/follow-the-connection/chocolate-transportation.jpg" alt="Cargo containers transporting goods between countries" loading="lazy" /> -->
           <article class="stage" data-stage="3" hidden>
             <div class="stage__text">
               <h2 class="info__title">Transportation</h2>
@@ -148,15 +155,19 @@
                 <li>Cocoa and chocolate products are shipped between countries.</li>
               </ul>
             </div>
-            <figure class="stage__shot" data-placeholder="chocolate-transportation">
-              <div class="shot__frame" role="img" aria-label="Empty image placeholder: Cargo containers transporting goods between countries"></div>
+            <figure class="stage__shot">
+              <div class="shot__frame">
+                <img src="../../assets/images/follow-the-connection/transportation.jpg" alt="Cargo ships and shipping containers transporting goods between countries" />
+                <div class="shot__empty">
+                  <svg class="shot__icon" viewBox="0 0 32 32" width="40" height="40" aria-hidden="true" focusable="false"><rect x="3" y="5" width="26" height="22" fill="none" stroke="currentColor" stroke-width="3"/><rect x="8" y="9" width="5" height="5" fill="currentColor"/><path d="M5 25 L13 16 L18 21 L22 17 L27 25 Z" fill="currentColor"/></svg>
+                  <p class="shot__msg">Add your photo here</p>
+                  <p class="shot__search">Search: Cargo ships or shipping containers transporting goods internationally.</p>
+                  <p class="shot__file">Save as: transportation.jpg</p>
+                </div>
+              </div>
             </figure>
           </article>
 
-          <!-- STAGE 05 PLACEHOLDER: chocolate-market
-               Image search: "chocolate products displayed in a Philippine grocery store"
-               Future file: ../../assets/images/follow-the-connection/chocolate-market.jpg
-               Paste inside the frame: <img src="../../assets/images/follow-the-connection/chocolate-market.jpg" alt="Chocolate products displayed in a local store" loading="lazy" /> -->
           <article class="stage" data-stage="4" hidden>
             <div class="stage__text">
               <h2 class="info__title">Market</h2>
@@ -165,15 +176,19 @@
                 <li>The Philippines imports cocoa-containing products from Malaysia.</li>
               </ul>
             </div>
-            <figure class="stage__shot" data-placeholder="chocolate-market">
-              <div class="shot__frame" role="img" aria-label="Empty image placeholder: Chocolate products displayed in a local store"></div>
+            <figure class="stage__shot">
+              <div class="shot__frame">
+                <img src="../../assets/images/follow-the-connection/philippine-market.jpg" alt="Chocolate products displayed in a Philippine grocery store" />
+                <div class="shot__empty">
+                  <svg class="shot__icon" viewBox="0 0 32 32" width="40" height="40" aria-hidden="true" focusable="false"><rect x="3" y="5" width="26" height="22" fill="none" stroke="currentColor" stroke-width="3"/><rect x="8" y="9" width="5" height="5" fill="currentColor"/><path d="M5 25 L13 16 L18 21 L22 17 L27 25 Z" fill="currentColor"/></svg>
+                  <p class="shot__msg">Add your photo here</p>
+                  <p class="shot__search">Search: Chocolate products displayed in a Philippine grocery store.</p>
+                  <p class="shot__file">Save as: philippine-market.jpg</p>
+                </div>
+              </div>
             </figure>
           </article>
 
-          <!-- STAGE 06 PLACEHOLDER: filipino-consumer
-               Image search: "Filipino shopper buying chocolate in a grocery store"
-               Future file: ../../assets/images/follow-the-connection/filipino-consumer.jpg
-               Paste inside the frame: <img src="../../assets/images/follow-the-connection/filipino-consumer.jpg" alt="A Filipino shopper buying chocolate" loading="lazy" /> -->
           <article class="stage" data-stage="5" hidden>
             <div class="stage__text">
               <h2 class="info__title">Filipino Consumer</h2>
@@ -181,8 +196,16 @@
                 <li>Filipino consumers buy chocolate products from local stores.</li>
               </ul>
             </div>
-            <figure class="stage__shot" data-placeholder="filipino-consumer">
-              <div class="shot__frame" role="img" aria-label="Empty image placeholder: A Filipino shopper buying chocolate"></div>
+            <figure class="stage__shot">
+              <div class="shot__frame">
+                <img src="../../assets/images/follow-the-connection/filipino-consumer.webp" alt="A Filipino shopper buying chocolate from a local store" />
+                <div class="shot__empty">
+                  <svg class="shot__icon" viewBox="0 0 32 32" width="40" height="40" aria-hidden="true" focusable="false"><rect x="3" y="5" width="26" height="22" fill="none" stroke="currentColor" stroke-width="3"/><rect x="8" y="9" width="5" height="5" fill="currentColor"/><path d="M5 25 L13 16 L18 21 L22 17 L27 25 Z" fill="currentColor"/></svg>
+                  <p class="shot__msg">Add your photo here</p>
+                  <p class="shot__search">Search: A Filipino consumer buying chocolate from a local store.</p>
+                  <p class="shot__file">Save as: filipino-consumer.jpg</p>
+                </div>
+              </div>
             </figure>
           </article>
         </div>
