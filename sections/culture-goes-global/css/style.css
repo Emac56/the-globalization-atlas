@@ -227,30 +227,10 @@
 .part__num { flex: none; font-size: 10px; color: var(--ink); background: var(--gold); padding: 4px 6px; }
 .part__value { font-size: 26px; line-height: 1.1; color: #dbe9ff; }
 
-/* ---------- Bottom navigation (same on every section) ---------- */
-.sec__nav {
-  width: min(100%, 960px);
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-.nav-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 64px;
-  padding: 14px 12px;
-  font-size: 12px;
-  line-height: 1.5;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-.nav-btn--menu { background: var(--gold); }
-.nav-btn--menu:hover { background: #ffe58a; }
+/* ---------- Bottom navigation: now shared (shared/css/global.css + shared/js/nav.js) ---------- */
 
 /* ---------- Load / leave ---------- */
-.sec__header, .sec__content > *, .sec__nav { animation: rise 0.35s steps(5) both; }
+.sec__header, .sec__content > * { animation: rise 0.35s steps(5) both; }
 .sec__content > *:nth-child(2) { animation-delay: 0.08s; }
 .sec__content > *:nth-child(3) { animation-delay: 0.16s; }
 @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
@@ -288,5 +268,6 @@
   .qa { grid-template-columns: 1fr; }
   .info__nav { gap: 12px; }
   .info__nav .small-btn { flex: 1; padding: 18px 8px; }
-  .sec__nav { grid-template-columns: 1fr; gap: 16px; }
 }
+
+

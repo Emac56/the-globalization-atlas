@@ -10,7 +10,6 @@ const COUNTRIES = {
   "singapore":     { name: "Singapore",     category: "Investment / Business",   text: "[Draft — to be researched]" }
 };
 
-const page = document.getElementById("secPage");
 const map = document.getElementById("map");
 const nodes = document.querySelectorAll(".node");
 const lines = document.querySelectorAll(".line");
@@ -55,14 +54,7 @@ function selectCountry(id) {
 
 nodes.forEach((n) => n.addEventListener("click", () => selectCountry(n.dataset.id)));
 
-// Small fade-out before leaving the page
-page.querySelectorAll(".nav-btn").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
-    e.preventDefault();
-    page.classList.add("is-leaving");
-    setTimeout(() => { window.location.href = link.href; }, 180);
-  });
-});
 
-window.addEventListener("pageshow", () => page.classList.remove("is-leaving"));
+
+
+

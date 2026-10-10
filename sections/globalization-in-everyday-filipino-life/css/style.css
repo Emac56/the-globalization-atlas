@@ -165,30 +165,10 @@
 }
 .point__value { font-size: 26px; line-height: 1.1; color: #dbe9ff; }
 
-/* ---------- Bottom navigation ---------- */
-.sec__nav {
-  width: min(100%, 960px);
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-.nav-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 64px;
-  padding: 14px 12px;
-  font-size: 12px;
-  line-height: 1.5;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-.nav-btn--menu { background: var(--gold); }
-.nav-btn--menu:hover { background: #ffe58a; }
+/* ---------- Bottom navigation: now shared (shared/css/global.css + shared/js/nav.js) ---------- */
 
 /* ---------- Load / leave ---------- */
-.sec__header, .ex, .sec__nav { animation: rise 0.35s steps(5) both; }
+.sec__header, .ex { animation: rise 0.35s steps(5) both; }
 .ex:nth-of-type(2) { animation-delay: 0.04s; }
 .ex:nth-of-type(3) { animation-delay: 0.08s; }
 .ex:nth-of-type(4) { animation-delay: 0.12s; }
@@ -201,6 +181,7 @@
   .sec { padding: 28px 16px 40px; gap: 24px; }
   .ex__head { padding: 16px 14px; gap: 12px; min-height: 64px; }
   .ex__points { grid-template-columns: 1fr; padding: 4px 14px 18px; }
-  .sec__nav { grid-template-columns: 1fr; gap: 16px; }
-  .nav-btn { min-height: 64px; }
 }
+
+
+

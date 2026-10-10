@@ -141,13 +141,12 @@
 
 /* ---------- Footer ---------- */
 .menu__footer {
+  width: min(100%, 960px); /* full width so the shared nav matches every other page */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  margin-top: 8px;
 }
-.menu__back { text-decoration: none; display: inline-block; font-size: 12px; }
 .menu__hint {
   font-size: 20px;
   color: #dbe9ff;
@@ -180,6 +179,9 @@
   .card { min-height: 48px; padding: 18px 16px 16px; }
   .menu__hint { display: none; } /* keyboard tip not useful on phones */
 }
+
+
+
 
 
 

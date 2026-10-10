@@ -218,9 +218,7 @@
 .note__label { font-family: var(--font-title); font-size: 10px; line-height: 1.6; color: var(--navy); text-transform: uppercase; margin-bottom: 8px; }
 .note__value { font-size: 26px; line-height: 1.1; color: #555; }
 
-/* ---------- Navigation ---------- */
-.sec__nav { width: min(100%, 1040px); display: flex; flex-wrap: wrap; gap: 16px; justify-content: flex-start; }
-.nav-btn { display: inline-block; text-decoration: none; font-size: 12px; line-height: 1.5; text-align: center; padding: 16px 28px; }
+/* ---------- Bottom navigation: now shared (shared/css/global.css + shared/js/nav.js) ---------- */
 
 /* ---------- Load / leave ---------- */
 .sec__header, .sec__content > * { animation: rise 0.35s steps(5) both; }
@@ -261,9 +259,10 @@
   .notes__grid { grid-template-columns: 1fr; }
   .info__nav { gap: 12px; }
   .info__nav .small-btn { flex: 1; padding: 18px 8px; }
-  .sec__nav { justify-content: stretch; }
-  .nav-btn { width: 100%; padding: 18px 16px; }
 }
+
+
+
 
 
 

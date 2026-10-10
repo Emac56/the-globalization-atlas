@@ -171,9 +171,7 @@
 .takeaway__title { font-family: var(--font-title); font-size: clamp(14px, 2.6vw, 20px); line-height: 1.5; text-transform: uppercase; color: var(--gold); text-shadow: 3px 3px 0 #000; margin-bottom: 16px; }
 .takeaway__value { max-width: 28em; margin: 0 auto; padding: 18px 14px; font-size: 30px; line-height: 1.15; background: rgba(255, 255, 255, 0.08); border: 2px dashed var(--cyan); }
 
-/* ---------- Navigation ---------- */
-.sec__nav { width: min(100%, 960px); display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-.nav-btn { display: inline-block; text-decoration: none; font-size: 12px; line-height: 1.5; text-align: center; padding: 16px 28px; }
+/* ---------- Bottom navigation: now shared (shared/css/global.css + shared/js/nav.js) ---------- */
 .sec.is-leaving { opacity: 0; transition: opacity 0.2s linear; }
 
 /* ---------- Mobile ---------- */
@@ -199,6 +197,7 @@
   .takeaway { padding: 18px 14px 22px; }
   .takeaway__value { font-size: 26px; }
 
-  .sec__nav { flex-direction: column-reverse; }
-  .nav-btn { width: 100%; padding: 18px 16px; }
 }
+
+
+

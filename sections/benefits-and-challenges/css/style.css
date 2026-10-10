@@ -234,30 +234,10 @@
 .detail__label { font-family: var(--font-title); font-size: 10px; line-height: 1.6; color: var(--navy); text-transform: uppercase; margin-bottom: 6px; }
 .detail__value { font-size: 26px; line-height: 1.1; color: #555; }
 
-/* ---------- Bottom navigation (same on every section) ---------- */
-.sec__nav {
-  width: min(100%, 960px);
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-.nav-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 64px;
-  padding: 14px 12px;
-  font-size: 12px;
-  line-height: 1.5;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-.nav-btn--menu { background: var(--gold); }
-.nav-btn--menu:hover { background: #ffe58a; }
+/* ---------- Bottom navigation: now shared (shared/css/global.css + shared/js/nav.js) ---------- */
 
 /* ---------- Load / leave ---------- */
-.sec__header, .sec__content > *, .sec__nav { animation: rise 0.35s steps(5) both; }
+.sec__header, .sec__content > * { animation: rise 0.35s steps(5) both; }
 .sec__content > *:nth-child(2) { animation-delay: 0.1s; }
 @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 .sec.is-leaving { opacity: 0; transition: opacity 0.2s linear; }
@@ -269,5 +249,6 @@
   .compare { grid-template-columns: 1fr; }
   .vs { padding: 4px 0; }
   .deep { grid-template-columns: 1fr; }
-  .sec__nav { grid-template-columns: 1fr; gap: 16px; }
 }
+
+

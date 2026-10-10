@@ -158,7 +158,7 @@
 
       <!-- Step controls + progress -->
       <div class="stepper">
-        <button class="pixel-btn small-btn" type="button" id="prevBtn">&larr; Prev</button>
+        <button class="pixel-btn small-btn" type="button" id="prevBtn">&larr; PREVIOUS</button>
         <div class="progress" aria-live="polite">
           <p class="progress__text" id="progressText">Explored 1 / 6</p>
           <div class="progress__meter" aria-hidden="true">
@@ -170,7 +170,7 @@
             <span class="progress__seg"></span>
           </div>
         </div>
-        <button class="pixel-btn small-btn" type="button" id="nextStageBtn">Next &rarr;</button>
+        <button class="pixel-btn small-btn" type="button" id="nextStageBtn">NEXT &rarr;</button>
       </div>
 
       <!-- FINAL QUESTION — replace .final__value when the research is ready -->
@@ -188,14 +188,15 @@
 
     </div>
 
-    <!-- Bottom navigation: PREVIOUS | ATLAS MENU | NEXT -->
-    <nav class="sec__nav" aria-label="Section navigation">
-      <a class="pixel-btn nav-btn" href="../benefits-and-challenges/index.html">&larr; Previous</a>
-      <a class="pixel-btn nav-btn nav-btn--menu" href="../menu/index.html" id="menuBtn">Atlas Menu</a>
-      <a class="pixel-btn nav-btn" href="../my-globalization-map/index.html">Next &rarr;</a>
-    </nav>
+    <!-- Shared navigation (built by shared/js/nav.js) -->
+    <div data-atlas-nav="global-problem-global-response"></div>
   </main>
 
+  <script src="../../shared/js/nav.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
+
+
+
+

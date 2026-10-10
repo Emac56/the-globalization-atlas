@@ -4,13 +4,13 @@
 const page = document.getElementById("menuPage");
 const cards = document.querySelectorAll(".card");
 
-// 1) Quick fade-out before leaving the page (cards + back button)
+// 1) Quick fade-out before leaving the page (cards)
 function fadeAndGo(url) {
   page.classList.add("is-leaving");
   setTimeout(() => { window.location.href = url; }, 180);
 }
 
-document.querySelectorAll(".card, #backBtn").forEach((link) => {
+document.querySelectorAll(".card").forEach((link) => {
   link.addEventListener("click", (e) => {
     // let ctrl/cmd/middle-click open normally
     if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
@@ -19,21 +19,17 @@ document.querySelectorAll(".card, #backBtn").forEach((link) => {
   });
 });
 
-// 2) Keyboard: press 1–9 (or 0 for the 10th) to open a section, Esc to go back to the cover
+// 2) Keyboard: press 1–9 (or 0 for the 10th) to open a section. (Esc -> cover is handled by shared/js/nav.js)
 document.addEventListener("keydown", (e) => {
   if (e.ctrlKey || e.metaKey || e.altKey) return;
-
-  if (e.key === "Escape") {
-    fadeAndGo(document.getElementById("backBtn").href);
-    return;
-  }
 
   const card = document.querySelector('.card[data-key="' + e.key + '"]');
   if (card) fadeAndGo(card.href);
 });
 
-// 3) Restore page if user comes back with the browser Back button
-window.addEventListener("pageshow", () => page.classList.remove("is-leaving"));
+
+
+
 
 
 

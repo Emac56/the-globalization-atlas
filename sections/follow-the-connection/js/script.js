@@ -13,7 +13,6 @@ const STAGE_TEXTS = [
   "Placeholder: Explain how the product eventually reaches Filipino consumers and becomes part of everyday life."
 ];
 
-const page = document.getElementById("secPage");
 const route = document.getElementById("route");
 const stops = document.querySelectorAll(".stop");
 const info = document.getElementById("info");
@@ -74,21 +73,10 @@ document.addEventListener("keydown", (e) => {
   if (e.ctrlKey || e.metaKey || e.altKey) return;
   if (e.key === "ArrowLeft") selectStage(current - 1);
   if (e.key === "ArrowRight") selectStage(current + 1);
-  if (e.key === "Escape") fadeAndGo(document.getElementById("backBtn").href);
 });
 
-// Small fade-out before leaving the page
-function fadeAndGo(url) {
-  page.classList.add("is-leaving");
-  setTimeout(() => { window.location.href = url; }, 180);
-}
-
-const backBtn = document.getElementById("backBtn");
-backBtn.addEventListener("click", (e) => {
-  if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
-  e.preventDefault();
-  fadeAndGo(backBtn.href);
-});
-window.addEventListener("pageshow", () => page.classList.remove("is-leaving"));
 
 selectStage(0);
+
+
+

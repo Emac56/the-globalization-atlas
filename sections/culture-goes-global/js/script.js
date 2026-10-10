@@ -13,7 +13,6 @@ const STOPS = [
   { form: "Remixed",   text: "Placeholder: Explain how local cover groups copy, mix, and add Filipino style to K-pop." }
 ];
 
-const page = document.getElementById("secPage");
 const route = document.getElementById("route");
 const stops = document.querySelectorAll(".stop");
 const info = document.getElementById("info");
@@ -75,28 +74,15 @@ stops.forEach((stop) => {
 prevBtn.addEventListener("click", () => selectStage(current - 1));
 nextStageBtn.addEventListener("click", () => selectStage(current + 1));
 
-// Keyboard: 1–5 select a stop, left / right arrows move along the route, Esc goes to the Atlas Menu
+// Keyboard: 1–5 select a stop, left / right arrows move along the route
 document.addEventListener("keydown", (e) => {
   if (e.ctrlKey || e.metaKey || e.altKey) return;
-  if (e.key === "Escape") { fadeAndGo(document.getElementById("menuBtn").href); return; }
   if (e.key === "ArrowLeft") selectStage(current - 1);
   if (e.key === "ArrowRight") selectStage(current + 1);
   if (e.key >= "1" && e.key <= String(stops.length)) selectStage(Number(e.key) - 1);
 });
 
-// Small fade-out before leaving the page
-function fadeAndGo(url) {
-  page.classList.add("is-leaving");
-  setTimeout(() => { window.location.href = url; }, 180);
-}
-
-document.querySelectorAll(".nav-btn").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
-    e.preventDefault();
-    fadeAndGo(link.href);
-  });
-});
-window.addEventListener("pageshow", () => page.classList.remove("is-leaving"));
 
 selectStage(0);
+
+

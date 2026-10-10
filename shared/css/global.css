@@ -106,3 +106,61 @@ body {
   image-rendering: pixelated;
 }
 .atlas-bg > * { position: relative; z-index: 1; }
+
+/* ===== SHARED NAVIGATION (built by shared/js/nav.js) =====
+   Used by the Atlas Menu and every section page. Do NOT restyle it in a page's own style.css.
+   Layout:   [ ← PREVIOUS ] [ ATLAS MENU ] [ NEXT → ]
+                     [ ⌂ BACK TO COVER ]            */
+.atlas-nav {
+  width: min(100%, 960px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: atlas-nav-rise 0.35s steps(5) both;
+}
+.atlas-nav__row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.atlas-nav__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 64px;
+  padding: 14px 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+}
+.atlas-nav__btn--menu { background: var(--gold); }
+.atlas-nav__btn--menu:hover { background: #ffe58a; }
+
+/* separate button under the main row: same height as the row buttons, narrower on desktop */
+.atlas-nav__btn--cover {
+  padding: 14px 28px;
+}
+
+/* PREVIOUS on the first section: slot kept, but not clickable */
+.atlas-nav__btn.is-disabled,
+.atlas-nav__btn.is-disabled:hover,
+.atlas-nav__btn.is-disabled:active {
+  opacity: 0.4;
+  cursor: default;
+  background: var(--paper);
+  transform: none;
+}
+
+@keyframes atlas-nav-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (max-width: 640px) {
+  .atlas-nav__row { grid-template-columns: 1fr; gap: 16px; }
+  .atlas-nav__btn--cover { width: 100%; }
+}
+

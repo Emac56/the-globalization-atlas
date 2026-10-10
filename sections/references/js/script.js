@@ -1,7 +1,6 @@
 // REFERENCES — script for this page only.
 // Navigation uses plain HTML links. JS handles the category filter and the expandable APA details.
 
-const page = document.getElementById("secPage");
 const cats = document.querySelectorAll(".cat");
 const chips = document.querySelectorAll(".chip[data-filter]");
 const countEl = document.getElementById("count");
@@ -60,23 +59,7 @@ toggleAll.addEventListener("click", () => {
   syncToggleAll();
 });
 
-// Keyboard: Esc goes to the Atlas Menu
-document.addEventListener("keydown", (e) => {
-  if (e.ctrlKey || e.metaKey || e.altKey) return;
-  if (e.key === "Escape") {
-    page.classList.add("is-leaving");
-    setTimeout(() => { window.location.href = "../menu/index.html"; }, 180);
-  }
-});
 
-// Small fade-out before leaving the page
-page.querySelectorAll(".nav-btn").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
-    e.preventDefault();
-    page.classList.add("is-leaving");
-    setTimeout(() => { window.location.href = link.href; }, 180);
-  });
-});
 
-window.addEventListener("pageshow", () => page.classList.remove("is-leaving"));
+
+

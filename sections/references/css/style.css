@@ -211,9 +211,7 @@ a.src__link:focus-visible { outline: 3px dashed var(--gold); outline-offset: 4px
 .apa__fields dt { font-family: var(--font-title); font-size: 8px; line-height: 1.6; text-transform: uppercase; color: var(--accent); }
 .apa__fields dd { font-size: 22px; line-height: 1.1; color: #8fa6cf; overflow-wrap: anywhere; }
 
-/* ---------- Navigation ---------- */
-.sec__nav { width: min(100%, 960px); display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-.nav-btn { display: inline-block; text-decoration: none; font-size: 12px; line-height: 1.5; text-align: center; padding: 16px 28px; }
+/* ---------- Bottom navigation: now shared (shared/css/global.css + shared/js/nav.js) ---------- */
 .sec.is-leaving { opacity: 0; transition: opacity 0.2s linear; }
 
 /* ---------- Mobile ---------- */
@@ -231,6 +229,7 @@ a.src__link:focus-visible { outline: 3px dashed var(--gold); outline-offset: 4px
   .src { padding: 14px 14px 16px; }
   .src__org { font-size: 28px; }
 
-  .sec__nav { flex-direction: column-reverse; }
-  .nav-btn { width: 100%; padding: 18px 16px; }
 }
+
+
+

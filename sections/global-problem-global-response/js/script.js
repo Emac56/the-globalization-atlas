@@ -1,7 +1,6 @@
 // GLOBAL PROBLEM / GLOBAL RESPONSE — script for this page only.
 // Navigation uses plain HTML links. JS handles the part selection and progress.
 
-const page = document.getElementById("secPage");
 const areas = document.querySelectorAll(".area");
 const panels = document.querySelectorAll(".panel");
 const prevBtn = document.getElementById("prevBtn");
@@ -72,10 +71,9 @@ areas.forEach((btn, idx) => {
 prevBtn.addEventListener("click", () => selectArea(current - 1));
 nextStageBtn.addEventListener("click", () => selectArea(current + 1));
 
-// Keyboard: 1–6 select a part, left / right arrows move between parts, Esc goes to the Atlas Menu
+// Keyboard: 1–6 select a part, left / right arrows move between parts
 document.addEventListener("keydown", (e) => {
   if (e.ctrlKey || e.metaKey || e.altKey) return;
-  if (e.key === "Escape") { fadeAndGo(document.getElementById("menuBtn").href); return; }
   if (e.key === "ArrowLeft") { selectArea(current - 1); return; }
   if (e.key === "ArrowRight") { selectArea(current + 1); return; }
   if (/^[1-9]$/.test(e.key)) {
@@ -84,19 +82,7 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// Small fade-out before leaving the page
-function fadeAndGo(url) {
-  page.classList.add("is-leaving");
-  setTimeout(() => { window.location.href = url; }, 180);
-}
-
-document.querySelectorAll(".nav-btn").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
-    e.preventDefault();
-    fadeAndGo(link.href);
-  });
-});
-window.addEventListener("pageshow", () => page.classList.remove("is-leaving"));
 
 selectArea(0);
+
+

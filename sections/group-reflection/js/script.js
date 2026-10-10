@@ -31,7 +31,6 @@ const QUESTIONS = [
 ];
 
 // ---------------------------------------------------------------
-const page = document.getElementById("secPage");
 const cards = document.querySelectorAll(".card");
 const takeaway = document.getElementById("takeaway");
 const seen = new Set();
@@ -151,14 +150,7 @@ cards.forEach((card) => {
   });
 });
 
-// Small fade-out before leaving the page
-page.querySelectorAll(".nav-btn").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
-    e.preventDefault();
-    page.classList.add("is-leaving");
-    setTimeout(() => { window.location.href = link.href; }, 180);
-  });
-});
 
-window.addEventListener("pageshow", () => page.classList.remove("is-leaving"));
+
+
+

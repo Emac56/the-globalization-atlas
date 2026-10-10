@@ -1,7 +1,6 @@
 // SECTION 01 — script for this page only (placeholder content).
 // Basic navigation is plain HTML links. JS only adds small interactions.
 
-const page = document.getElementById("secPage");
 
 // 1) Key characteristic cards: click to show / hide extra text
 document.querySelectorAll(".trait").forEach((card) => {
@@ -39,19 +38,6 @@ tags.forEach((t) => {
 });
 showTag(0);
 
-// 3) Small fade-out before leaving the page
-function fadeAndGo(url) {
-  page.classList.add("is-leaving");
-  setTimeout(() => { window.location.href = url; }, 180);
-}
 
-["backBtn", "nextBtn"].forEach((id) => {
-  const link = document.getElementById(id);
-  link.addEventListener("click", (e) => {
-    if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
-    e.preventDefault();
-    fadeAndGo(link.href);
-  });
-});
 
-window.addEventListener("pageshow", () => page.classList.remove("is-leaving"));
+
