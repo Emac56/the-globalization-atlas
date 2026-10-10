@@ -209,6 +209,35 @@ window.ATLAS_REFERENCES = {
       date: "2025, July 2",
       title: "Unlocking the Philippines’ Digital Transformation by Increasing Internet Connectivity",
       url: "https://www.worldbank.org/en/results/2025/07/02/unlocking-the-philippines-digital-transformation-by-increasing-internet-connectivity"
+    },
+
+    // ---- Culture Goes Global (dates read from each linked page) ----
+    "oup-2021-rise-of-kpop": {
+      author: "Oxford Academic",
+      date: "2021, February 10",                // chapter page: 2021/2/10
+      title: "The Rise and Rise of K-Pop: A Pocket History",
+      url: "https://academic.oup.com/edited-volume/34725/chapter-abstract/296485624"
+    },
+
+    "oup-2015-korean-wave-dramas": {
+      author: "Oxford Academic",
+      date: "2015, December 3",                 // chapter page: 2015/12/03
+      title: "The Korean Wave and Korean Dramas",
+      url: "https://academic.oup.com/edited-volume/61798/chapter/546180877"
+    },
+
+    "kcc-2023-everyones-kpop-manila": {
+      author: "Korean Cultural Center",
+      date: "2023, July 3",                     // posted 2023.07.03
+      title: "Everyone’s K-Pop: Manila",
+      url: "https://www.korean-culture.org/kocc/view.do?seq=1045330&menucode=menu0023&langCode=lang001&searchType=menu0023"
+    },
+
+    "sanchez-2024-korean-turn-kci": {
+      author: "Louie Jon A. Sánchez",
+      date: "2024",                             // SUVANNABHUMI vol. 16, no. 1 (2024)
+      title: "The “Korean Turn” in Philippine Popular Culture",
+      url: "https://journal.kci.go.kr/svn/archive/articleView?artiId=ART003048391"
     }
   },
 
@@ -271,7 +300,17 @@ window.ATLAS_REFERENCES = {
         { id: "worldbank-2025-internet-connectivity" }
       ]
     },
-    { id: "culture-goes-global",                      title: "Culture Goes Global",                      short: "Culture Goes Global",       sources: [] },
+    {
+      id: "culture-goes-global",
+      title: "Culture Goes Global",
+      short: "Culture Goes Global",
+      sources: [
+        { id: "oup-2021-rise-of-kpop" },
+        { id: "oup-2015-korean-wave-dramas" },
+        { id: "kcc-2023-everyones-kpop-manila" },
+        { id: "sanchez-2024-korean-turn-kci" }
+      ]
+    },
     { id: "benefits-and-challenges",                  title: "Benefits and Challenges",                  short: "Benefits & Challenges",     sources: [] },
     { id: "global-problem-global-response",           title: "Global Problem / Global Response",         short: "Problem / Response",        sources: [] },
     { id: "my-globalization-map",                     title: "My Globalization Map",                     short: "My Map",                    sources: [] }

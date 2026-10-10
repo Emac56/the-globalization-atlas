@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- CULTURE GOES GLOBAL (draft / placeholder content) -->
+  <!-- CULTURE GOES GLOBAL -->
   <main class="page atlas-bg sec" id="secPage">
 
     <!-- Header -->
@@ -22,114 +22,111 @@
       <h1 class="sec__title">Culture Goes Global</h1>
       <p class="sec__counter">06 / 10</p>
       <p class="sec__quote">Culture does not stay in one place. Follow how it travels, and how it changes along the way.</p>
-      <p class="draft-tag">Draft topic: K-Pop &mdash; details to be researched</p>
     </header>
 
     <div class="sec__content">
 
-      <!-- CULTURE CONNECTION MAP -->
+      <h2 class="block-title block-title--main">K-pop and Filipino Culture</h2>
+
+      <!-- 1. INTRODUCTION + PHOTO 1 -->
+      <section class="split" aria-label="Introduction to K-pop">
+        <div class="stack">
+          <article class="part">
+          <p class="part__label"><span class="part__num">01</span> What is K-pop?</p>
+          <p class="part__value">K-pop is popular music from South Korea.</p>
+        </article>
+          <article class="part">
+          <p class="part__label"><span class="part__num">02</span> Where did it start?</p>
+          <p class="part__value">K-pop&rsquo;s early groups emerged in South Korea in the 1990s.</p>
+        </article>
+        </div>
+        <!-- PHOTO: save the file as ../../assets/images/culture-goes-global/kpop-performance.jpg (search: "K-pop group performing on stage South Korea") -->
+        <figure class="shot">
+          <div class="shot__frame">
+            <img src="../../assets/images/culture-goes-global/kpop-performance.jpg" alt="K-pop group performing on a stage" />
+            <div class="shot__empty">
+              <svg class="shot__icon" viewBox="0 0 32 32" width="40" height="40" aria-hidden="true" focusable="false"><rect x="3" y="5" width="26" height="22" fill="none" stroke="currentColor" stroke-width="3"/><rect x="8" y="9" width="5" height="5" fill="currentColor"/><path d="M5 25 L13 16 L18 21 L22 17 L27 25 Z" fill="currentColor"/></svg>
+              <p class="shot__msg">Add your photo here</p>
+              <p class="shot__search">Search: K-pop group performing on stage South Korea</p>
+              <p class="shot__file">Save as: kpop-performance.jpg</p>
+            </div>
+          </div>
+        </figure>
+      </section>
+
+      <!-- 2. HOW IT SPREAD -->
+      <section class="duo" aria-label="How K-pop spread">
+        <article class="part">
+          <p class="part__label"><span class="part__num">03</span> How did it spread?</p>
+          <p class="part__value">Digital music and platforms such as YouTube helped K-pop reach audiences worldwide.</p>
+        </article>
+        <article class="part">
+          <p class="part__label"><span class="part__num">04</span> How did it reach Filipinos?</p>
+          <p class="part__value">Korean popular culture became influential in the Philippines through media and entertainment.</p>
+        </article>
+      </section>
+
+      <!-- CULTURE CONNECTION MAP (HTML + CSS only) -->
       <section class="route-card" aria-labelledby="routeTitle">
         <h2 class="block-title" id="routeTitle">Culture Connection Map</h2>
-        <p class="block-hint">Select a stop to see how K-pop travels and changes.</p>
-
-        <div class="route" id="route" style="--i: 0">
-          <div class="route__track" aria-hidden="true">
-            <span class="route__fill"></span>
-            <span class="route__marker"></span>
-          </div>
-
-          <button class="stop" type="button" data-stage="0">
-            <span class="stop__icon">01</span>
-            <span class="stop__label">South Korea</span>
-          </button>
-          <button class="stop" type="button" data-stage="1">
-            <span class="stop__icon">02</span>
-            <span class="stop__label">K-Pop</span>
-          </button>
-          <button class="stop" type="button" data-stage="2">
-            <span class="stop__icon">03</span>
-            <span class="stop__label">Social Media</span>
-          </button>
-          <button class="stop" type="button" data-stage="3">
-            <span class="stop__icon">04</span>
-            <span class="stop__label">Filipino Fans</span>
-          </button>
-          <button class="stop" type="button" data-stage="4">
-            <span class="stop__icon">05</span>
-            <span class="stop__label">Local Cover Groups</span>
-          </button>
-        </div>
+        <p class="block-hint">Follow K-pop from South Korea to Filipino fans.</p>
+        <ol class="flow">
+          <li class="flow__node"><span class="flow__num">01</span><span class="flow__text">South Korea</span></li>
+          <li class="flow__arrow" aria-hidden="true">&darr;</li>
+          <li class="flow__node"><span class="flow__num">02</span><span class="flow__text">K-pop music and dance</span></li>
+          <li class="flow__arrow" aria-hidden="true">&darr;</li>
+          <li class="flow__node"><span class="flow__num">03</span><span class="flow__text">Internet, YouTube, and social media</span></li>
+          <li class="flow__arrow" aria-hidden="true">&darr;</li>
+          <li class="flow__node"><span class="flow__num">04</span><span class="flow__text">Filipino fans</span></li>
+          <li class="flow__arrow" aria-hidden="true">&darr;</li>
+          <li class="flow__node"><span class="flow__num">05</span><span class="flow__text">Fan communities, dance covers, and local events</span></li>
+        </ol>
       </section>
 
-      <!-- MAP INFORMATION PANEL (text comes from js/script.js) -->
-      <section class="card info" id="info" aria-live="polite">
-        <div class="info__top">
-          <span class="info__stage" id="infoStage">Stop 01 / 05</span>
-          <span class="info__ph">Placeholder</span>
-        </div>
-        <div class="info__body" id="infoBody">
-          <h2 class="info__title" id="infoTitle">South Korea</h2>
-          <p class="info__text" id="infoText"></p>
-
-          <div class="change">
-            <p class="change__label">How the culture looks here: <span id="changeForm">Original</span></p>
-            <div class="change__meter" aria-hidden="true">
-              <span class="change__seg"></span>
-              <span class="change__seg"></span>
-              <span class="change__seg"></span>
-              <span class="change__seg"></span>
-              <span class="change__seg"></span>
+      <!-- 3. HOW FILIPINOS ADOPTED IT + PHOTO 2 -->
+      <section class="split" aria-label="How Filipinos adopted K-pop">
+        <article class="part">
+          <p class="part__label"><span class="part__num">05</span> How did Filipinos adopt it?</p>
+          <p class="part__value">Filipino fans joined K-pop communities, attended events, and performed dance covers.</p>
+        </article>
+        <!-- PHOTO: save the file as ../../assets/images/culture-goes-global/filipino-kpop-fans.jpg (search: "Filipino K-pop fans fan event Philippines") -->
+        <figure class="shot">
+          <div class="shot__frame">
+            <img src="../../assets/images/culture-goes-global/filipino-kpop-fans.jpg" alt="Filipino K-pop fans at a fan event in the Philippines" />
+            <div class="shot__empty">
+              <svg class="shot__icon" viewBox="0 0 32 32" width="40" height="40" aria-hidden="true" focusable="false"><rect x="3" y="5" width="26" height="22" fill="none" stroke="currentColor" stroke-width="3"/><rect x="8" y="9" width="5" height="5" fill="currentColor"/><path d="M5 25 L13 16 L18 21 L22 17 L27 25 Z" fill="currentColor"/></svg>
+              <p class="shot__msg">Add your photo here</p>
+              <p class="shot__search">Search: Filipino K-pop fans fan event Philippines</p>
+              <p class="shot__file">Save as: filipino-kpop-fans.jpg</p>
             </div>
-            <p class="change__ends" aria-hidden="true"><span>Original</span><span>Local</span></p>
           </div>
-        </div>
-        <div class="info__nav">
-          <button class="pixel-btn small-btn" type="button" id="prevBtn">&larr; PREVIOUS</button>
-          <button class="pixel-btn small-btn" type="button" id="nextStageBtn">NEXT &rarr;</button>
-        </div>
+        </figure>
       </section>
 
-      <!-- THE QUESTIONS — replace each .part__value when the research is ready -->
-      <section aria-labelledby="qaTitle">
-        <h2 class="block-title" id="qaTitle">K-Pop: Seven Questions</h2>
-        <p class="block-hint">Draft answers to be added after research.</p>
+      <!-- 4. SIMILAR, DIVERSE, OR BOTH -->
+      <section class="answer" aria-label="Similar, diverse, or both">
+        <p class="answer__q"><span class="part__num">06</span> Does globalization make cultures more similar, more diverse, or both?</p>
+        <p class="answer__a"><span class="answer__tag">Both.</span> Filipinos enjoy Korean pop culture and adapt it through local fan activities and performances.</p>
+      </section>
 
-        <div class="qa">
-          <article class="part">
-            <p class="part__label"><span class="part__num">01</span> What is it?</p>
-            <p class="part__value">[Draft &mdash; to be researched]</p>
-          </article>
-
-          <article class="part">
-            <p class="part__label"><span class="part__num">02</span> Where did it start?</p>
-            <p class="part__value">[Draft &mdash; to be researched]</p>
-          </article>
-
-          <article class="part">
-            <p class="part__label"><span class="part__num">03</span> How did it spread?</p>
-            <p class="part__value">[Draft &mdash; to be researched]</p>
-          </article>
-
-          <article class="part">
-            <p class="part__label"><span class="part__num">04</span> How did it reach Filipinos?</p>
-            <p class="part__value">[Draft &mdash; to be researched]</p>
-          </article>
-
-          <article class="part">
-            <p class="part__label"><span class="part__num">05</span> How did Filipinos adopt or adapt it?</p>
-            <p class="part__value">[Draft &mdash; to be researched]</p>
-          </article>
-
-          <article class="part">
-            <p class="part__label"><span class="part__num">06</span> More similar, more diverse, or both?</p>
-            <p class="part__value">[Draft &mdash; to be researched]</p>
-          </article>
-
-          <article class="part part--wide">
-            <p class="part__label"><span class="part__num">07</span> Evidence</p>
-            <p class="part__value">[Draft &mdash; to be researched]</p>
-          </article>
-        </div>
+      <!-- 5. EVIDENCE + PHOTO 3 -->
+      <section class="split" aria-label="Evidence">
+        <article class="part">
+          <p class="part__label"><span class="part__num">07</span> What is the evidence?</p>
+          <p class="part__value">In 2023, 13 Filipino dance groups competed in a K-pop cover-dance festival in Manila. One team represented the Philippines in the international final in South Korea.</p>
+        </article>
+        <!-- PHOTO: save the file as ../../assets/images/culture-goes-global/kpop-dance-competition.jpg (search: "Philippines K-pop cover dance competition 2023 Manila") -->
+        <figure class="shot">
+          <div class="shot__frame">
+            <img src="../../assets/images/culture-goes-global/kpop-dance-competition.jpg" alt="Dance groups performing at a K-pop cover dance competition in Manila" />
+            <div class="shot__empty">
+              <svg class="shot__icon" viewBox="0 0 32 32" width="40" height="40" aria-hidden="true" focusable="false"><rect x="3" y="5" width="26" height="22" fill="none" stroke="currentColor" stroke-width="3"/><rect x="8" y="9" width="5" height="5" fill="currentColor"/><path d="M5 25 L13 16 L18 21 L22 17 L27 25 Z" fill="currentColor"/></svg>
+              <p class="shot__msg">Add your photo here</p>
+              <p class="shot__search">Search: Philippines K-pop cover dance competition 2023 Manila</p>
+              <p class="shot__file">Save as: kpop-dance-competition.jpg</p>
+            </div>
+          </div>
+        </figure>
       </section>
 
     </div>
@@ -142,6 +139,3 @@
   <script src="js/script.js"></script>
 </body>
 </html>
-
-
-
