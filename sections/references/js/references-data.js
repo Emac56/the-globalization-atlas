@@ -202,6 +202,13 @@ window.ATLAS_REFERENCES = {
       title: "Long-Term Effects of Labor Migration in the Philippines: “Napakasakit, Kuya Eddie!”",
       descriptor: "(PIDS Discussion Paper Series No. 2023-17)",
       url: "https://pids.gov.ph/publication/discussion-papers/long-term-effects-of-labor-migration-in-the-philippines-napakasakit-kuya-eddie"
+    },
+
+    "worldbank-2025-internet-connectivity": {
+      author: "World Bank",
+      date: "2025, July 2",
+      title: "Unlocking the Philippines’ Digital Transformation by Increasing Internet Connectivity",
+      url: "https://www.worldbank.org/en/results/2025/07/02/unlocking-the-philippines-digital-transformation-by-increasing-internet-connectivity"
     }
   },
 
@@ -260,7 +267,8 @@ window.ATLAS_REFERENCES = {
         { id: "pids-2014-23-pdf" },
         { id: "pids-2014-23-page" },
         { id: "pids-2021-38-pdf" },
-        { id: "pids-2023-17-page" }
+        { id: "pids-2023-17-page" },
+        { id: "worldbank-2025-internet-connectivity" }
       ]
     },
     { id: "culture-goes-global",                      title: "Culture Goes Global",                      short: "Culture Goes Global",       sources: [] },
