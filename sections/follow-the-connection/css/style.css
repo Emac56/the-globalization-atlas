@@ -183,7 +183,6 @@
   background: var(--navy);
   padding: 8px 10px;
 }
-.info__ph { font-size: 20px; color: #555; background: #eee; padding: 2px 8px; border: 2px dashed #999; }
 .info__title {
   font-family: var(--font-title);
   font-size: clamp(14px, 2.4vw, 20px);
@@ -191,7 +190,33 @@
   text-transform: uppercase;
   margin-bottom: 14px;
 }
-.info__text { font-size: 28px; line-height: 1.15; color: #222; max-width: 36em; }
+.stage { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.stage[hidden] { display: none; }
+.stage__place { font-family: var(--font-title); font-size: 10px; line-height: 1.6; text-transform: uppercase; color: var(--navy); background: var(--gold); display: inline-block; padding: 6px 8px; margin: -4px 0 14px; }
+.stage__shot { margin: 0; min-width: 0; }
+
+/* Bullet lists (pixel squares) */
+.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.bullets li { position: relative; padding-left: 24px; font-size: 26px; line-height: 1.1; color: #222; }
+.bullets li::before { content: ""; position: absolute; left: 0; top: 0.3em; width: 10px; height: 10px; background: var(--gold); border: 2px solid var(--ink); }
+.stage .bullets li { font-size: 28px; line-height: 1.15; }
+
+/* Empty photo frame. When a real <img> is pasted inside, it covers the frame completely. */
+.shot__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--navy);
+  background-image:
+    linear-gradient(45deg, rgba(79, 216, 255, 0.10) 25%, transparent 25%, transparent 75%, rgba(79, 216, 255, 0.10) 75%),
+    linear-gradient(45deg, rgba(79, 216, 255, 0.10) 25%, transparent 25%, transparent 75%, rgba(79, 216, 255, 0.10) 75%);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+  border: 4px dashed var(--cyan);
+  box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.35);
+}
+.shot__frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .info__body.swap { animation: swap 0.3s steps(5) both; }
 @keyframes swap { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: none; } }
 
@@ -216,7 +241,8 @@
   border-left: 12px solid var(--gold);
 }
 .note__label { font-family: var(--font-title); font-size: 10px; line-height: 1.6; color: var(--navy); text-transform: uppercase; margin-bottom: 8px; }
-.note__value { font-size: 26px; line-height: 1.1; color: #555; }
+.note .bullets li { font-size: 24px; }
+.note-line { margin-top: 18px; padding-top: 12px; border-top: 4px dashed #9db7e6; font-size: 22px; line-height: 1.15; color: #444; }
 
 /* ---------- Bottom navigation: now shared (shared/css/global.css + shared/js/nav.js) ---------- */
 
@@ -257,6 +283,8 @@
   .route-card { padding: 20px 14px 22px; }
   .info, .notes { padding: 20px 16px 22px; }
   .notes__grid { grid-template-columns: 1fr; }
+  .stage { grid-template-columns: 1fr; }
+  .bullets li, .stage .bullets li { font-size: 26px; }
   .info__nav { gap: 12px; }
   .info__nav .small-btn { flex: 1; padding: 18px 8px; }
 }

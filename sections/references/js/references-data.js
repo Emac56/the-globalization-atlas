@@ -15,7 +15,7 @@
 
    HOW TO ADD A SOURCE
    1. Add it to "sources" (new unique id). Fill ONLY what the source really shows.
-      No date shown -> date: "n.d."
+      No date shown -> leave "date" out (or date: "n.d.")
    2. Add { id: "..." } to the "sources" array of the right section below.
    Never guess an author, date, DOI or URL. */
 
@@ -26,6 +26,49 @@ window.ATLAS_REFERENCES = {
   showEmptySections: false,
 
   sources: {
+
+    "wits-2024-cocoa-exports-malaysia": {
+      author: "World Bank WITS",
+      title: "Cocoa bean exports to Malaysia, 2024",
+      url: "https://wits.worldbank.org/trade/comtrade/en/country/All/year/2024/tradeflow/Exports/partner/MYS/product/180100"
+    },
+
+    "wits-2024-philippines-imports": {
+      author: "World Bank WITS",
+      title: "Philippines’ imports of cocoa-containing products, 2024",
+      url: "https://wits.worldbank.org/trade/comtrade/en/country/PHL/year/2024/tradeflow/Imports/partner/ALL/product/1806"
+    },
+
+    "mcb-statistics": {
+      author: "Malaysian Cocoa Board",
+      title: "Statistics",
+      url: "https://www.koko.gov.my/doc/en/statistics/"
+    },
+
+    "icco-trading-shipping": {
+      author: "International Cocoa Organization",
+      title: "Trading and Shipping",
+      url: "https://www.icco.org/trading-shipping/"
+    },
+
+    "dol-cocoa-child-labor": {
+      author: "U.S. Department of Labor",
+      title: "Cocoa child labor",
+      url: "https://www.dol.gov/newsroom/releases/ilab/ilab20241127"
+    },
+
+    "dimattia-2017-processing": {
+      author: "Di Mattia et al.",
+      date: "2017",
+      title: "Chocolate processing",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5626833/"
+    },
+
+    "icco-2024-august-statistics": {
+      author: "International Cocoa Organization",
+      title: "August 2024 cocoa statistics",
+      url: "https://www.icco.org/august-2024-quarterly-bulletin-of-cocoa-statistics/"
+    },
 
     "abscbn-2023-vietnam": {
       author: "ABS-CBN News",
@@ -97,7 +140,20 @@ window.ATLAS_REFERENCES = {
         { id: "jollibee-mississauga-boyer" }
       ]
     },
-    { id: "follow-the-connection",                    title: "Follow the Connection",                    short: "Follow the Connection",     sources: [] },
+    {
+      id: "follow-the-connection",
+      title: "Follow the Connection",
+      short: "Follow the Connection",
+      sources: [
+        { id: "wits-2024-cocoa-exports-malaysia" },
+        { id: "wits-2024-philippines-imports" },
+        { id: "mcb-statistics" },
+        { id: "icco-trading-shipping" },
+        { id: "dol-cocoa-child-labor" },
+        { id: "dimattia-2017-processing" },
+        { id: "icco-2024-august-statistics" }
+      ]
+    },
     { id: "globalization-in-everyday-filipino-life",  title: "Globalization in Everyday Filipino Life",  short: "Everyday Filipino Life",    sources: [] },
     { id: "globalization-and-the-philippines",        title: "Globalization and the Philippines",        short: "The Philippines",           sources: [] },
     { id: "culture-goes-global",                      title: "Culture Goes Global",                      short: "Culture Goes Global",       sources: [] },

@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- FOLLOW THE CONNECTION (draft / placeholder content) -->
+  <!-- FOLLOW THE CONNECTION — product: Chocolate -->
   <main class="page atlas-bg sec" id="secPage">
 
     <!-- Header -->
@@ -22,10 +22,18 @@
       <h1 class="sec__title">Follow the Connection</h1>
       <p class="sec__counter">03 / 10</p>
       <p class="sec__quote">Every product has a journey. Follow the connection from its starting materials to the Filipino consumer.</p>
-      <p class="draft-tag">Draft content &mdash; product to be selected</p>
+      <p class="draft-tag">Product: Chocolate</p>
     </header>
 
     <div class="sec__content">
+
+      <!-- WHAT IS IT? -->
+      <section class="card notes" aria-labelledby="whatTitle">
+        <h2 class="notes__title" id="whatTitle">What Is It?</h2>
+        <ul class="bullets">
+          <li>Chocolate is made from cocoa beans, often mixed with sugar or milk.</li>
+        </ul>
+      </section>
 
       <!-- GLOBAL PRODUCT JOURNEY (route) -->
       <section class="route-card" aria-labelledby="routeTitle">
@@ -48,7 +56,7 @@
           </button>
           <button class="stop" type="button" data-stage="2">
             <span class="stop__icon">03</span>
-            <span class="stop__label">Manufacturing / Assembly</span>
+            <span class="stop__label">Manufacturing</span>
           </button>
           <button class="stop" type="button" data-stage="3">
             <span class="stop__icon">04</span>
@@ -65,15 +73,118 @@
         </div>
       </section>
 
-      <!-- MAIN INFORMATION PANEL (text comes from js/script.js) -->
+      <!-- MAIN INFORMATION PANEL: one block per stage (JS shows the selected one) -->
       <section class="card info" id="info" aria-live="polite">
         <div class="info__top">
           <span class="info__stage" id="infoStage">Stage 01 / 06</span>
-          <span class="info__ph">Placeholder</span>
         </div>
+
+        <!-- Six EMPTY image placeholders (one per stage). No photos are included.
+             HOW TO ADD A PHOTO LATER:
+               1. Save the photo in assets/images/follow-the-connection/ with the filename in that stage's comment.
+               2. Paste the <img> line from the comment INSIDE the matching <div class="shot__frame">.
+               3. Delete the comment. The photo covers the empty frame automatically. -->
         <div class="info__body" id="infoBody">
-          <h2 class="info__title" id="infoTitle">Raw Materials</h2>
-          <p class="info__text" id="infoText"></p>
+
+          <!-- STAGE 01 PLACEHOLDER: cocoa-farming
+               Image search: "cocoa farmers harvesting cocoa pods in Côte d’Ivoire"
+               Future file: ../../assets/images/follow-the-connection/cocoa-farming.jpg
+               Paste inside the frame: <img src="../../assets/images/follow-the-connection/cocoa-farming.jpg" alt="Cocoa farmers harvesting cocoa pods" loading="lazy" /> -->
+          <article class="stage" data-stage="0">
+            <div class="stage__text">
+              <h2 class="info__title">Raw Materials</h2>
+              <p class="stage__place">Côte d’Ivoire</p>
+              <ul class="bullets">
+                <li>Cocoa beans are grown and exported to Malaysia.</li>
+              </ul>
+            </div>
+            <figure class="stage__shot" data-placeholder="cocoa-farming">
+              <div class="shot__frame" role="img" aria-label="Empty image placeholder: Cocoa farmers harvesting cocoa pods"></div>
+            </figure>
+          </article>
+
+          <!-- STAGE 02 PLACEHOLDER: cocoa-production
+               Image search: "cocoa beans being ground in a Malaysian factory"
+               Future file: ../../assets/images/follow-the-connection/cocoa-production.jpg
+               Paste inside the frame: <img src="../../assets/images/follow-the-connection/cocoa-production.jpg" alt="Cocoa beans being processed and ground" loading="lazy" /> -->
+          <article class="stage" data-stage="1" hidden>
+            <div class="stage__text">
+              <h2 class="info__title">Production</h2>
+              <p class="stage__place">Malaysia</p>
+              <ul class="bullets">
+                <li>Cocoa beans are processed and ground.</li>
+              </ul>
+            </div>
+            <figure class="stage__shot" data-placeholder="cocoa-production">
+              <div class="shot__frame" role="img" aria-label="Empty image placeholder: Cocoa beans being processed and ground"></div>
+            </figure>
+          </article>
+
+          <!-- STAGE 03 PLACEHOLDER: chocolate-manufacturing
+               Image search: "chocolate manufacturing factory production line"
+               Future file: ../../assets/images/follow-the-connection/chocolate-manufacturing.jpg
+               Paste inside the frame: <img src="../../assets/images/follow-the-connection/chocolate-manufacturing.jpg" alt="Chocolate products being made in a factory" loading="lazy" /> -->
+          <article class="stage" data-stage="2" hidden>
+            <div class="stage__text">
+              <h2 class="info__title">Manufacturing</h2>
+              <p class="stage__place">Malaysia</p>
+              <ul class="bullets">
+                <li>Cocoa ingredients are made into chocolate products.</li>
+              </ul>
+            </div>
+            <figure class="stage__shot" data-placeholder="chocolate-manufacturing">
+              <div class="shot__frame" role="img" aria-label="Empty image placeholder: Chocolate products being made in a factory"></div>
+            </figure>
+          </article>
+
+          <!-- STAGE 04 PLACEHOLDER: chocolate-transportation
+               Image search: "cargo containers shipping goods internationally"
+               Future file: ../../assets/images/follow-the-connection/chocolate-transportation.jpg
+               Paste inside the frame: <img src="../../assets/images/follow-the-connection/chocolate-transportation.jpg" alt="Cargo containers transporting goods between countries" loading="lazy" /> -->
+          <article class="stage" data-stage="3" hidden>
+            <div class="stage__text">
+              <h2 class="info__title">Transportation</h2>
+              <ul class="bullets">
+                <li>Cocoa and chocolate products are shipped between countries.</li>
+              </ul>
+            </div>
+            <figure class="stage__shot" data-placeholder="chocolate-transportation">
+              <div class="shot__frame" role="img" aria-label="Empty image placeholder: Cargo containers transporting goods between countries"></div>
+            </figure>
+          </article>
+
+          <!-- STAGE 05 PLACEHOLDER: chocolate-market
+               Image search: "chocolate products displayed in a Philippine grocery store"
+               Future file: ../../assets/images/follow-the-connection/chocolate-market.jpg
+               Paste inside the frame: <img src="../../assets/images/follow-the-connection/chocolate-market.jpg" alt="Chocolate products displayed in a local store" loading="lazy" /> -->
+          <article class="stage" data-stage="4" hidden>
+            <div class="stage__text">
+              <h2 class="info__title">Market</h2>
+              <p class="stage__place">Philippines</p>
+              <ul class="bullets">
+                <li>The Philippines imports cocoa-containing products from Malaysia.</li>
+              </ul>
+            </div>
+            <figure class="stage__shot" data-placeholder="chocolate-market">
+              <div class="shot__frame" role="img" aria-label="Empty image placeholder: Chocolate products displayed in a local store"></div>
+            </figure>
+          </article>
+
+          <!-- STAGE 06 PLACEHOLDER: filipino-consumer
+               Image search: "Filipino shopper buying chocolate in a grocery store"
+               Future file: ../../assets/images/follow-the-connection/filipino-consumer.jpg
+               Paste inside the frame: <img src="../../assets/images/follow-the-connection/filipino-consumer.jpg" alt="A Filipino shopper buying chocolate" loading="lazy" /> -->
+          <article class="stage" data-stage="5" hidden>
+            <div class="stage__text">
+              <h2 class="info__title">Filipino Consumer</h2>
+              <ul class="bullets">
+                <li>Filipino consumers buy chocolate products from local stores.</li>
+              </ul>
+            </div>
+            <figure class="stage__shot" data-placeholder="filipino-consumer">
+              <div class="shot__frame" role="img" aria-label="Empty image placeholder: A Filipino shopper buying chocolate"></div>
+            </figure>
+          </article>
         </div>
         <div class="info__nav">
           <button class="pixel-btn small-btn" type="button" id="prevBtn">&larr; PREVIOUS</button>
@@ -81,35 +192,46 @@
         </div>
       </section>
 
-      <!-- CONNECTION NOTES — replace each .note__value when the research is ready -->
+      <!-- CONNECTION NOTES -->
       <section class="card notes" aria-labelledby="notesTitle">
         <h2 class="notes__title" id="notesTitle">Connection Notes</h2>
         <div class="notes__grid">
           <div class="note">
-            <p class="note__label">Materials</p>
-            <p class="note__value">[To be researched]</p>
-          </div>
-          <div class="note">
             <p class="note__label">Countries Involved</p>
-            <p class="note__value">[To be researched]</p>
+            <ul class="bullets">
+              <li><strong>Côte d’Ivoire:</strong> Exports cocoa beans.</li>
+              <li><strong>Malaysia:</strong> Processes cocoa and makes chocolate products.</li>
+              <li><strong>Philippines:</strong> Imports and sells cocoa-containing products.</li>
+            </ul>
           </div>
           <div class="note">
-            <p class="note__label">Transportation</p>
-            <p class="note__value">[To be researched]</p>
+            <p class="note__label">Who Benefits?</p>
+            <ul class="bullets">
+              <li>Cocoa farmers earn income.</li>
+              <li>Malaysian processors make cocoa products.</li>
+              <li>Philippine importers and retailers sell products.</li>
+              <li>Filipino consumers can buy chocolate.</li>
+            </ul>
           </div>
           <div class="note">
-            <p class="note__label">Market</p>
-            <p class="note__value">[To be researched]</p>
+            <p class="note__label">Problems</p>
+            <ul class="bullets">
+              <li><strong>Child Labor:</strong> Reported in cocoa farming in Côte d’Ivoire and Ghana.</li>
+              <li><strong>Supply Issues:</strong> Weather and crop problems can affect cocoa production.</li>
+              <li><strong>Traceability:</strong> Tracking cocoa’s origin can be difficult.</li>
+            </ul>
           </div>
           <div class="note">
-            <p class="note__label">Global Connection</p>
-            <p class="note__value">[To be explained]</p>
-          </div>
-          <div class="note">
-            <p class="note__label">Possible Challenges</p>
-            <p class="note__value">[To be researched]</p>
+            <p class="note__label">How Are They Connected?</p>
+            <ul class="bullets">
+              <li>Côte d’Ivoire exports cocoa beans to Malaysia.</li>
+              <li>Malaysia processes cocoa and makes chocolate products.</li>
+              <li>The Philippines imports cocoa-containing products from Malaysia.</li>
+              <li>These trade links connect the countries through the cocoa supply chain.</li>
+            </ul>
           </div>
         </div>
+        <p class="note-line">Note: Trade data does not prove that every chocolate product imported from Malaysia uses cocoa from Côte d’Ivoire.</p>
       </section>
 
     </div>

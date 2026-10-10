@@ -26,7 +26,7 @@
   }
 
   // Letters-only, lowercase: so "World Bank" sorts before "World Trade Organization".
-  function sortKey(s) { return (s.author + " " + s.date + " " + s.title).toLowerCase(); }
+  function sortKey(s) { return (s.author + " " + (s.date || "") + " " + s.title).toLowerCase(); }
 
   function bySource(a, b) {
     var ka = sortKey(DATA.sources[a.id]);
@@ -38,7 +38,7 @@
   //   Author. (Date). Title (descriptor). [Retrieved Month Day, Year, from] URL
   function buildApa(s) {
     var p = el("p", "apa__ref");
-    p.appendChild(document.createTextNode(s.author + ". (" + s.date + "). "));
+    p.appendChild(document.createTextNode(s.author + ". " + (s.date ? "(" + s.date + "). " : "")));
 
     var em = el("em", null, s.title);
     p.appendChild(em);
@@ -83,7 +83,7 @@
     var s = DATA.sources[usage.id];
     var homeSec = DATA.sections.filter(function (x) { return x.id === home[usage.id]; })[0];
     var p = el("p", "xref");
-    p.appendChild(textNode("See also: " + s.author + " (" + s.date + ") \u2014 listed in full under "));
+    p.appendChild(textNode("See also: " + s.author + (s.date ? " (" + s.date + ")" : "") + " \u2014 listed in full under "));
     var a = el("a", null, homeSec.title);
     a.href = "#src-" + usage.id;
     p.appendChild(a);
