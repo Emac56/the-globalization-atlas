@@ -167,6 +167,41 @@ window.ATLAS_REFERENCES = {
       date: "n.d.",                             // no publication date shown on the page
       title: "What is the WTO?",
       url: "https://www.wto.org/english/thewto_e/whatis_e/whatis_e.htm"
+    },
+
+    // ---- Globalization and the Philippines (all four verified on the linked PIDS PDFs/pages) ----
+    // Note: pids-2014-23-pdf and pids-2014-23-page are the SAME paper (PIDS DP 2014-23),
+    // listed twice because two different URLs were requested. Dates follow each linked page.
+    "pids-2014-23-pdf": {
+      author: "Philippine Institute for Development Studies (PIDS)",
+      date: "2014, April",                      // cover of the PDF: "April 2014"
+      title: "Small Farmers in High Value Chains: Binding or Relaxing Constraints to Inclusive Growth?",
+      descriptor: "(PIDS Discussion Paper Series No. 2014-23)",
+      url: "https://pidswebs.pids.gov.ph/CDN/PUBLICATIONS/pidsdps1423.pdf"
+    },
+
+    "pids-2014-23-page": {
+      author: "Philippine Institute for Development Studies (PIDS)",
+      date: "2014, April 29",                   // publication page: "Apr 29, 2014"
+      title: "Small Farmers in High Value Chains: Binding or Relaxing Constraints to Inclusive Growth?",
+      descriptor: "(PIDS Discussion Paper Series No. 2014-23)",
+      url: "https://www.pids.gov.ph/publication/discussion-papers/small-farmers-in-high-value-chains-binding-or-relaxing-constraints-to-inclusive-growth"
+    },
+
+    "pids-2021-38-pdf": {
+      author: "Philippine Institute for Development Studies (PIDS)",
+      date: "2021, December",                   // cover of the PDF: "December 2021"
+      title: "Analyzing Filipino Migrant Workers’ Access to Social Protection",
+      descriptor: "(PIDS Discussion Paper Series No. 2021-38)",
+      url: "https://pidswebs.pids.gov.ph/CDN/PUBLICATIONS/pidsdps2138.pdf"
+    },
+
+    "pids-2023-17-page": {
+      author: "Philippine Institute for Development Studies (PIDS)",
+      date: "2023, December 14",                // publication page: "Dec 14, 2023"
+      title: "Long-Term Effects of Labor Migration in the Philippines: “Napakasakit, Kuya Eddie!”",
+      descriptor: "(PIDS Discussion Paper Series No. 2023-17)",
+      url: "https://pids.gov.ph/publication/discussion-papers/long-term-effects-of-labor-migration-in-the-philippines-napakasakit-kuya-eddie"
     }
   },
 
@@ -217,7 +252,17 @@ window.ATLAS_REFERENCES = {
         { id: "bsp-ofw-remittances" }
       ]
     },
-    { id: "globalization-and-the-philippines",        title: "Globalization and the Philippines",        short: "The Philippines",           sources: [] },
+    {
+      id: "globalization-and-the-philippines",
+      title: "Globalization and the Philippines",
+      short: "The Philippines",
+      sources: [
+        { id: "pids-2014-23-pdf" },
+        { id: "pids-2014-23-page" },
+        { id: "pids-2021-38-pdf" },
+        { id: "pids-2023-17-page" }
+      ]
+    },
     { id: "culture-goes-global",                      title: "Culture Goes Global",                      short: "Culture Goes Global",       sources: [] },
     { id: "benefits-and-challenges",                  title: "Benefits and Challenges",                  short: "Benefits & Challenges",     sources: [] },
     { id: "global-problem-global-response",           title: "Global Problem / Global Response",         short: "Problem / Response",        sources: [] },
