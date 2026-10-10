@@ -42,16 +42,6 @@
   text-shadow: 2px 2px 0 #000;
 }
 
-.draft-note {
-  display: inline-block;
-  margin-top: 16px;
-  font-size: 20px;
-  line-height: 1.1;
-  color: var(--ink);
-  background: var(--gold);
-  padding: 6px 10px;
-}
-
 /* ---------- Layout ---------- */
 .sec__content {
   width: min(100%, 960px);
@@ -86,13 +76,11 @@
   font-size: clamp(12px, 2vw, 16px);
   color: #fff;
   text-shadow: 3px 3px 0 #000;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
-.block-hint { font-size: 22px; color: #dbe9ff; text-shadow: 2px 2px 0 #000; margin-bottom: 20px; }
 
-/* ---------- 1. Definition: "In simple words" panel ---------- */
+/* ---------- 1. Definition panel ---------- */
 .simple {
-  margin-top: 24px;
   padding: 18px 20px;
   background: var(--deep);
   border: 4px solid var(--cyan);
@@ -107,29 +95,16 @@
 }
 .simple__text { font-size: 28px; line-height: 1.15; }
 
-/* ---------- 2. Key characteristics ---------- */
-.traits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+/* ---------- 2. Key characteristics (exactly three, static cards) ---------- */
+.traits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
 
-.trait { transition: transform 0.12s steps(3), background 0.15s; }
-.trait:hover { transform: translateY(-4px); background: #fff6c8; }
-.trait.is-open { background: #fff6c8; }
-
-.trait__btn {
-  width: 100%;
+.trait {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  padding: 20px 18px 18px;
-  text-align: left;
-  font: inherit;
-  color: inherit;
-  background: none;
-  border: 0;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+  padding: 20px 18px 22px;
 }
-.trait__btn:focus-visible { outline: 3px dashed var(--gold); outline-offset: 8px; }
 .trait__tag {
   font-family: var(--font-title);
   font-size: 12px;
@@ -138,114 +113,66 @@
 }
 .trait__name { font-family: var(--font-title); font-size: 13px; line-height: 1.5; }
 .trait__desc { font-size: 24px; line-height: 1.1; color: #222; }
-.trait__toggle { font-family: var(--font-title); font-size: 10px; color: var(--navy); margin-top: 4px; }
 
-.trait__more {
-  margin: 0 18px 18px;
-  padding-top: 12px;
-  border-top: 4px dotted var(--navy);
-  font-size: 24px;
-  line-height: 1.1;
-  color: #222;
-  animation: reveal 0.2s steps(4) both;
-}
-@keyframes reveal { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
-
-/* ---------- 3. Everyday example + chain ---------- */
-.example { font-size: 28px; margin-bottom: 24px; }
-.example strong {
-  font-family: var(--font-title);
-  font-size: 15px;
-  background: var(--gold);
-  padding: 4px 8px;
-  margin-left: 6px;
-}
-.example__note { font-size: 20px; color: #555; margin-left: 6px; }
-
-/* Everyday moment: one center box with 4 small tags (NOT a step-by-step chain) */
-.moment {
+/* ---------- 3. Everyday example + JOLLIBEE GOES GLOBAL feature ---------- */
+.feature {
+  margin-top: 24px;
+  padding: 22px 18px 24px;
   background: var(--deep);
   border: 4px solid var(--cyan);
-  padding: 28px 16px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
-.moment__root {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 20px;
-  color: #fff;
-  background: var(--navy);
-  border: 4px solid var(--gold);
+.feature__title {
+  font-family: var(--font-title);
+  font-size: clamp(12px, 2.2vw, 16px);
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--gold);
+  text-shadow: 3px 3px 0 #000;
+  margin-bottom: 20px;
 }
-.moment__icon {
-  width: 22px;
-  height: 22px;
-  background: var(--gold);
-  box-shadow: 6px 6px 0 0 rgba(0, 0, 0, 0.4);
-  animation: blink 2.4s steps(2) infinite;
-}
-@keyframes blink { 50% { opacity: 0.45; } }
-.moment__name { font-family: var(--font-title); font-size: 12px; line-height: 1.5; }
 
-.moment__stem { width: 4px; height: 24px; background: var(--cyan); }
+.shots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.shot { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 
-.moment__tags {
+/* Empty photo frame. When a real <img> is pasted inside, it covers the frame completely. */
+.shot__frame {
   position: relative;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--navy);
+  /* subtle pixel checkerboard so an empty frame reads as "photo goes here" */
+  background-image:
+    linear-gradient(45deg, rgba(79, 216, 255, 0.10) 25%, transparent 25%, transparent 75%, rgba(79, 216, 255, 0.10) 75%),
+    linear-gradient(45deg, rgba(79, 216, 255, 0.10) 25%, transparent 25%, transparent 75%, rgba(79, 216, 255, 0.10) 75%);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+  border: 4px dashed var(--cyan);
+  box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.35);
 }
-/* horizontal bar connecting the tags */
-.moment__tags::before {
-  content: "";
+.shot__frame img {
   position: absolute;
-  top: 0;
-  left: 12.5%;
-  right: 12.5%;
-  height: 4px;
-  background: var(--cyan);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
-.tag {
-  position: relative;
-  margin-top: 24px;
-  padding: 14px 8px;
-  font: inherit;
-  color: #fff;
-  background: var(--navy);
-  border: 4px solid var(--cyan);
-  cursor: pointer;
-  text-align: center;
-  transition: transform 0.12s steps(3), background 0.15s;
-  -webkit-tap-highlight-color: transparent;
-}
-/* short line from the bar down to each tag */
-.tag::before {
-  content: "";
-  position: absolute;
-  top: -28px;
-  left: 50%;
-  margin-left: -2px;
-  width: 4px;
-  height: 24px;
-  background: var(--cyan);
-}
-.tag:hover { transform: translateY(-3px); }
-.tag:focus-visible { outline: 3px dashed var(--gold); outline-offset: 4px; }
-.tag__label { display: block; font-family: var(--font-title); font-size: 10px; line-height: 1.5; }
-.tag__sub { display: block; font-size: 20px; color: #bcd6ff; margin-top: 4px; }
-.tag.is-active { background: var(--gold); color: var(--ink); border-color: #fff; }
-.tag.is-active .tag__sub { color: #333; }
 
-.moment__caption {
-  margin-top: 18px;
-  min-height: 2.4em;
-  font-size: 26px;
-  line-height: 1.15;
-  color: #222;
+.shot__country {
+  font-family: var(--font-title);
+  font-size: 11px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+  overflow-wrap: anywhere;
 }
 
 /* ---------- 4. Why it counts ---------- */
@@ -261,6 +188,22 @@
 .why__title { font-family: var(--font-title); font-size: clamp(11px, 1.8vw, 14px); line-height: 1.5; margin: 0 0 12px 12px; }
 .why .card__text { margin-left: 12px; }
 
+/* ---------- Pointer to the References page ---------- */
+.sources-note {
+  font-size: 22px;
+  line-height: 1.2;
+  color: #dbe9ff;
+  text-shadow: 2px 2px 0 #000;
+  text-align: center;
+}
+.sources-note a {
+  color: var(--cyan);
+  text-decoration: none;
+  border-bottom: 3px solid var(--cyan);
+}
+.sources-note a:hover { color: var(--gold); border-color: var(--gold); }
+.sources-note a:focus-visible { outline: 3px dashed var(--gold); outline-offset: 4px; }
+
 /* ---------- Bottom navigation: now shared (shared/css/global.css + shared/js/nav.js) ---------- */
 
 /* ---------- Page load / leave ---------- */
@@ -268,6 +211,7 @@
 .sec__content > *:nth-child(2) { animation-delay: 0.08s; }
 .sec__content > *:nth-child(3) { animation-delay: 0.16s; }
 .sec__content > *:nth-child(4) { animation-delay: 0.24s; }
+.sec__content > *:nth-child(5) { animation-delay: 0.32s; }
 @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 .sec.is-leaving { opacity: 0; transition: opacity 0.2s linear; }
 
@@ -283,14 +227,8 @@
   .card--big { padding: 22px 16px 24px; }
   .card__text, .simple__text { font-size: 26px; }
 
-  /* tags become 2 x 2, connector lines hidden */
-  .moment { padding: 22px 12px 18px; }
-  .moment__stem, .moment__tags::before, .tag::before { display: none; }
-  .moment__root { margin-bottom: 16px; }
-  .moment__tags { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-  .tag { margin-top: 0; padding: 16px 8px; min-height: 64px; }
-
+  /* photo placeholders stack in one column */
+  .feature { padding: 18px 14px 20px; }
+  .shots { grid-template-columns: 1fr; gap: 24px; }
+  .shot__frame { aspect-ratio: 16 / 10; }
 }
-
-
-
