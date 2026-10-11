@@ -1,19 +1,32 @@
 // GLOBAL PROBLEM / GLOBAL RESPONSE — script for this page only.
 // Navigation uses plain HTML links. JS handles the part selection and progress.
 
-// ---------- PHOTOS: add your filenames here ----------
-// 1. Save each photo in assets/images/global-problem-response/ using the name shown
-//    in the placeholder ("Save as: ..."), or change the name below to match your file
-//    (for example if your photo is a .png or .webp).
-// 2. Until the file exists, the labeled placeholder stays visible (no broken image).
+// ---------- PHOTOS: easy-to-update image paths ----------
+// Every photo lives in assets/images/global-problem-response/ (IMAGE_FOLDER below).
+// To swap a photo: save the new file in that folder and change the "file" name here
+// (for example if your photo is a .png or .webp).
+// "source" is only shown on the placeholder, which stays visible until the file loads
+// (no broken image icon). It is never shown on the answer panels.
 const IMAGE_FOLDER = "../../assets/images/global-problem-response/";
 const IMAGE_FILES = {
-  rivers:      { file: "plastic-pollution-rivers.jpg", alt: "Plastic waste along a river in the Philippines" },        // Image 1 - under "What is the problem?"
-  cooperation: { file: "international-cooperation.jpg", alt: "People working together on environmental protection" },  // Image 3 - under "Why can't one country solve it alone?"
-  coastal:     { file: "plastic-pollution-coastline.jpg", alt: "Plastic waste along a Philippine coastline" },           // Image 2 - under "How is the Philippines affected?"
-  involved:    { file: "who-is-involved.webp", alt: "Waste workers and community members handling waste" },     // under "Who is involved?"
-  solutions:   { file: "recycling-waste-management.jpg", alt: "Recycling and waste management in action" },    // under "What cooperation is possible?"
-  community:   { file: "community-cleanup.avif", alt: "Volunteers joining a community cleanup" }                // Image 4 - under "What can individuals do?"
+  // Part 01 - The Problem
+  rivers:      { file: "plastic-pollution-rivers.jpg",    alt: "A woman picks up plastic waste along the Pasig River riverbank",
+                 source: "Source page: interaksyon.philstar.com (lead photo of the Pasig River riverbank)" },
+  // Part 02 - Why Not Alone?
+  cooperation: { file: "international-cooperation.jpg",   alt: "ASEAN-Japan Action Agenda on Plastic Pollution presented at a symposium",
+                 source: "Source page: rkcmpd-eria.org (ASEAN-Japan symposium photo)" },
+  // Part 03 - Who Is Involved?
+  involved:    { file: "who-is-involved.webp",            alt: "Two garbage collectors loading waste into a sanitation truck in Las Piñas",
+                 source: "Source page: dreamstime.com (Las Piñas garbage collectors, license needed)" },
+  // Part 04 - Cooperation
+  solutions:   { file: "recycling-waste-management.jpg",  alt: "Officials and workers at a recycling facility in Pasig City",
+                 source: "Source page: ph.usembassy.gov (Pasig City recycling facility)" },
+  // Part 05 - The Philippines
+  coastal:     { file: "plastic-pollution-coastline.jpg", alt: "Plastic waste along a polluted shore in Manila Bay",
+                 source: "Source page: archive.wwf.org.ph (polluted shore in Manila Bay)" },
+  // Part 06 - Individuals
+  community:   { file: "community-cleanup.avif",          alt: "Volunteers collecting waste during a coastal cleanup",
+                 source: "Source page: metro.style (Watsons x CORA coastal cleanup)" }
 };
 
 const areas = document.querySelectorAll(".area");
@@ -107,6 +120,8 @@ document.querySelectorAll(".shot").forEach((fig) => {
   if (!item || !item.file) return;
 
   // the placeholder shows the filename to save as (same as the other sections)
+  const srcEl = fig.querySelector(".shot__search");
+  if (srcEl && item.source) srcEl.textContent = item.source;
   const fileEl = fig.querySelector(".shot__file");
   if (fileEl) fileEl.textContent = "Save as: " + item.file;
 
