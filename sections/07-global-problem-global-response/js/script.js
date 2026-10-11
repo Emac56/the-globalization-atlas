@@ -1,6 +1,21 @@
 // GLOBAL PROBLEM / GLOBAL RESPONSE — script for this page only.
 // Navigation uses plain HTML links. JS handles the part selection and progress.
 
+// ---------- PHOTOS: add your filenames here ----------
+// 1. Save each photo in assets/images/global-problem-response/ using the name shown
+//    in the placeholder ("Save as: ..."), or change the name below to match your file
+//    (for example if your photo is a .png or .webp).
+// 2. Until the file exists, the labeled placeholder stays visible (no broken image).
+const IMAGE_FOLDER = "../../assets/images/global-problem-response/";
+const IMAGE_FILES = {
+  rivers:      { file: "plastic-pollution-rivers.jpg", alt: "Plastic waste along a river in the Philippines" },        // Image 1 - under "What is the problem?"
+  cooperation: { file: "international-cooperation.jpg", alt: "People working together on environmental protection" },  // Image 3 - under "Why can't one country solve it alone?"
+  coastal:     { file: "plastic-pollution-coastline.jpg", alt: "Plastic waste along a Philippine coastline" },           // Image 2 - under "How is the Philippines affected?"
+  involved:    { file: "who-is-involved.webp", alt: "Waste workers and community members handling waste" },     // under "Who is involved?"
+  solutions:   { file: "recycling-waste-management.jpg", alt: "Recycling and waste management in action" },    // under "What cooperation is possible?"
+  community:   { file: "community-cleanup.avif", alt: "Volunteers joining a community cleanup" }                // Image 4 - under "What can individuals do?"
+};
+
 const areas = document.querySelectorAll(".area");
 const panels = document.querySelectorAll(".panel");
 const prevBtn = document.getElementById("prevBtn");
@@ -82,6 +97,30 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+
+// Photos: show the real photo only when a filename is set and the file loads.
+// Otherwise the labeled placeholder stays visible (no broken image icon).
+document.querySelectorAll(".shot").forEach((fig) => {
+  const item = IMAGE_FILES[fig.dataset.shot];
+  const frame = fig.querySelector(".shot__frame");
+  const img = fig.querySelector("img");
+  if (!item || !item.file) return;
+
+  // the placeholder shows the filename to save as (same as the other sections)
+  const fileEl = fig.querySelector(".shot__file");
+  if (fileEl) fileEl.textContent = "Save as: " + item.file;
+
+  img.addEventListener("load", () => {
+    img.hidden = false;
+    frame.classList.remove("is-empty");
+  });
+  img.addEventListener("error", () => {
+    img.hidden = true;
+    frame.classList.add("is-empty");
+  });
+  img.alt = item.alt || "";
+  img.src = IMAGE_FOLDER + item.file;
+});
 
 selectArea(0);
 
