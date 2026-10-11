@@ -15,16 +15,16 @@
 
   // Section order = same order as the Atlas Menu cards.
   var ATLAS_ORDER = [
-    "what-is-globalization",
-    "follow-the-connection",
-    "globalization-in-everyday-filipino-life",
-    "globalization-and-the-philippines",
-    "culture-goes-global",
-    "benefits-and-challenges",
-    "global-problem-global-response",
-    "my-globalization-map",
-    "group-reflection",
-    "references"
+    "01-what-is-globalization",
+    "02-follow-the-connection",
+    "03-globalization-in-everyday-filipino-life",
+    "04-globalization-and-the-philippines",
+    "05-culture-goes-global",
+    "06-benefits-and-challenges",
+    "07-global-problem-global-response",
+    "08-my-globalization-map",
+    "09-group-reflection",
+    "10-references"
   ];
 
   var LABELS = {
