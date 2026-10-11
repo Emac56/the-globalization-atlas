@@ -66,21 +66,64 @@
         </article>
       </section>
 
-      <!-- CULTURE CONNECTION MAP (HTML + CSS only) -->
-      <section class="route-card" aria-labelledby="routeTitle">
+      <!-- CULTURE CONNECTION MAP (interactive: HTML + CSS + js/script.js)
+           Without JavaScript this still reads as the same five-step list. -->
+      <section class="route-card flow-map" aria-labelledby="routeTitle" data-flow-map>
         <h2 class="block-title" id="routeTitle">Culture Connection Map</h2>
         <p class="block-hint">Follow K-pop from South Korea to Filipino fans.</p>
+        <p class="flow__help" hidden>Tap any stop to learn more, or press Explore the Connection to watch K-pop travel.</p>
+
+        <!-- Controls + progress (shown by JavaScript) -->
+        <div class="flow__controls" hidden>
+          <div class="flow__buttons">
+            <button type="button" class="pixel-btn flow__btn-main" id="flowExplore">Explore the Connection</button>
+          </div>
+          <div class="flow__progress">
+            <p class="flow__stage" id="flowStage">Stage 1 of 5</p>
+            <span class="flow__bar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+          </div>
+        </div>
+
         <ol class="flow">
-          <li class="flow__node"><span class="flow__num">01</span><span class="flow__text">South Korea</span></li>
-          <li class="flow__arrow" aria-hidden="true">&darr;</li>
-          <li class="flow__node"><span class="flow__num">02</span><span class="flow__text">K-pop music and dance</span></li>
-          <li class="flow__arrow" aria-hidden="true">&darr;</li>
-          <li class="flow__node"><span class="flow__num">03</span><span class="flow__text">Internet, YouTube, and social media</span></li>
-          <li class="flow__arrow" aria-hidden="true">&darr;</li>
-          <li class="flow__node"><span class="flow__num">04</span><span class="flow__text">Filipino fans</span></li>
-          <li class="flow__arrow" aria-hidden="true">&darr;</li>
-          <li class="flow__node"><span class="flow__num">05</span><span class="flow__text">Fan communities, dance covers, and local events</span></li>
+          <li class="flow__node"><button type="button" class="flow__btn" aria-controls="flowPanel"><span class="flow__num">01</span><span class="flow__text">South Korea</span></button></li>
+          <li class="flow__arrow" aria-hidden="true"><span class="flow__line"></span><span class="flow__fill"></span><span class="flow__dot"></span><span class="flow__head">&darr;</span></li>
+          <li class="flow__node"><button type="button" class="flow__btn" aria-controls="flowPanel"><span class="flow__num">02</span><span class="flow__text">K-pop music and dance</span></button></li>
+          <li class="flow__arrow" aria-hidden="true"><span class="flow__line"></span><span class="flow__fill"></span><span class="flow__dot"></span><span class="flow__head">&darr;</span></li>
+          <li class="flow__node"><button type="button" class="flow__btn" aria-controls="flowPanel"><span class="flow__num">03</span><span class="flow__text">Internet, YouTube, and social media</span></button></li>
+          <li class="flow__arrow" aria-hidden="true"><span class="flow__line"></span><span class="flow__fill"></span><span class="flow__dot"></span><span class="flow__head">&darr;</span></li>
+          <li class="flow__node"><button type="button" class="flow__btn" aria-controls="flowPanel"><span class="flow__num">04</span><span class="flow__text">Filipino fans</span></button></li>
+          <li class="flow__arrow" aria-hidden="true"><span class="flow__line"></span><span class="flow__fill"></span><span class="flow__dot"></span><span class="flow__head">&darr;</span></li>
+          <li class="flow__node"><button type="button" class="flow__btn" aria-controls="flowPanel"><span class="flow__num">05</span><span class="flow__text">Fan communities, dance covers, and local events</span></button></li>
         </ol>
+
+        <!-- Explanation panel (desktop: under the map; mobile: JS moves it under the selected stop).
+             Each stage has its own photo placeholder. Save your photos in ../../assets/images/culture-goes-global/
+             using the file names listed in STAGES (js/script.js):
+               map-south-korea.jpg, map-kpop-music-dance.jpg, map-internet-youtube.jpg,
+               map-filipino-fans.jpg, map-fan-events.jpg -->
+        <div class="flow__panel-home" data-flow-home>
+          <div class="flow__panel" id="flowPanel" hidden>
+            <span class="flow__pointer" aria-hidden="true"></span>
+            <div class="flow__panel-body">
+              <h3 class="flow__panel-title" id="flowPanelTitle"></h3>
+              <p class="flow__panel-text" id="flowPanelText"></p>
+            </div>
+            <figure class="shot flow__shot">
+              <div class="shot__frame is-missing" id="flowShotFrame">
+                <img id="flowShotImg" src="" alt="" />
+                <div class="shot__empty">
+                  <svg class="shot__icon" viewBox="0 0 32 32" width="40" height="40" aria-hidden="true" focusable="false"><rect x="3" y="5" width="26" height="22" fill="none" stroke="currentColor" stroke-width="3"/><rect x="8" y="9" width="5" height="5" fill="currentColor"/><path d="M5 25 L13 16 L18 21 L22 17 L27 25 Z" fill="currentColor"/></svg>
+                  <p class="shot__msg">Add your photo here</p>
+                  <p class="shot__search" id="flowShotSearch"></p>
+                  <p class="shot__file" id="flowShotFile"></p>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Screen-reader announcements -->
+        <p class="flow__sr" id="flowAnnounce" aria-live="polite"></p>
       </section>
 
       <!-- 3. HOW FILIPINOS ADOPTED IT + PHOTO 2 -->
