@@ -64,115 +64,139 @@
 }
 .block-hint { font-size: 22px; line-height: 1.15; color: #dbe9ff; text-shadow: 2px 2px 0 #000; margin-bottom: 22px; }
 
-/* ---------- Comparison table ---------- */
+/* ---------- Topic cards ---------- */
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
-.tablebox {
+.board {
   background: var(--deep);
   border: 4px solid var(--cyan);
   box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.35);
-  padding: 6px 14px 16px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
-.compare {
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: separate;
-  border-spacing: 0 14px;
-}
-.compare th, .compare td { vertical-align: top; padding: 0; }
-.compare tr > :first-child { padding-right: 8px; }
-.compare tr > :last-child  { padding-left: 8px; }
-
-.head {
+.group { --c: var(--cyan); min-width: 0; }
+.group--bad { --c: var(--bad); }
+.group__head {
   font-family: var(--font-title);
-  font-size: clamp(10px, 1.8vw, 14px);
+  font-size: clamp(10px, 1.8vw, 13px);
   line-height: 1.6;
   text-transform: uppercase;
-  text-align: left;
-  padding-bottom: 4px;
+  color: var(--c);
+  margin-bottom: 14px;
 }
-.head--good { color: var(--cyan); }
-.head--bad  { color: var(--bad); }
-.head__sign {
-  display: inline-grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  margin-right: 8px;
-  vertical-align: middle;
-  font-family: var(--font-text);
-  font-size: 24px;
-  line-height: 1;
-  color: var(--ink);
+.group__sign {
+  display: inline-grid; place-items: center;
+  width: 28px; height: 28px; margin-right: 8px; vertical-align: middle;
+  font-family: var(--font-text); font-size: 24px; line-height: 1;
+  color: var(--ink); background: var(--c);
 }
-.head--good .head__sign { background: var(--cyan); }
-.head--bad  .head__sign { background: var(--bad); }
+.topics { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.topic { --c: var(--cyan); }
+.topic--bad { --c: var(--bad); }
 
-/* each benefit / challenge is one button that fills its cell */
-.cell__btn {
+.topic__btn {
   width: 100%;
-  min-height: 64px;
+  min-height: 72px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
-  padding: 12px 14px;
+  padding: 10px 12px;
   font-family: var(--font-text);
-  font-size: 26px;
-  line-height: 1.1;
   text-align: left;
   color: #fff;
   background: rgba(255, 255, 255, 0.07);
   border: 0;
-  border-left: 12px solid var(--cyan);
+  border-left: 8px solid var(--c);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
-.cell--bad .cell__btn { border-left-color: var(--bad); }
-.cell__btn:hover { background: rgba(255, 255, 255, 0.16); }
-.cell__btn:focus-visible { outline: 3px dashed var(--gold); outline-offset: 3px; }
-.cell__btn[aria-expanded="true"] { background: rgba(255, 255, 255, 0.2); box-shadow: inset 0 -6px 0 0 var(--cyan); }
-.cell--bad .cell__btn[aria-expanded="true"] { box-shadow: inset 0 -6px 0 0 var(--bad); }
-
-.cell__num {
-  flex: none;
-  font-family: var(--font-title);
-  font-size: 10px;
-  line-height: 1;
-  color: var(--ink);
-  padding: 5px 6px;
-  margin-top: 2px;
-  background: var(--cyan);
+.topic__btn:hover { background: rgba(255, 255, 255, 0.16); }
+.topic__btn:focus-visible { outline: 3px dashed var(--gold); outline-offset: 3px; }
+.topic__btn[aria-expanded="true"] {
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 0 4px var(--gold), 0 6px 0 4px rgba(0, 0, 0, 0.35);
+  position: relative;
 }
-.cell--bad .cell__num { background: var(--bad); }
-.cell__text { flex: 1; min-width: 0; overflow-wrap: break-word; }
-.cell__tag { display: none; }   /* "Benefit 01" label: shown on phones only */
-.cell__chev { flex: none; font-family: var(--font-title); font-size: 10px; line-height: 2; color: var(--gold); }
-.cell__btn[aria-expanded="true"] .cell__chev { transform: rotate(180deg); }
+.topic__btn[aria-expanded="true"] .topic__chev { transform: rotate(90deg); color: var(--gold); }
 
-/* ---------- Explanation panel (opens under the selected row) ---------- */
-.detail-row[hidden] { display: none !important; }
+/* icon tile: benefits are cyan with round-ish "+" corner, challenges are coral with square "!" corner */
+.topic__icon {
+  flex: none;
+  position: relative;
+  width: 52px; height: 52px;
+  display: grid; place-items: center;
+  background: #06142f;
+  border: 4px solid var(--c);
+  color: var(--c);
+  --acc: var(--gold);
+}
+.topic--bad .topic__icon { --acc: #fff; }
+.topic__icon::after {
+  content: "+";
+  position: absolute; right: -8px; bottom: -8px;
+  width: 18px; height: 18px;
+  display: grid; place-items: center;
+  font-family: var(--font-text); font-size: 20px; line-height: 1;
+  color: var(--ink); background: var(--c);
+}
+.topic--bad .topic__icon::after { content: "!"; }
+
+.px-icon { width: 32px; height: 32px; image-rendering: pixelated; }
+.px-main { fill: currentColor; }
+.px-acc  { fill: var(--acc, var(--gold)); }
+
+.topic__text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; overflow-wrap: break-word; }
+.topic__tag { font-family: var(--font-title); font-size: 8px; line-height: 1.6; text-transform: uppercase; color: var(--c); }
+.topic__name { font-size: 26px; line-height: 1.05; }
+.topic__chev { flex: none; font-family: var(--font-title); font-size: 14px; color: var(--gold); }
+
+/* ---------- Detail panel ---------- */
+.detailbox { margin-top: 28px; scroll-margin-top: 16px; }
+.placeholder {
+  font-size: 24px; line-height: 1.15; text-align: center; color: #dbe9ff;
+  text-shadow: 2px 2px 0 #000;
+  padding: 18px 14px;
+  border: 4px dashed rgba(255, 255, 255, 0.45);
+}
+.panel[hidden], .placeholder[hidden] { display: none !important; }
 .panel {
+  --c: var(--cyan);
   background: var(--paper);
   color: var(--ink);
   padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  border-top: 6px solid var(--cyan);
+  border-top: 8px solid var(--c);
   box-shadow: 0 -4px 0 0 var(--ink), 0 4px 0 0 var(--ink), -4px 0 0 0 var(--ink), 4px 0 0 0 var(--ink), 0 10px 0 0 rgba(0, 0, 0, 0.35);
 }
-.detail-row--bad .panel { border-top-color: var(--bad); }
-.panel__title { font-family: var(--font-title); font-size: 12px; line-height: 1.7; text-transform: uppercase; color: var(--navy); }
+.panel--bad { --c: var(--bad); }
+.panel__head { display: flex; align-items: center; gap: 14px; }
+.panel__icon {
+  flex: none; width: 56px; height: 56px; display: grid; place-items: center;
+  background: var(--navy); border: 4px solid var(--c); color: var(--c); --acc: var(--gold);
+}
+.panel--bad .panel__icon { --acc: #fff; }
+.panel__icon .px-icon { width: 36px; height: 36px; }
+.panel__tag { font-family: var(--font-title); font-size: 9px; line-height: 1.6; text-transform: uppercase; color: var(--navy); opacity: 0.75; }
+.panel--bad .panel__tag::before { content: "\2212  "; }
+.panel--good .panel__tag::before { content: "+  "; }
+.panel__title { font-family: var(--font-title); font-size: 13px; line-height: 1.7; text-transform: uppercase; color: var(--navy); }
 
 .detail {
   padding: 12px 14px;
   background: #eef5ff;
   border: 4px solid var(--navy);
-  border-left: 12px solid var(--cyan);
+  border-left: 12px solid var(--c);
 }
-.detail-row--bad .detail { border-left-color: var(--bad); }
 .detail__label { font-family: var(--font-title); font-size: 10px; line-height: 1.6; color: var(--navy); text-transform: uppercase; margin-bottom: 6px; }
 .detail__value { font-size: 26px; line-height: 1.1; color: #333; }
+
+@media (min-width: 761px) {
+  .detailbox--on .panel { animation: rise 0.25s steps(4) both; }
+}
 
 /* ---------- Bottom navigation: now shared (shared/css/global.css + shared/js/nav.js) ---------- */
 
@@ -185,26 +209,20 @@
 @media (max-width: 760px) {
   .sec { padding: 28px 16px 40px; gap: 24px; }
   .sec__content { gap: 28px; }
-  .tablebox { padding: 6px 10px 12px; }
-  .cell__btn { font-size: 24px; }
+  .board { padding: 12px; gap: 18px; }
+  .topic__name { font-size: 24px; }
   .detail__value { font-size: 24px; }
 }
 
-/* Phones: each row becomes a small stack (benefit, then challenge) so the text keeps a readable width */
-@media (max-width: 560px) {
-  .compare, .compare tbody, .compare tr, .compare th, .compare td { display: block; }
-  .compare { border-spacing: 0; }
-  .compare thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }  /* headings stay for screen readers; each cell shows its own tag */
-  .compare tr > :first-child, .compare tr > :last-child { padding: 0; }
-  .compare tr.pair { margin-top: 18px; }
-  .compare tr.pair:first-child { margin-top: 8px; }
-  .compare tr.pair td + td { margin-top: 10px; }
-  .detail-row { margin: 14px 0 6px; }
-  .cell__tag { display: block; margin-bottom: 4px; font-family: var(--font-title); font-size: 9px; line-height: 1.6; text-transform: uppercase; color: var(--cyan); }
-  .cell--bad .cell__tag { color: var(--bad); }
-  .cell__num { display: none; }
+/* Phones: benefits stack above challenges */
+@media (max-width: 640px) {
+  .board { grid-template-columns: 1fr; }
   .panel { padding: 12px; }
+  .panel__icon { width: 48px; height: 48px; }
+  .panel__title { font-size: 11px; }
   .detail { padding: 10px; border-left-width: 8px; }
 }
 
-
+@media (prefers-reduced-motion: reduce) {
+  .sec__header, .sec__content > *, .detailbox--on .panel { animation: none; }
+}

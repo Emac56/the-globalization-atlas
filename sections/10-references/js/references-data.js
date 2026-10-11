@@ -243,6 +243,13 @@ window.ATLAS_REFERENCES = {
     // ---- Benefits and Challenges of Globalization ----
     // (The Korean Cultural Center "Everyone’s K-Pop: Manila" source is already stored above as
     //  kcc-2023-everyones-kpop-manila, so it is reused here instead of being typed twice.)
+    "kcc-2023-everyones-kpop-manila-bc": {
+      author: "Korean Cultural Center",
+      date: "2023, July 3",
+      title: "Everyone’s K-Pop: Manila",
+      url: "https://www.korean-culture.org/kocc/view.do?seq=1045330&menucode=menu0023&langCode=lang001&searchType=menu0023"
+    },
+
     "ilo-2019-trade-employment-ph": {
       author: "International Labour Organization",
       date: "2019",
@@ -362,7 +369,7 @@ window.ATLAS_REFERENCES = {
       short: "Benefits & Challenges",
       sources: [
         { id: "ilo-2019-trade-employment-ph" },
-        { id: "kcc-2023-everyones-kpop-manila" },          // listed in full under Culture Goes Global
+        { id: "kcc-2023-everyones-kpop-manila-bc" },
         { id: "un-2018-cultural-linguistic-diversity" },
         { id: "worldbank-2009-ph-country-environmental-analysis" },
         { id: "worldbank-2022-gvc-participation-press-release" },
