@@ -238,6 +238,51 @@ window.ATLAS_REFERENCES = {
       date: "2024",                             // SUVANNABHUMI vol. 16, no. 1 (2024)
       title: "The “Korean Turn” in Philippine Popular Culture",
       url: "https://journal.kci.go.kr/svn/archive/articleView?artiId=ART003048391"
+    },
+
+    // ---- Benefits and Challenges of Globalization ----
+    // (The Korean Cultural Center "Everyone’s K-Pop: Manila" source is already stored above as
+    //  kcc-2023-everyones-kpop-manila, so it is reused here instead of being typed twice.)
+    "ilo-2019-trade-employment-ph": {
+      author: "International Labour Organization",
+      date: "2019",
+      title: "The impact of trade on employment in the Philippines: Country report",
+      url: "https://www.ilo.org/publications/impact-trade-employment-philippines-country-report"
+    },
+
+    "un-2018-cultural-linguistic-diversity": {
+      author: "United Nations",
+      date: "2018",
+      title: "Safeguarding cultural and linguistic diversity in the context of global citizenship",
+      url: "https://www.un.org/en/chronicle/article/safeguarding-cultural-and-linguistic-diversity-context-global-citizenship"
+    },
+
+    "worldbank-2009-ph-country-environmental-analysis": {
+      author: "World Bank",
+      date: "2009",
+      title: "The Philippines: Country environmental analysis",
+      url: "https://openknowledge.worldbank.org/entities/publication/71045d21-501c-504e-b1e5-4fda4b45c316"
+    },
+
+    "worldbank-2022-gvc-participation-press-release": {
+      author: "World Bank",
+      date: "2022, October 6",
+      title: "Deeper participation in global value chains will strengthen recovery and competitiveness of the Philippine economy",
+      url: "https://www.worldbank.org/en/news/press-release/2022/10/06/deeper-participation-in-gvcs-will-strengthen-recovery-and-competitiveness-of-ph-econ"
+    },
+
+    "worldbank-2025-new-dawn-gvc": {
+      author: "World Bank",
+      date: "2025",
+      title: "A new dawn for global value chain participation in the Philippines",
+      url: "https://www.worldbank.org/en/country/philippines/publication/report-key-findings-a-new-dawn-for-global-value-chain-participation-in-the-philippines"
+    },
+
+    "worldbank-2025-ph-growth-jobs-report": {
+      author: "World Bank",
+      date: "2025",
+      title: "Philippines country growth and jobs report 2025",
+      url: "https://www.worldbank.org/en/country/philippines/publication/philippines-growth-and-jobs-report-2025"
     }
   },
 
@@ -311,7 +356,20 @@ window.ATLAS_REFERENCES = {
         { id: "sanchez-2024-korean-turn-kci" }
       ]
     },
-    { id: "benefits-and-challenges",                  title: "Benefits and Challenges",                  short: "Benefits & Challenges",     sources: [] },
+    {
+      id: "benefits-and-challenges",
+      title: "Benefits and Challenges of Globalization",
+      short: "Benefits & Challenges",
+      sources: [
+        { id: "ilo-2019-trade-employment-ph" },
+        { id: "kcc-2023-everyones-kpop-manila" },          // listed in full under Culture Goes Global
+        { id: "un-2018-cultural-linguistic-diversity" },
+        { id: "worldbank-2009-ph-country-environmental-analysis" },
+        { id: "worldbank-2022-gvc-participation-press-release" },
+        { id: "worldbank-2025-new-dawn-gvc" },
+        { id: "worldbank-2025-ph-growth-jobs-report" }
+      ]
+    },
     { id: "global-problem-global-response",           title: "Global Problem / Global Response",         short: "Problem / Response",        sources: [] },
     { id: "my-globalization-map",                     title: "My Globalization Map",                     short: "My Map",                    sources: [] }
   ]

@@ -1,28 +1,34 @@
 // BENEFITS AND CHALLENGES — script for this page only.
-// Navigation uses plain HTML links. JS handles the expandable explanations.
+// Navigation uses plain HTML links. JS handles the explanations: select a benefit or a challenge and its
+// explanation opens right under its row. Only one explanation is open at a time; select it again to close it.
+// (Without JavaScript every explanation simply stays visible under its row.)
 
-const accButtons = document.querySelectorAll(".acc__btn");
+(function () {
+  "use strict";
 
-// Open or close one explanation
-function setOpen(btn, open) {
-  btn.setAttribute("aria-expanded", String(open));
-  document.getElementById(btn.getAttribute("aria-controls")).hidden = !open;
-}
+  const buttons = Array.from(document.querySelectorAll(".cell__btn"));
+  const panelFor = (btn) => document.getElementById(btn.getAttribute("aria-controls"));
 
-accButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    setOpen(btn, btn.getAttribute("aria-expanded") !== "true");
+  // Open or close one explanation
+  function setOpen(btn, open) {
+    btn.setAttribute("aria-expanded", String(open));
+    panelFor(btn).hidden = !open;
+  }
+
+  // Start with everything closed
+  buttons.forEach((btn) => setOpen(btn, false));
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const willOpen = btn.getAttribute("aria-expanded") !== "true";
+      buttons.forEach((other) => setOpen(other, false));
+      if (!willOpen) return;
+      setOpen(btn, true);
+      // If the explanation opened below the visible screen (phones), bring it into view
+      const rect = panelFor(btn).getBoundingClientRect();
+      if (rect.bottom > window.innerHeight || rect.top < 0) {
+        panelFor(btn).scrollIntoView({ block: "nearest" });
+      }
+    });
   });
-});
-
-// "See deeper explanation" in the comparison opens the matching section and scrolls to it
-document.querySelectorAll(".item__more").forEach((link) => {
-  link.addEventListener("click", () => {
-    const target = link.dataset.target;           // e.g. "good1", "bad2"
-    setOpen(document.getElementById("btn-" + target), true);
-    document.getElementById("acc-" + target).scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-});
-
-
-
+})();
