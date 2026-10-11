@@ -11,7 +11,7 @@
 
   <!-- Shared styles first, then this page's styles -->
   <link rel="stylesheet" href="shared/css/global.css" />
-  <link rel="stylesheet" href="sections/cover/css/cover.css" />
+  <link rel="stylesheet" href="sections/cover/css/cover.css?v=narrator1" />
 </head>
 <body>
   <!-- PAGE 1: COVER -->
@@ -41,10 +41,43 @@
       </div>
     </section>
 
+    <!-- NARRATOR INTRO (prototype): a stationary pixel character + dialogue box.
+         Text lines and speech logic live in sections/cover/js/cover.js -->
+    <section class="narrator" id="narrator" aria-label="Introduction narrator">
+      <button class="narrator__char" id="charBtn" type="button" aria-describedby="charHint"
+              aria-label="Atlas Guide, the narrator. Click to learn more about this project.">
+        <svg class="narrator__sprite" id="charSprite" viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"></svg>
+        <span class="narrator__hint" id="charHint">Click me</span>
+      </button>
+
+      <div class="dialog pixel-box" id="dialog">
+        <p class="dialog__top">
+          <span class="dialog__name">Atlas Guide</span>
+          <span class="dialog__progress" id="dialogProgress">Line 1 of 4</span>
+        </p>
+        <p class="dialog__done" id="dialogDone" hidden>&#10003; Introduction complete!</p>
+        <p class="dialog__text" id="dialogText"></p>
+
+        <p class="dialog__status" id="narrStatus" role="status">
+          <span class="speaker" id="speaker" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span id="narrStatusText">Starting narration&hellip;</span>
+        </p>
+
+        <div class="dialog__btns" id="introBtns">
+          <button class="pixel-btn dlg-btn" id="continueBtn" type="button" disabled>Continue</button>
+          <button class="pixel-btn dlg-btn" id="skipBtn" type="button">Skip</button>
+          <button class="pixel-btn dlg-btn dlg-btn--ghost" id="replayBtn" type="button" disabled>Replay voice</button>
+        </div>
+        <div class="dialog__btns" id="doneBtns" hidden>
+          <button class="pixel-btn dlg-btn dlg-btn--go" id="exploreBtn" type="button">Start Exploring</button>
+        </div>
+      </div>
+    </section>
+
     <button class="pixel-btn cover__start" id="startBtn" type="button">Start Atlas</button>
   </main>
 
-  <script src="sections/cover/js/cover.js"></script>
+  <script src="sections/cover/js/cover.js?v=narrator1"></script>
 </body>
 </html>
 
