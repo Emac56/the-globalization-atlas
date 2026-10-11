@@ -40,7 +40,17 @@
     var p = el("p", "apa__ref");
     p.appendChild(document.createTextNode(s.author + ". " + (s.date ? "(" + s.date + "). " : "")));
 
-    var em = el("em", null, s.title);
+    var em = el("em");
+    if (s.linkTitle) {
+      // Clickable title (opens the original source in a new tab)
+      var t = el("a", "apa__title-link", s.title);
+      t.href = s.url;
+      t.target = "_blank";
+      t.rel = "noopener noreferrer";
+      em.appendChild(t);
+    } else {
+      em.textContent = s.title;
+    }
     p.appendChild(em);
 
     // APA: no extra period after a title that already ends in ? or !

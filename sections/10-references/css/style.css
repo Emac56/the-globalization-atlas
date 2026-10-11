@@ -152,6 +152,9 @@
 .apa__url { color: #0b3d91; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
 .apa__url:hover { color: #6b3fa0; }
 .apa__url:focus-visible { outline: 3px dashed var(--navy); outline-offset: 3px; }
+.apa__title-link { color: #0b3d91; text-decoration: underline; text-underline-offset: 3px; }
+.apa__title-link:hover { color: #6b3fa0; }
+.apa__title-link:focus-visible { outline: 3px dashed var(--navy); outline-offset: 3px; }
 /* ---------- Bottom navigation: now shared (shared/css/global.css + shared/js/nav.js) ---------- */
 .sec.is-leaving { opacity: 0; transition: opacity 0.2s linear; }
 

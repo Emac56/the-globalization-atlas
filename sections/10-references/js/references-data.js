@@ -290,6 +290,118 @@ window.ATLAS_REFERENCES = {
       date: "2025",
       title: "Philippines country growth and jobs report 2025",
       url: "https://www.worldbank.org/en/country/philippines/publication/philippines-growth-and-jobs-report-2025"
+    },
+
+    // ---- Global Problems / Global Response: Plastic Pollution in the Philippines’ Rivers and Oceans ----
+    "unep-beat-plastic-pollution": {
+      author: "UNEP",
+      title: "Beat Plastic Pollution",
+      linkTitle: true,                          // title is also a clickable link (new tab)
+      url: "https://www.unep.org/beatpollution/beat-plastic-pollution"
+    },
+
+    "undp-ph-plastic-action-roadmap-2026-2040": {
+      author: "UNDP Philippines",
+      title: "Philippine National Plastic Action Roadmap 2026–2040",
+      linkTitle: true,                          // title is also a clickable link (new tab)
+      url: "https://www.undp.org/philippines/publications/philippine-national-plastic-action-roadmap-2026-2040"
+    },
+
+    "undp-ph-diverse-sectors-national-roadmap": {
+      author: "UNDP Philippines",
+      title: "Philippines brings diverse sectors together under a national roadmap",
+      linkTitle: true,                          // title is also a clickable link (new tab)
+      url: "https://www.undp.org/philippines/news/philippines-brings-diverse-sectors-together-under-national-roadmap-85-plastic-pollution-reduction-2040"
+    },
+
+    "senate-ph-epr-act-2022": {
+      author: "Senate of the Philippines",
+      title: "Extended Producer Responsibility Act of 2022",
+      linkTitle: true,                          // title is also a clickable link (new tab)
+      url: "https://issuances-library.senate.gov.ph/subject/extended-producer-responsibility-act-2022"
+    },
+
+    "unep-leap-epr-act-2022": {
+      author: "UNEP",
+      title: "Extended Producer Responsibility Act of 2022",
+      linkTitle: true,                          // title is also a clickable link (new tab)
+      url: "https://leap.unep.org/en/akn/ph/act/2022/11898/eng@2022-07-23/overview"
+    },
+
+    "sciencedirect-plastic-southern-mindanao": {
+      author: "ScienceDirect",
+      title: "Plastic pollution in Southern Mindanao, Philippines",
+      linkTitle: true,                          // title is also a clickable link (new tab)
+      url: "https://www.sciencedirect.com/science/article/abs/pii/S0025326X24011111"
+    },
+
+    "boell-sachets-to-marine-litter": {
+      author: "Heinrich-Böll-Stiftung",
+      title: "From Sachets to Marine Litter",
+      linkTitle: true,                          // title is also a clickable link (new tab)
+      url: "https://th.boell.org/en/2024/10/21/sachets-plastics-ocean"
+    },
+
+    "lawphil-ra-11898": {
+      author: "Lawphil",
+      title: "Republic Act No. 11898",
+      linkTitle: true,                          // title is also a clickable link (new tab)
+      url: "https://lawphil.net/statutes/repacts/ra2022/ra_11898_2022.html"
+    },
+
+    "denr-epr-faq": {
+      author: "DENR",
+      title: "EPR FAQ",
+      linkTitle: true,                          // title is also a clickable link (new tab)
+      url: "https://epr.emb.gov.ph/Application/faq"
+    },
+
+    "undp-ph-plastic-waste-circularity": {
+      author: "UNDP Philippines",
+      title: "Philippines advances plastic waste reduction, prevention, and circularity",
+      linkTitle: true,                          // title is also a clickable link (new tab)
+      url: "https://www.undp.org/philippines/press-releases/philippines-advances-plastic-waste-reduction-prevention-and-circularity"
+    },
+
+    // ---- My Globalization Map (the same entries are shown in the map's detail panel) ----
+    "jica-2025-top-development-partner": {
+      author: "Japan International Cooperation Agency",
+      date: "2025, August 8",
+      title: "Japan remains PH top development partner",
+      linkTitle: true,                          // title is also a clickable link (new tab)
+      url: "https://www.jica.go.jp/english/overseas/philippine/information/press/2025/JPN-PH-TopDevtPartner.html"
+    },
+
+    "dti-philippines-korea-fta": {
+      author: "Department of Trade and Industry",
+      date: "n.d.",
+      title: "Philippines–Korea Free Trade Agreement",
+      linkTitle: true,                          // title is also a clickable link (new tab)
+      url: "https://philippineftas.dti.gov.ph/discover-fta/ph-fta-status/effective-fta/pkfta"
+    },
+
+    "pna-2024-us-biz-mission-ai": {
+      author: "Philippine News Agency",
+      date: "2024",
+      title: "US biz mission brings $1-B investments, to train 30M Filipinos on AI",
+      linkTitle: true,                          // title is also a clickable link (new tab)
+      url: "https://www.pna.gov.ph/articles/1220531"
+    },
+
+    "mfa-china-philippines": {
+      author: "Ministry of Foreign Affairs of the People’s Republic of China",
+      date: "n.d.",
+      title: "Philippines",
+      linkTitle: true,                          // title is also a clickable link (new tab)
+      url: "https://www.fmprc.gov.cn/mfa_eng/gjhdq_665435/2675_665437/2762_663528/"
+    },
+
+    "asean-aec-blueprint-2025": {
+      author: "Association of Southeast Asian Nations",
+      date: "n.d.",
+      title: "ASEAN Economic Community Blueprint 2025",
+      linkTitle: true,                          // title is also a clickable link (new tab)
+      url: "https://www.asean.org/book/asean-economic-community-blueprint-2025/"
     }
   },
 
@@ -377,7 +489,34 @@ window.ATLAS_REFERENCES = {
         { id: "worldbank-2025-ph-growth-jobs-report" }
       ]
     },
-    { id: "global-problem-global-response",           title: "Global Problem / Global Response",         short: "Problem / Response",        sources: [] },
-    { id: "my-globalization-map",                     title: "My Globalization Map",                     short: "My Map",                    sources: [] }
+    {
+      id: "global-problem-global-response",
+      title: "Global Problems / Global Response \u2014 Plastic Pollution in the Philippines\u2019 Rivers and Oceans",
+      short: "Problem / Response",
+      sources: [
+        { id: "unep-beat-plastic-pollution" },
+        { id: "undp-ph-plastic-action-roadmap-2026-2040" },
+        { id: "undp-ph-diverse-sectors-national-roadmap" },
+        { id: "senate-ph-epr-act-2022" },
+        { id: "unep-leap-epr-act-2022" },
+        { id: "sciencedirect-plastic-southern-mindanao" },
+        { id: "boell-sachets-to-marine-litter" },
+        { id: "lawphil-ra-11898" },
+        { id: "denr-epr-faq" },
+        { id: "undp-ph-plastic-waste-circularity" }
+      ]
+    },
+    {
+      id: "my-globalization-map",
+      title: "My Globalization Map",
+      short: "My Map",
+      sources: [
+        { id: "jica-2025-top-development-partner" },
+        { id: "dti-philippines-korea-fta" },
+        { id: "pna-2024-us-biz-mission-ai" },
+        { id: "mfa-china-philippines" },
+        { id: "asean-aec-blueprint-2025" }
+      ]
+    }
   ]
 };

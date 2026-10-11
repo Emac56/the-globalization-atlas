@@ -13,92 +13,100 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- MY GLOBALIZATION MAP (draft / placeholder content) -->
+  <!-- MY GLOBALIZATION MAP — interactive map of the Philippines' connections.
+       The land, lines and flags are drawn by js/script.js. The country texts live in script.js (COUNTRIES);
+       the sources come from the central list in ../10-references/js/references-data.js,
+       so the map and the References page always show the same entry. -->
   <main class="page atlas-bg sec" id="secPage">
 
-    <!-- Header -->
     <header class="sec__header">
       <p class="sec__kicker">My Globalization Atlas</p>
       <h1 class="sec__title">My Globalization Map</h1>
       <p class="sec__counter">09 / 10</p>
       <p class="sec__quote">The Philippines is connected to the world in many ways. Select a country to see how.</p>
-      <p class="draft-tag">Draft content &mdash; to be researched</p>
     </header>
 
     <div class="sec__content">
 
-      <!-- MAP: Philippines in the center, 5 country nodes around it.
-           Edit the explanations in script.js (COUNTRIES) when the research is ready. -->
       <section aria-labelledby="mapTitle">
         <h2 class="block-title" id="mapTitle">Connections of the Philippines</h2>
-        <p class="block-hint">Tap a country to follow its connection line.</p>
+        <p class="block-hint">Tap a country on the map to follow its connection line.</p>
 
         <div class="map" id="map">
-          <!-- Connection lines: one per country, from the center (50,50) to the node -->
-          <svg class="map__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            <line class="line" data-id="japan" x1="50" y1="50" x2="85" y2="36" />
-            <line class="line" data-id="south-korea" x1="50" y1="50" x2="50" y2="12" />
-            <line class="line" data-id="united-states" x1="50" y1="50" x2="76" y2="84" />
-            <line class="line" data-id="china" x1="50" y1="50" x2="15" y2="36" />
-            <line class="line" data-id="singapore" x1="50" y1="50" x2="24" y2="84" />
-          </svg>
+          <!-- Pixel land + connection lines are drawn here by script.js -->
+          <svg class="map__land" id="mapLand" aria-hidden="true" focusable="false"></svg>
+          <svg class="map__lines" id="mapLines" aria-hidden="true" focusable="false"></svg>
 
-          <!-- Center node -->
-          <div class="hub" aria-label="Philippines, center of the map">
+          <!-- Philippines: the center of the map. Selecting it returns to the overview. -->
+          <button class="hub" id="hub" type="button" aria-label="Philippines, center of the map. Back to overview">
             <span class="hub__code" aria-hidden="true">PH</span>
             <span class="hub__name">Philippines</span>
-          </div>
-
-          <!-- Country nodes -->
-          <button class="node" type="button" data-id="japan" aria-pressed="false" aria-controls="detail" style="--x:85%; --y:36%; --c:#ff6b81;">
-            <span class="node__code" aria-hidden="true">JP</span>
-            <span class="node__name">Japan</span>
-            <span class="node__cat">Technology / Trade</span>
           </button>
 
-          <button class="node" type="button" data-id="south-korea" aria-pressed="false" aria-controls="detail" style="--x:50%; --y:12%; --c:#7cc4ff;">
-            <span class="node__code" aria-hidden="true">KR</span>
-            <span class="node__name">South Korea</span>
-            <span class="node__cat">Entertainment / Culture</span>
-          </button>
-
-          <button class="node" type="button" data-id="united-states" aria-pressed="false" aria-controls="detail" style="--x:76%; --y:84%; --c:#a98bff;">
-            <span class="node__code" aria-hidden="true">US</span>
-            <span class="node__name">United States</span>
-            <span class="node__cat">Business / Education</span>
-          </button>
-
-          <button class="node" type="button" data-id="china" aria-pressed="false" aria-controls="detail" style="--x:15%; --y:36%; --c:#ff9a4d;">
-            <span class="node__code" aria-hidden="true">CN</span>
+          <!-- Country markers (positions are desktop x/y and mobile mx/my, in percent) -->
+          <button class="node" type="button" data-id="china" aria-pressed="false" aria-controls="detail" style="--x:22%; --y:34%; --mx:20%; --my:38%;">
+            <span class="node__flag" aria-hidden="true"></span>
             <span class="node__name">China</span>
-            <span class="node__cat">Trade</span>
+            <span class="node__cat">Trade and products</span>
           </button>
 
-          <button class="node" type="button" data-id="singapore" aria-pressed="false" aria-controls="detail" style="--x:24%; --y:84%; --c:#6df0a8;">
-            <span class="node__code" aria-hidden="true">SG</span>
+          <button class="node" type="button" data-id="south-korea" aria-pressed="false" aria-controls="detail" style="--x:58%; --y:15%; --mx:46%; --my:14%;">
+            <span class="node__flag" aria-hidden="true"></span>
+            <span class="node__name">South Korea</span>
+            <span class="node__cat">Trade, entertainment, culture</span>
+          </button>
+
+          <button class="node" type="button" data-id="japan" aria-pressed="false" aria-controls="detail" style="--x:79%; --y:28%; --mx:82%; --my:26%;">
+            <span class="node__flag" aria-hidden="true"></span>
+            <span class="node__name">Japan</span>
+            <span class="node__cat">Infrastructure, technology</span>
+          </button>
+
+          <button class="node" type="button" data-id="united-states" aria-pressed="false" aria-controls="detail" style="--x:89%; --y:60%; --mx:84%; --my:64%;">
+            <span class="node__flag" aria-hidden="true"></span>
+            <span class="node__name">United States</span>
+            <span class="node__cat">Business, education, technology</span>
+          </button>
+
+          <button class="node" type="button" data-id="singapore" aria-pressed="false" aria-controls="detail" style="--x:27%; --y:86%; --mx:22%; --my:86%;">
+            <span class="node__flag" aria-hidden="true"></span>
             <span class="node__name">Singapore</span>
-            <span class="node__cat">Investment / Business</span>
+            <span class="node__cat">Jobs, investment, business</span>
           </button>
         </div>
+        <p class="map__note">Simplified pixel map. Positions show direction only, not exact distances or borders.</p>
       </section>
 
-      <!-- CONNECTION DETAIL: filled by script.js when a country is selected -->
+      <!-- DETAIL PANEL: updates without reloading the page -->
       <section class="detail" id="detail" aria-live="polite" aria-labelledby="detailHead">
         <div class="detail__top">
           <span class="detail__tag" id="detailHead">Connection</span>
           <span class="detail__count" id="detailCount">Explored 0 / 5</span>
         </div>
 
-        <p class="detail__empty" id="detailEmpty">Select a country on the map to see its connection to the Philippines.</p>
+        <!-- Country switcher: same as clicking the markers -->
+        <div class="picker" id="picker" role="group" aria-label="Choose a country"></div>
 
-        <div class="detail__body" id="detailBody" hidden>
-          <h3 class="detail__route"><span id="detailName">Country</span> &harr; Philippines</h3>
-          <p class="detail__cat"><span class="detail__catlabel">Category</span> <span class="chip" id="detailCat">Category</span></p>
+        <!-- Default view -->
+        <div class="detail__overview" id="detailOverview">
+          <h3 class="detail__route">Globalization connects the Philippines to the world</h3>
           <div class="detail__box">
-            <p class="detail__label">Explanation</p>
-            <p class="detail__value" id="detailText">[Draft &mdash; to be researched]</p>
+            <p class="detail__value">Globalization links the Philippines with other countries through trade, technology, culture, investment, and employment. Select a country to see one real connection.</p>
           </div>
         </div>
+
+        <!-- Selected country -->
+        <div class="detail__body" id="detailBody" hidden>
+          <h3 class="detail__route"><span class="flag-slot" id="detailFlag" aria-hidden="true"></span><span id="detailName">Country</span> &harr; Philippines</h3>
+          <p class="detail__cat"><span class="detail__catlabel">Connection</span> <span class="chip" id="detailCat">Category</span></p>
+          <div class="detail__box">
+            <p class="detail__label">Explanation</p>
+            <p class="detail__value" id="detailText"></p>
+          </div>
+          <ul class="keywords" id="detailKeys" aria-label="Key words"></ul>
+        </div>
+
+        <button class="pixel-btn reset-btn" id="resetBtn" type="button" hidden>&larr; Back to overview</button>
       </section>
 
     </div>
