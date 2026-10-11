@@ -359,6 +359,27 @@
 .shot__search { font-size: 20px; line-height: 1.05; }
 .shot__file { font-size: 18px; line-height: 1; color: var(--cyan); overflow-wrap: anywhere; }
 
+/* ---------- Photo source links (added so each photo can be verified) ---------- */
+.shot__link { position: absolute; inset: 0; display: block; cursor: pointer; }
+.shot__link:hover img { filter: brightness(1.08); }
+.shot__link:focus-visible { outline: 4px dashed var(--gold); outline-offset: -8px; }
+.shot__source { margin-top: 16px; text-align: right; }
+.shot__source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 3px 12px;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--gold);
+  text-decoration: none;
+  background: var(--navy);
+  border: 3px solid var(--cyan);
+}
+.shot__source-link:hover { color: var(--navy); background: var(--gold); border-color: var(--gold); }
+.shot__source-link:focus-visible { outline: 3px dashed var(--gold); outline-offset: 3px; }
+
 /* ---------- Bottom navigation: now shared (shared/css/global.css + shared/js/nav.js) ---------- */
 
 /* ---------- Load / leave ---------- */

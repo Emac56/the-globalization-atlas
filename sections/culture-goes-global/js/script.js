@@ -14,18 +14,24 @@
 
   // text = explanation shown when the stage is selected.
   // img/alt/search = the photo for that stage (save it in assets/images/culture-goes-global/).
+  // source = the webpage where the photo came from (opens in a new tab from the photo and "Photo Source" link).
   const DIR = "../../assets/images/culture-goes-global/";
   const STAGES = [
     { text: "K-pop began here. Its early groups emerged in South Korea in the 1990s.",
-      img: "map-south-korea.webp", alt: "A street or skyline scene in South Korea", search: "Seoul South Korea city skyline" },
+      img: "map-south-korea.webp", alt: "A street or skyline scene in South Korea", search: "Seoul South Korea city skyline",
+      source: "https://www.dreamstime.com/downtown-seoul-city-skyline-cityscape-south-korea-asia-sunset-image255413640" },
     { text: "K-pop pairs music with dance, so songs come with performances that fans can watch and learn.",
-      img: "map-kpop-music-dance.avif", alt: "K-pop dancers performing choreography", search: "K-pop group dance choreography performance" },
+      img: "map-kpop-music-dance.avif", alt: "K-pop dancers performing choreography", search: "K-pop group dance choreography performance",
+      source: "https://www.elitedaily.com/p/bts-black-swan-dance-practice-video-lets-jimins-man-bun-shine-21784383" },
     { text: "Digital music and platforms such as YouTube helped K-pop reach audiences worldwide.",
-      img: "map-internet-youtube.jpg", alt: "A person watching K-pop videos on a phone or laptop", search: "person watching music video on phone YouTube" },
+      img: "map-internet-youtube.jpg", alt: "A person watching K-pop videos on a phone or laptop", search: "person watching music video on phone YouTube",
+      source: "https://www.redpillrebellion.com/daily-success-habits/man-watching-youtube-on-his-cell-phone/" },
     { text: "Korean popular culture became influential in the Philippines through media and entertainment.",
-      img: "map-filipino-fans.webp", alt: "Filipino fans enjoying Korean entertainment", search: "Filipino K-pop fans Philippines" },
+      img: "map-filipino-fans.webp", alt: "Filipino fans enjoying Korean entertainment", search: "Filipino K-pop fans Philippines",
+      source: "https://www.aljazeera.com/opinions/2021/10/10/k-pop-fans-vs-dutertes-philippines-why-young-voters-want-change" },
     { text: "Filipino fans joined K-pop communities, attended events, and performed dance covers. In 2023, 13 groups competed in a cover-dance festival in Manila.",
-      img: "map-fan-events.jpg", alt: "Filipino dance cover group performing at a fan event", search: "Philippines K-pop dance cover event Manila" }
+      img: "map-fan-events.jpg", alt: "Filipino dance cover group performing at a fan event", search: "Philippines K-pop dance cover event Manila",
+      source: "https://phil.korean-culture.org/en/338/board/153/read/130877" }
   ];
 
   const DWELL = 2800;   // ms spent on each stage while the animation plays
@@ -49,6 +55,8 @@
   const shotImg = map.querySelector("#flowShotImg");
   const shotSearch = map.querySelector("#flowShotSearch");
   const shotFile = map.querySelector("#flowShotFile");
+  const shotLink = map.querySelector("#flowShotLink");
+  const sourceLink = map.querySelector("#flowSourceLink");
 
   const mobileMQ = window.matchMedia("(max-width: 860px)");
   const motionMQ = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -88,7 +96,7 @@
     shown = i;
     panelTitle.textContent = titles[i];
     panelText.textContent = STAGES[i].text;
-    setPhoto(STAGES[i]);
+    setPhoto(STAGES[i], titles[i]);
     panel.classList.remove("is-in");
     void panel.offsetWidth; // restart the entrance animation
     panel.classList.add("is-in");
@@ -102,12 +110,23 @@
   }
 
   // Photo for the selected stage; shows the "Add your photo here" box if the file is missing.
-  function setPhoto(stage) {
+  function setPhoto(stage, title) {
     shotFrame.classList.add("is-missing");
     shotImg.alt = stage.alt;
     shotSearch.textContent = "Search: " + stage.search;
     shotFile.textContent = "Save as: " + stage.img;
     shotImg.src = DIR + stage.img;
+    setSource(stage, title);
+  }
+
+  // Point the photo and its "Photo Source" link at this stage's source webpage.
+  function setSource(stage, title) {
+    const label = "View original photo source for " + title + " (opens in a new tab)";
+    [shotLink, sourceLink].forEach((a) => {
+      if (!a) return;
+      a.href = stage.source;
+      a.setAttribute("aria-label", label);
+    });
   }
   shotImg.addEventListener("load", () => { if (shotImg.naturalWidth > 0) shotFrame.classList.remove("is-missing"); });
   shotImg.addEventListener("error", () => shotFrame.classList.add("is-missing"));
