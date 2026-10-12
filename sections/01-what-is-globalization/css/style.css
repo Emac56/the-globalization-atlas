@@ -95,6 +95,12 @@
 }
 .simple__text { font-size: 28px; line-height: 1.15; }
 
+/* Definition text on the left, narration button on the right (wraps/stacks on small screens) */
+.def-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 20px; }
+.def-row .simple { flex: 1 1 320px; min-width: 0; }
+.def-row__narration { flex: 0 0 auto; max-width: 100%; }
+.def-row__narration .narr-trigger { max-width: 100%; }
+
 /* ---------- 2. Key characteristics (exactly three, static cards) ---------- */
 .traits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
 

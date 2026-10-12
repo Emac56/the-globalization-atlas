@@ -9,6 +9,7 @@
 //     parts: [                                               // one or more clips
 //       { audio: "assets/audio/section/clip-jaymark-vicente.mp3", transcript: "..." }
 //     ],
+//     showPartIndicator: true,                               // optional: show "Part 1 of 1" even for a single clip
 //     finalAction: { label: "Start Exploring", onClick: fn }  // optional: replaces Continue/Skip on the last part
 //   });
 //
@@ -118,7 +119,8 @@
     index = i;
     var last = index === parts.length - 1;
     ui.text.textContent = "\u201C" + (parts[index].transcript || "") + "\u201D";
-    ui.progress.textContent = parts.length > 1 ? "Part " + (index + 1) + " of " + parts.length : "";   // total = number of parts in the config
+    ui.text.style.whiteSpace = /\n/.test(parts[index].transcript || "") ? "pre-line" : "";   // blank line in a transcript = paragraph break
+    ui.progress.textContent = (parts.length > 1 || cfg.showPartIndicator) ? "Part " + (index + 1) + " of " + parts.length : "";   // total = number of parts in the config
     ui.nextRow.hidden = last || parts.length < 2;
     ui.finalBtn.hidden = !(last && cfg.finalAction);
     if (cfg.finalAction) ui.finalBtn.textContent = cfg.finalAction.label || "Continue";

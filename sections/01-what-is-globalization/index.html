@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../../shared/css/global.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="../../shared/css/narration.css?v=narration4" />
+  <link rel="stylesheet" href="css/style.css?v=narration4" />
 </head>
 <body>
   <!-- SECTION 01: WHAT IS GLOBALIZATION?
@@ -32,12 +33,16 @@
       <!-- 1. DEFINITION -->
       <section class="card card--big" id="definition" aria-labelledby="defTitle">
         <h2 class="card__title" id="defTitle">Definition</h2>
-        <div class="simple">
-          <p class="simple__label">In our own words</p>
-          <p class="simple__text">
-            Globalization is the growing connection between countries through trade, technology,
-            communication, people, and ideas.
-          </p>
+        <div class="def-row">
+          <div class="simple">
+            <p class="simple__label">In our own words</p>
+            <p class="simple__text">
+              Globalization is the growing connection between countries through trade, technology,
+              communication, people, and ideas.
+            </p>
+          </div>
+          <!-- Narration button (shared component: shared/js/narration.js) -->
+          <div class="def-row__narration" id="definitionNarrationMount"></div>
         </div>
       </section>
 
@@ -123,6 +128,7 @@
   </main>
 
   <script src="../../shared/js/nav.js"></script>
-  <script src="js/script.js"></script>
+  <script src="../../shared/js/narration.js?v=narration4"></script>
+  <script src="js/script.js?v=narration4"></script>
 </body>
 </html>
