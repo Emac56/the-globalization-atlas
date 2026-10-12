@@ -76,91 +76,6 @@
   50%      { filter: drop-shadow(0 0 12px rgba(255, 245, 160, 0.95)); }
 }
 
-/* ---------- Narrator intro (prototype) ---------- */
-.narrator [hidden] { display: none !important; }
-
-.narrator {
-  position: relative;
-  z-index: 2;
-  width: min(92vw, 860px);
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-/* Character = one big button. It never moves: only its outline/background change. */
-.narrator__char {
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 12px 10px;
-  font-family: var(--font-title);
-  color: #fff;
-  background: rgba(18, 48, 110, 0.92);
-  border: 4px solid var(--gold);
-  box-shadow: 0 0 0 4px var(--ink), 0 8px 0 4px rgba(0, 0, 0, 0.35);
-  cursor: pointer;
-  transition: background 0.12s;
-  -webkit-tap-highlight-color: transparent;
-}
-.narrator__char:hover { background: #1d4aa8; }
-.narrator__char:focus-visible { outline: 4px dashed #fff; outline-offset: 6px; }
-.narrator__sprite { display: block; width: 144px; height: 144px; image-rendering: pixelated; }
-.narrator__hint { font-size: 10px; line-height: 1.4; text-transform: uppercase; color: var(--gold); }
-
-/* Dialogue box */
-.dialog {
-  flex: 1;
-  min-width: 0;
-  padding: 18px 20px 20px;
-  color: var(--ink);
-}
-.dialog__top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 10px; }
-.dialog__name { font-family: var(--font-title); font-size: 11px; text-transform: uppercase; color: var(--navy); }
-.dialog__progress { font-family: var(--font-title); font-size: 9px; color: #555; }
-.dialog__done {
-  display: inline-block;
-  margin-bottom: 8px;
-  padding: 6px 8px;
-  font-family: var(--font-title);
-  font-size: 10px;
-  line-height: 1.5;
-  background: var(--gold);
-  border: 2px solid var(--ink);
-}
-.dialog__text { min-height: 3.6em; font-size: clamp(24px, 3vw, 30px); line-height: 1.12; margin-bottom: 12px; }
-
-/* Narration status: text + speaker bars (the text is the real signal, not the color) */
-.dialog__status {
-  display: flex; align-items: center; gap: 10px;
-  margin-bottom: 14px;
-  font-size: 22px; line-height: 1.1;
-  color: #243b6b;
-}
-.speaker { display: inline-flex; align-items: flex-end; gap: 3px; width: 22px; height: 18px; flex: 0 0 auto; }
-.speaker i { display: block; width: 5px; height: 6px; background: #8a96b3; }
-.speaker.is-on i { background: var(--navy); }
-.speaker.is-on i:nth-child(1) { height: 10px; animation: bar 0.5s steps(2) infinite; }
-.speaker.is-on i:nth-child(2) { height: 18px; animation: bar 0.5s steps(2) infinite 0.15s; }
-.speaker.is-on i:nth-child(3) { height: 12px; animation: bar 0.5s steps(2) infinite 0.3s; }
-@keyframes bar { 50% { height: 6px; } }
-
-.dialog__btns { display: flex; flex-wrap: wrap; gap: 14px; }
-.dlg-btn { padding: 12px 16px; font-size: 11px; line-height: 1.5; }
-.dlg-btn--ghost { background: #eef3ff; }
-.dlg-btn--go { background: var(--gold); }
-.dlg-btn--go:hover { background: #ffe58a; }
-/* Disabled: faded, flat, hatched, "not allowed" cursor */
-.dlg-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  background: repeating-linear-gradient(135deg, #e2e6f0 0 6px, #f4f6fb 6px 12px);
-  transform: none;
-}
-.dlg-btn:disabled:hover { transform: none; }
-
 /* Mobile */
 @media (max-width: 560px) {
   .cover__box { padding: 24px 16px 20px; }
@@ -168,10 +83,6 @@
   .cover__col:first-child,
   .cover__col:last-child { text-align: center; }
 
-  .narrator { flex-direction: column; gap: 20px; }
-  .narrator__sprite { width: 112px; height: 112px; }
-  .dialog { width: 100%; padding: 14px 14px 16px; }
-  .dlg-btn { flex: 1 1 auto; }
 }
 
 
