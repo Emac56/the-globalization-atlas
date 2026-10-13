@@ -215,6 +215,18 @@
   overflow-wrap: anywhere;
 }
 
+/* Titles with a narration button beside them (row layout lives in shared/css/narration.css).
+   Desktop: the button stays beside the title (the title wraps inside its own space). Mobile: it wraps under the title. */
+.narr-title-row { margin-bottom: 20px; }
+.narr-title-row .panel__title,
+.narr-title-row .final__question { margin: 0; }
+@media (min-width: 761px) {
+  .narr-title-row { flex-wrap: nowrap; }
+  .narr-title-row > :first-child { flex: 1 1 auto; }
+  .narr-title-row__btn { flex: 0 1 auto; max-width: 44%; }
+  .narr-title-row .narr-trigger { font-size: 10px; padding: 9px 14px; }
+}
+
 .part {
   padding: 14px 16px;
   color: #fff;

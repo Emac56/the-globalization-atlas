@@ -2,6 +2,7 @@
 // Navigation uses plain HTML links. JS handles the topic cards: select a benefit or a challenge and its
 // four-part explanation shows in the detail panel under the cards. Only one is shown at a time;
 // select the same card again to close it. (Without JavaScript all eight explanations simply stay visible.)
+// The eight narration buttons sit beside the titles in the detail panel; their configs are NARRATIONS at the bottom of this file.
 
 (function () {
   "use strict";
@@ -24,8 +25,17 @@
 
   select(null);   // start with the hint showing
 
+  // The shared narration panel belongs to the topic it was opened from: close it when another topic is picked or this one closes.
+  function closeNarration() {
+    const open = document.querySelector('.narr-trigger[aria-expanded="true"]');
+    if (!open || !box.contains(open) || !window.AtlasNarration) return false;
+    AtlasNarration.close();
+    return true;
+  }
+
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
+      if (closeNarration()) btn.focus({ preventScroll: true });
       const already = btn.getAttribute("aria-expanded") === "true";
       select(already ? null : btn);
       if (already) return;
@@ -37,3 +47,122 @@
     });
   });
 })();
+
+
+// =====================================================================================
+// NARRATION CONFIGS — the eight buttons beside the titles in the detail panel. EDIT THE VALUES HERE.
+// All eight open the SAME shared panel (shared/js/narration.js); only these values change.
+//   label             -> text on the button beside the title
+//   title             -> NARRATION TITLE shown at the top of the panel
+//   image             -> CHARACTER IMAGE PATH (relative to project root), e.g. "assets/images/characters/jaymark-vicente.png"
+//   showPartIndicator -> PART INDICATOR: true shows "Part 1 of N" (N = number of items in parts below); false hides it for a single clip
+//   parts[].audio     -> AUDIO FILE PATH (relative to project root), e.g. "assets/audio/benefits-and-challenges/clip.mp3"
+//   parts[].transcript-> TRANSCRIPT text shown in the panel (blank line = new paragraph)
+// Empty values are fine: the panel opens with placeholders ("Audio not added yet", etc.) and never autoplays.
+// Need more clips for one narration? Add more { audio, transcript } objects to its parts array
+// and the panel shows "Part 1 of 2", "Part 2 of 2", and so on.
+// Entries 1-4 are the Benefits, entries 5-8 are the Challenges. A button shows when its topic card is selected.
+// =====================================================================================
+const NARRATIONS = [
+
+  // ---------- 1. BENEFIT 01: MORE JOBS IN THE PHILIPPINES ----------
+  {
+    mountId: "moreJobsNarrationMount",
+    label: "Listen to More Jobs",
+    title: "More Jobs in the Philippines",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 2. BENEFIT 02: ACCESS TO NEW TECHNOLOGY ----------
+  {
+    mountId: "newTechnologyNarrationMount",
+    label: "Listen to New Technology",
+    title: "Access to New Technology",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 3. BENEFIT 03: WIDER MARKET FOR FILIPINO BUSINESSES ----------
+  {
+    mountId: "widerMarketsNarrationMount",
+    label: "Listen to Wider Markets",
+    title: "Wider Market for Filipino Businesses",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 4. BENEFIT 04: CULTURAL EXCHANGE ----------
+  {
+    mountId: "culturalExchangeNarrationMount",
+    label: "Listen to Cultural Exchange",
+    title: "Cultural Exchange",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 5. CHALLENGE 01: JOB COMPETITION ----------
+  {
+    mountId: "jobCompetitionNarrationMount",
+    label: "Listen to Job Competition",
+    title: "Job Competition",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 6. CHALLENGE 02: ENVIRONMENTAL PROBLEMS ----------
+  {
+    mountId: "environmentNarrationMount",
+    label: "Listen to Environmental Problems",
+    title: "Environmental Problems",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 7. CHALLENGE 03: ECONOMIC DEPENDENCE ----------
+  {
+    mountId: "economicDependenceNarrationMount",
+    label: "Listen to Economic Dependence",
+    title: "Economic Dependence",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 8. CHALLENGE 04: CULTURAL CHANGES ----------
+  {
+    mountId: "culturalChangesNarrationMount",
+    label: "Listen to Cultural Changes",
+    title: "Cultural Changes",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  }
+];
+
+// Builds the eight buttons. Nothing to edit below this line.
+NARRATIONS.forEach(function (n) {
+  AtlasNarration.create(Object.assign({}, n, { mount: document.getElementById(n.mountId) }));
+});

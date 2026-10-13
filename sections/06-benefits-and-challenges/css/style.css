@@ -183,7 +183,13 @@
 .panel__tag { font-family: var(--font-title); font-size: 9px; line-height: 1.6; text-transform: uppercase; color: var(--navy); opacity: 0.75; }
 .panel--bad .panel__tag::before { content: "\2212  "; }
 .panel--good .panel__tag::before { content: "+  "; }
+.panel__titles { flex: 1; min-width: 0; }
 .panel__title { font-family: var(--font-title); font-size: 13px; line-height: 1.7; text-transform: uppercase; color: var(--navy); }
+
+/* Title + narration button (row layout lives in shared/css/narration.css): beside the title on desktop, wraps under it when narrow */
+.narr-title-row .panel__title { margin: 0; }
+.panel__titles .narr-title-row { margin-top: 2px; }
+.panel__titles .narr-trigger { font-size: 10px; padding: 8px 12px; }
 
 .detail {
   padding: 12px 14px;

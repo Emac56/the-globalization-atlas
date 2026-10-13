@@ -1,5 +1,6 @@
 // GLOBAL PROBLEM / GLOBAL RESPONSE — script for this page only.
 // Navigation uses plain HTML links. JS handles the part selection and progress.
+// The seven narration buttons (six parts + the final question) are configured in NARRATIONS at the bottom of this file.
 
 // ---------- PHOTOS: easy-to-update image paths ----------
 // Every photo lives in assets/images/global-problem-response/ (IMAGE_FOLDER below).
@@ -45,7 +46,11 @@ let current = 0;
 
 // Show one part: highlight its tab, show only its panel, update progress
 function selectArea(i) {
-  current = Math.max(0, Math.min(LAST, i));
+  const next = Math.max(0, Math.min(LAST, i));
+  // A part's narration belongs to that part: close it when another part is selected.
+  // (The final question's narration is not tied to a part, so it stays open.)
+  const closed = next !== current && closePartNarration();
+  current = next;
   seen.add(current);
 
   areas.forEach((btn, idx) => {
@@ -61,6 +66,23 @@ function selectArea(i) {
   nextStageBtn.disabled = current === LAST;
 
   updateProgress();
+
+  // closing the narration panel hands focus to its (now hidden) button, so put it back where the visitor was
+  if (closed) {
+    const back = closed.focusBack && closed.focusBack.offsetParent !== null ? closed.focusBack : areas[current];
+    back.focus({ preventScroll: true });
+  }
+}
+
+// Closes the shared narration panel if it was opened from one of the six part panels.
+// Returns { focusBack } when it closed something, otherwise false.
+function closePartNarration() {
+  const open = document.querySelector(".panel .narr-trigger[aria-expanded='true']");
+  if (!open || !window.AtlasNarration) return false;
+  const prev = document.activeElement;
+  AtlasNarration.close();
+  const ok = prev && prev !== document.body && !prev.closest(".narr-panel");
+  return { focusBack: ok ? prev : null };
 }
 
 // "Explored X / 6" and the final question state
@@ -140,3 +162,108 @@ document.querySelectorAll(".shot").forEach((fig) => {
 selectArea(0);
 
 
+// =====================================================================================
+// NARRATION CONFIGS — the seven buttons beside the titles on this page. EDIT THE VALUES HERE.
+// All seven open the SAME shared panel (shared/js/narration.js); only these values change.
+//   label             -> text on the button beside the title
+//   title             -> NARRATION TITLE shown at the top of the panel
+//   image             -> CHARACTER IMAGE PATH (relative to project root), e.g. "assets/images/characters/jaymark-vicente.png"
+//   showPartIndicator -> PART INDICATOR: true shows "Part 1 of N" (N = number of items in parts below); false hides it for a single clip
+//   parts[].audio     -> AUDIO FILE PATH (relative to project root), e.g. "assets/audio/global-problem-response/clip.mp3"
+//   parts[].transcript-> TRANSCRIPT text shown in the panel (blank line = new paragraph)
+// Empty values are fine: the panel opens with placeholders ("Audio not added yet", etc.) and never autoplays.
+// Need more clips for one narration? Add more { audio, transcript } objects to its parts array
+// and the panel shows "Part 1 of 2", "Part 2 of 2", and so on.
+// Entries 1-6 are the six parts (a button shows when its part is selected). Entry 7 is the final question.
+// =====================================================================================
+const NARRATIONS = [
+
+  // ---------- 1. PART 01: WHAT IS THE PROBLEM? ----------
+  {
+    mountId: "problemNarrationMount",
+    label: "Listen to the Problem",
+    title: "What Is the Problem?",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 2. PART 02: WHY CAN'T ONE COUNTRY SOLVE IT ALONE? ----------
+  {
+    mountId: "cooperationNarrationMount",
+    label: "Listen to Global Cooperation",
+    title: "Why Can't One Country Solve It Alone?",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 3. PART 03: WHO IS INVOLVED? ----------
+  {
+    mountId: "involvedNarrationMount",
+    label: "Listen to Who Is Involved",
+    title: "Who Is Involved?",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 4. PART 04: WHAT COOPERATION IS POSSIBLE? ----------
+  {
+    mountId: "possibleCooperationNarrationMount",
+    label: "Listen to Possible Cooperation",
+    title: "What Cooperation Is Possible?",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 5. PART 05: HOW IS THE PHILIPPINES AFFECTED? ----------
+  {
+    mountId: "philippinesNarrationMount",
+    label: "Listen to the Philippines' Impact",
+    title: "How Is the Philippines Affected?",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 6. PART 06: WHAT CAN INDIVIDUALS DO? ----------
+  {
+    mountId: "individualsNarrationMount",
+    label: "Listen to Individual Actions",
+    title: "What Can Individuals Do?",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 7. FINAL QUESTION: WHY DOES THIS PROBLEM REQUIRE GLOBAL COOPERATION? ----------
+  {
+    mountId: "whyGlobalNarrationMount",
+    label: "Listen to Why Global Cooperation Matters",
+    title: "Why Does This Problem Require Global Cooperation?",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  }
+];
+
+// Builds the seven buttons. Nothing to edit below this line.
+NARRATIONS.forEach(function (n) {
+  AtlasNarration.create(Object.assign({}, n, { mount: document.getElementById(n.mountId) }));
+});
