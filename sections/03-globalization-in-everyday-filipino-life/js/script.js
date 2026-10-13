@@ -65,10 +65,10 @@ const EVERYDAY_LIFE_NARRATIONS = [
     mountId: "foodNarrationMount",
     label: "Listen to Food",
     title: "Food",
-    image: "",
+    image: "assets/images/characters/rey-dela-cruz.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/03-globalization-in-everyday-filipino-life/globalization-in-everyday-filipino-life-food-rey-dela-cruz.mp3", transcript: "Introduksyon:\nSa bahaging ito, makikita natin kung paano konektado ang Pilipinas sa ibang bansa at kung paano ito nakakaapekto sa buhay natin.\n\nGlobalization Connection:\nNagsimula ang McDonald's sa Amerika, pero nagkaroon din ito ng mga branch sa Pilipinas. Ibig sabihin, puwedeng lumawak ang isang negosyo at makilala sa ibang bansa.\n\nEffect on filipino life:\nDahil dito, nakakakain ang mga Pilipino sa McDonald's nang hindi na kailangang pumunta sa Amerika o sa ibat-ibang bansa na meron nang McDonalds." }
     ]
   },
 
@@ -77,10 +77,10 @@ const EVERYDAY_LIFE_NARRATIONS = [
     mountId: "clothingNarrationMount",
     label: "Listen to Clothing",
     title: "Clothing",
-    image: "",
+    image: "assets/images/characters/rey-dela-cruz.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/03-globalization-in-everyday-filipino-life/globalization-in-everyday-filipino-life-clothing-rey-dela-cruz.mp3", transcript: "Global Connection:\nAng UNIQLO ay mula sa Japan, pero nagbebenta rin ito ng damit sa Pilipinas. Ipinapakita nito na nakakarating ang mga produkto ng ibang bansa sa atin.\n\nEffect on filipino life:\nMas marami tayong pagpipiliang damit dahil mabibili na natin ang mga produkto ng UNIQLO dito sa Pilipinas." }
     ]
   },
 
@@ -89,10 +89,10 @@ const EVERYDAY_LIFE_NARRATIONS = [
     mountId: "entertainmentNarrationMount",
     label: "Listen to Entertainment",
     title: "Entertainment",
-    image: "",
+    image: "assets/images/characters/rey-dela-cruz.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/03-globalization-in-everyday-filipino-life/globalization-in-everyday-filipino-life-entertainment-rey-dela-cruz.mp3", transcript: "Global Connection:\nSa tulong ng internet, napapanood na rin sa Pilipinas ang mga palabas at napapakinggan ang musika mula sa South Korea.\n\nEffect on filipino life:\nMaraming Pilipino ang nae-enjoy ang Korean dramas at K-pop. Nagiging bahagi rin ang mga ito ng ating mga libangan at usapan." }
     ]
   },
 
@@ -101,10 +101,10 @@ const EVERYDAY_LIFE_NARRATIONS = [
     mountId: "technologyNarrationMount",
     label: "Listen to Technology",
     title: "Technology",
-    image: "",
+    image: "assets/images/characters/rey-dela-cruz.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/03-globalization-in-everyday-filipino-life/globalization-in-everyday-filipino-life-technology-rey-dela-cruz.mp3", transcript: "Global Connection:\nDahil sa internet, nakakakonekta tayo sa mga tao at nakakakuha ng impormasyon mula sa iba't ibang bansa.\n\nEffect on filipino life:\nMas madali na tayong makapag-aral, makipag-usap sa mga nasa ibang bansa, at maghanap ng impormasyon gamit ang ating mga device." }
     ]
   },
 
@@ -113,10 +113,10 @@ const EVERYDAY_LIFE_NARRATIONS = [
     mountId: "workNarrationMount",
     label: "Listen to Work",
     title: "Work",
-    image: "",
+    image: "assets/images/characters/rey-dela-cruz.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/03-globalization-in-everyday-filipino-life/globalization-in-everyday-filipino-life-work-rey-dela-cruz.mp3", transcript: "Global Connection:\nMay mga Pilipinong nagtatrabaho sa ibang bansa dahil may mga oportunidad doon na maaari nilang pasukan.\n\nEffect on filipino life:\nAng perang ipinapadala nila sa kanilang pamilya ay nakakatulong sa pang-araw-araw na gastusin, tulad ng pagkain, bayarin, at pag-aaral.\n\nSa mga halimbawang ito, makikita natin na ang globalisasyon ay bahagi na ng ating pang-araw-araw na buhay. Nakakaapekto ito sa mga produktong binibili natin, libangang tinatangkilik, teknolohiyang ginagamit, at trabahong pinipili natin." }
     ]
   }
 ];

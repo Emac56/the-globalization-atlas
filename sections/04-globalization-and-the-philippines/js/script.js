@@ -1,4 +1,4 @@
-// GLOBALIZATION AND THE PHILIPPINES — script for this page only.
+g// GLOBALIZATION AND THE PHILIPPINES — script for this page only.
 // Navigation uses plain HTML links. JS handles the area selection.
 
 const areas = document.querySelectorAll(".area");

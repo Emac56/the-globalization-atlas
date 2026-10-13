@@ -70,10 +70,10 @@ const NARRATIONS = [
     mountId: "moreJobsNarrationMount",
     label: "Listen to More Jobs",
     title: "More Jobs in the Philippines",
-    image: "",
+    image: "assets/images/characters/richard-mayundang.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/06-benefits-and-challenges/benefits-and-challenges-benefit-1-richard-mayundang.mp3", transcript: "Introduksyon:\nSa bahaging ito, pag-uusapan natin ang magagandang naidudulot ng globalisasyon at ang mga problemang maaari rin nitong dalhin.\n\nBakit ito nangyari?:\nDumarami ang trabaho kapag may mga kompanya mula sa ibang bansa na nagnenegosyo rito sa Pilipinas.\n\nSino ang nakikinabang?:\nMalaking tulong ito sa mga Pilipinong naghahanap ng trabaho para masuportahan ang kanilang pamilya.\n\nSino ang apektado?:\nPero ang mga walang sapat na kakayahan o training ay maaaring mahirapang makuha ang mga trabahong ito.\n\nKonrektong Halimbawa:\nHalimbawa, kapag may dayuhang kompanyang nagbukas sa Pilipinas, maaari itong kumuha ng mga lokal na empleyado at magbigay ng dagdag na trabaho." }
     ]
   },
 
@@ -82,10 +82,10 @@ const NARRATIONS = [
     mountId: "newTechnologyNarrationMount",
     label: "Listen to New Technology",
     title: "Access to New Technology",
-    image: "",
+    image: "assets/images/characters/richard-mayundang.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/06-benefits-and-challenges/benefits-and-challenges-benefit-2-richard-mayundang.mp3", transcript: "Bakit ito nangyari?:\nDahil sa globalisasyon, mas nagiging accessible sa mga negosyo sa Pilipinas ang mga bagong teknolohiya at digital tools mula sa ibang bansa.\n\nSino ang nakikinabang?:\nMalaking tulong ito sa mga negosyo, manggagawa, estudyante, at mamimili dahil mas napapadali ang kanilang mga gawain.\n\nSino ang apektado?:\nPero ang mga walang sapat na access sa teknolohiya o hindi marunong gumamit nito ay maaaring maiwan sa mga oportunidad.\n\nKonkretong Halimbawa:\nAyon sa World Bank, kabilang ang technology, media, at telecommunications sa mga sektor na maaaring makatulong sa Pilipinas na makilahok sa pandaigdigang kalakalan."}
     ]
   },
 
@@ -94,10 +94,10 @@ const NARRATIONS = [
     mountId: "widerMarketsNarrationMount",
     label: "Listen to Wider Markets",
     title: "Wider Market for Filipino Businesses",
-    image: "",
+    image: "assets/images/characters/richard-mayundang.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/06-benefits-and-challenges/benefits-and-challenges-benefit-1-richard-mayundang.mp3", transcript: "" }
     ]
   },
 
@@ -106,10 +106,10 @@ const NARRATIONS = [
     mountId: "culturalExchangeNarrationMount",
     label: "Listen to Cultural Exchange",
     title: "Cultural Exchange",
-    image: "",
+    image: "assets/images/characters/richard-mayundang.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/06-benefits-and-challenges/benefits-and-challenges-benefit-1-richard-mayundang.mp3", transcript: "" }
     ]
   },
 
@@ -118,7 +118,7 @@ const NARRATIONS = [
     mountId: "jobCompetitionNarrationMount",
     label: "Listen to Job Competition",
     title: "Job Competition",
-    image: "",
+    image: "assets/images/characters/jaymark-vicente.png",
     showPartIndicator: true,
     parts: [
       { audio: "", transcript: "" }
@@ -130,7 +130,7 @@ const NARRATIONS = [
     mountId: "environmentNarrationMount",
     label: "Listen to Environmental Problems",
     title: "Environmental Problems",
-    image: "",
+    image: "assets/images/characters/jaymark-vicente.png",
     showPartIndicator: true,
     parts: [
       { audio: "", transcript: "" }
@@ -142,7 +142,7 @@ const NARRATIONS = [
     mountId: "economicDependenceNarrationMount",
     label: "Listen to Economic Dependence",
     title: "Economic Dependence",
-    image: "",
+    image: "assets/images/characters/jaymark-vicente.png",
     showPartIndicator: true,
     parts: [
       { audio: "", transcript: "" }
@@ -154,7 +154,7 @@ const NARRATIONS = [
     mountId: "culturalChangesNarrationMount",
     label: "Listen to Cultural Changes",
     title: "Cultural Changes",
-    image: "",
+    image: "assets/images/characters/jaymark-vicente.png",
     showPartIndicator: true,
     parts: [
       { audio: "", transcript: "" }

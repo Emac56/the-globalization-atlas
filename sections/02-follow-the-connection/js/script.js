@@ -101,10 +101,10 @@ const FOLLOW_THE_CONNECTION_NARRATIONS = [
     mountId: "whatNarrationMount",
     label: "Listen to What Is It",
     title: "What Is It?",
-    image: "",
+    image: "assets/images/characters/kayzer-leopando.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/02-follow-the-connection/follow-the-connection-what-is-it-kayzer-leopando.mp3", transcript: "Introduksyon:\nSa bahaging ito, susundan natin ang paglalakbay ng tsokolate bago ito makarating sa mga mamimili sa Pilipinas. Aalamin natin kung saan nagsisimula ang mga sangkap nito at kung paano ito nagiging produktong nabibili natin.\n\nAno ngaba ang Chocolate/Tsokolate?:\nAng tsokolate ay pagkaing karaniwang ginagawa mula sa buto ng kakaw na hinahaluan ng asukal o gatas. Pero bago natin ito makain, dumadaan muna ito sa ilang proseso at ibat ibang bansa." }
     ]
   },
 
@@ -113,10 +113,10 @@ const FOLLOW_THE_CONNECTION_NARRATIONS = [
     mountId: "rawNarrationMount",
     label: "Listen to Raw Materials",
     title: "Raw Materials",
-    image: "",
+    image: "assets/images/characters/kayzer-leopando.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/02-follow-the-connection/follow-the-connection-raw-materials-kayzer-leopando.mp3", transcript: "Dito nagsisimula ang proseso. Ang mga magsasaka sa Côte d'Ivoire ay nagtatanim at nag-aani ng mga buto ng kakaw. Ang mga butong ito ang pangunahing sangkap na gagamitin sa paggawa ng tsokolate." }
     ]
   },
 
@@ -125,10 +125,10 @@ const FOLLOW_THE_CONNECTION_NARRATIONS = [
     mountId: "productionNarrationMount",
     label: "Listen to Production",
     title: "Production",
-    image: "",
+    image: "assets/images/characters/kayzer-leopando.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/02-follow-the-connection/follow-the-connection-production-kayzer-leopando.mp3", transcript: "Pagdating sa Malaysia, pinoproseso at dinudurog ang mga buto ng kakaw para makuha ang mga sangkap na kailangan sa paggawa ng mga produktong gawa sa kakaw." }
     ]
   },
 
@@ -137,10 +137,10 @@ const FOLLOW_THE_CONNECTION_NARRATIONS = [
     mountId: "manufacturingNarrationMount",
     label: "Listen to Manufacturing",
     title: "Manufacturing",
-    image: "",
+    image: "assets/images/characters/kayzer-leopando.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/02-follow-the-connection/follow-the-connection-manufacturing-kayzer-leopando.mp3", transcript: "Sa yugtong ito, ginagamit ang mga naprosesong sangkap para gumawa ng mga produktong tsokolate. Dito nabubuo ang mga produktong maaari nang ihanda para ibenta." }
     ]
   },
 
@@ -149,10 +149,10 @@ const FOLLOW_THE_CONNECTION_NARRATIONS = [
     mountId: "transportationNarrationMount",
     label: "Listen to Transportation",
     title: "Transportation",
-    image: "",
+    image: "assets/images/characters/kayzer-leopando.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/02-follow-the-connection/follow-the-connection-transportation-kayzer-leopando.mp3", transcript: "Pagkatapos ng pagproseso at paggawa, inililipat ang mga sangkap o produkto mula sa isang lugar papunta sa iba. Mahalaga ang transportasyon para makarating ang mga produkto sa mga bansang nangangailangan nito." }
     ]
   },
 
@@ -161,10 +161,10 @@ const FOLLOW_THE_CONNECTION_NARRATIONS = [
     mountId: "marketNarrationMount",
     label: "Listen to Market",
     title: "Market",
-    image: "",
+    image: "assets/images/characters/kayzer-leopando.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/02-follow-the-connection/follow-the-connection-market-kayzer-leopando.mp3", transcript: "Pagdating sa Pilipinas, may mga produktong may sangkap na kakaw na inaangkat mula sa Malaysia. Ibinibenta ang mga ito sa mga negosyo at tindahan para mabili ng mga mamimili." }
     ]
   },
 
@@ -173,10 +173,10 @@ const FOLLOW_THE_CONNECTION_NARRATIONS = [
     mountId: "consumerNarrationMount",
     label: "Listen to Filipino Consumer",
     title: "Filipino Consumer",
-    image: "",
+    image: "assets/images/characters/kayzer-leopando.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/02-follow-the-connection/follow-the-connection-filipino-consumers-kayzer-leopando.mp3", transcript: "Sa huling yugto, nabibili na ng mga Pilipino ang mga produktong tsokolate sa mga lokal na tindahan. Dito nagtatapos ang paglalakbay ng produkto mula sa mga sangkap hanggang sa mamimili." }
     ]
   },
 
@@ -185,10 +185,10 @@ const FOLLOW_THE_CONNECTION_NARRATIONS = [
     mountId: "countriesNarrationMount",
     label: "Listen to Countries Involved",
     title: "Countries Involved",
-    image: "",
+    image: "assets/images/characters/jaymark-vicente.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/02-follow-the-connection/follow-the-connection-countries-involved-jaymark-vicente.mp3", transcript: "May kanya-kanyang papel ang mga bansang ito. Nagbibigay ng buto ng kakaw ang Côte d'Ivoire, nagpoproseso at gumagawa ng mga produktong kakaw ang Malaysia, at nag-aangkat at nagbebenta naman ng mga produkto ang Pilipinas." }
     ]
   },
 
@@ -197,10 +197,10 @@ const FOLLOW_THE_CONNECTION_NARRATIONS = [
     mountId: "benefitsNarrationMount",
     label: "Listen to Who Benefits",
     title: "Who Benefits?",
-    image: "",
+    image: "assets/images/characters/jaymark-vicente.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/02-follow-the-connection/follow-the-connection-who-benefits-jaymark-vicente.mp3", transcript: "Maraming nakikinabang sa prosesong ito. Kumita ang mga magsasaka mula sa kanilang ani, nagkakaroon ng negosyo ang mga processor at nagbebenta, at nagkakaroon naman ng mapagpipiliang produkto ang mga mamimili." }
     ]
   },
 
@@ -209,10 +209,10 @@ const FOLLOW_THE_CONNECTION_NARRATIONS = [
     mountId: "problemsNarrationMount",
     label: "Listen to Problems",
     title: "Problems",
-    image: "",
+    image: "assets/images/characters/jaymark-vicente.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/02-follow-the-connection/follow-the-connection-problems-jaymark-vicente.mp3", transcript: "May mga hamon din sa paggawa ng tsokolate. Kabilang dito ang child labor sa ilang sakahan ng kakaw, mga problemang dulot ng panahon na nakaaapekto sa ani, at hirap sa pagtukoy kung saan talaga nagmula ang mga sangkap." }
     ]
   },
 
@@ -221,10 +221,10 @@ const FOLLOW_THE_CONNECTION_NARRATIONS = [
     mountId: "connectedNarrationMount",
     label: "Listen to How Are They Connected?",
     title: "How Are They Connected?",
-    image: "",
+    image: "assets/images/characters/jaymark-vicente.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/02-follow-the-connection/follow-the-connection-how-are-they-connected-jaymark-vicente.mp3", transcript: "Ipinapakita ng halimbawang ito na magkakaugnay ang mga bansa sa paggawa ng isang produkto. Ang kakaw na itinanim sa Côte d'Ivoire ay maaaring iproseso sa Malaysia, at ang mga produktong gawa rito ay maaaring makarating sa Pilipinas. Dahil dito, nakikita natin kung paano pinagdurugtong ng pandaigdigang kalakalan ang iba't ibang bansa.\n\nSa simpleng produkto tulad ng tsokolate, makikita nating may iba't ibang tao at bansang nagtutulungan bago ito makarating sa atin. Iyan ang isa sa mga paraan kung paano gumagana ang globalisasyon." }
     ]
   }
 ];

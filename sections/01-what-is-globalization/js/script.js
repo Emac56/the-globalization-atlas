@@ -16,8 +16,8 @@ AtlasNarration.create({
   title: "What Is Globalization",
   showPartIndicator: true,
   parts: [
-    { audio: "assets/audio/what-is-globalization/what-is-globalization-definition-jaymark-catinggan.mp3",
-      transcript: "Sa bahaging ito, pag-uusapan natin ang globalisasyon at kung paano natin ito nakikita sa pang-araw-araw nating buhay.\n\nAno nga ba ang Globalisasyon? Ang globalisasyon ay proseso kung saan nagiging mas magkakaugnay ang mga bansa sa pamamagitan ng kalakalan, teknolohiya, komunikasyon, at pagpapalitan ng kaalaman at kultura." }
+    { audio: "assets/audio/01-what-is-globalization/what-is-globalization-definition-jaymark-catinggan.mp3",
+      transcript: "Introduksyon:\nSa bahaging ito, pag-uusapan natin ang globalisasyon at kung paano natin ito nakikita sa pang-araw-araw nating buhay.\n\nAno nga ba ang Globalisasyon?:\nAng globalisasyon ay proseso kung saan nagiging mas magkakaugnay ang mga bansa sa pamamagitan ng kalakalan, teknolohiya, komunikasyon, at pagpapalitan ng kaalaman at kultura." }
   ]
 });
 
@@ -43,7 +43,7 @@ const WHAT_IS_GLOBALIZATION_NARRATIONS = [
     image: "assets/images/characters/jaymark-catinggan.png",
     showPartIndicator: true,
     parts: [
-      { audio: "assets/audio/what-is-globalization/what-is-globalization-global-trade-jaymark-catinggan.mp3", transcript: "Sa global trade, hindi lang sariling produkto ang ginagamit natin. Halimbawa, may mga gamit tayong binibili na gawa sa ibang bansa, habang ang mga produktong Pilipino ay naibebenta rin sa ibang lugar." }
+      { audio: "assets/audio/01-what-is-globalization/what-is-globalization-global-trade-jaymark-catinggan.mp3", transcript: "Sa global trade, hindi lang sariling produkto ang ginagamit natin. Halimbawa, may mga gamit tayong binibili na gawa sa ibang bansa, habang ang mga produktong Pilipino ay naibebenta rin sa ibang lugar." }
     ]
   },
 
@@ -55,7 +55,7 @@ const WHAT_IS_GLOBALIZATION_NARRATIONS = [
     image: "assets/images/characters/jaymark-catinggan.png",
     showPartIndicator: true,
     parts: [
-      { audio: "assets/audio/what-is-globalization/what-is-globalization-movement-of-people-jaymark-catinggan.mp3", transcript: "Ito naman ay tungkol sa mga taong pumupunta sa ibang bansa para magtrabaho, mag-aral, o magkaroon ng bagong karanasan. Sa ganitong paraan, nakikilala nila ang ibang pamumuhay at naibabahagi rin nila ang kanilang sariling kultura." }
+      { audio: "assets/audio/01-what-is-globalization/what-is-globalization-movement-of-people-jaymark-catinggan.mp3", transcript: "Ito naman ay tungkol sa mga taong pumupunta sa ibang bansa para magtrabaho, mag-aral, o magkaroon ng bagong karanasan. Sa ganitong paraan, nakikilala nila ang ibang pamumuhay at naibabahagi rin nila ang kanilang sariling kultura." }
     ]
   },
 
@@ -67,7 +67,7 @@ const WHAT_IS_GLOBALIZATION_NARRATIONS = [
     image: "assets/images/characters/jaymark-catinggan.png",
     showPartIndicator: true,
     parts: [
-      { audio: "assets/audio/what-is-globalization/what-is-globalization-digital-communication-jaymark-catinggan.mp3", transcript: "Dahil sa internet, hindi na kailangang magkalapit ang mga tao para makapag-usap. Halimbawa, puwede tayong makipag-video call sa kaibigan o kapamilyang nasa ibang bansa." }
+      { audio: "assets/audio/01-what-is-globalization/what-is-globalization-digital-communication-jaymark-catinggan.mp3", transcript: "Dahil sa internet, hindi na kailangang magkalapit ang mga tao para makapag-usap. Halimbawa, puwede tayong makipag-video call sa kaibigan o kapamilyang nasa ibang bansa." }
     ]
   },
 
@@ -79,7 +79,7 @@ const WHAT_IS_GLOBALIZATION_NARRATIONS = [
     image: "assets/images/characters/jaymark-vicente.png",
     showPartIndicator: true,
     parts: [
-      { audio: "assets/audio/what-is-globalization/what-is-globalization-everyday-example-jaymark-vicente.mp3", transcript: "Halimbawa natin ang Jollibee. Kilala itong tatak na nagsimula sa Pilipinas, pero mayroon na rin itong mga branch sa ibang bansa. Ibig sabihin, ang isang negosyong Pilipino ay kayang makilala at tangkilikin ng mga tao sa iba't ibang lugar.\n\nMakikita natin ang Jollibee sa United States, Canada, at Vietnam. Kahit nagmula ito sa Pilipinas, nakakapagbigay na rin ito ng serbisyo sa mga customer na may iba't ibang kultura." }
+      { audio: "assets/audio/01-what-is-globalization/what-is-globalization-everyday-example-jaymark-vicente.mp3", transcript: "Halimbawa natin ang Jollibee. Kilala itong tatak na nagsimula sa Pilipinas, pero mayroon na rin itong mga branch sa ibang bansa. Ibig sabihin, ang isang negosyong Pilipino ay kayang makilala at tangkilikin ng mga tao sa iba't ibang lugar.\n\nMakikita natin ang Jollibee sa United States, Canada, at Vietnam. Kahit nagmula ito sa Pilipinas, nakakapagbigay na rin ito ng serbisyo sa mga customer na may iba't ibang kultura." }
     ]
   },
 
@@ -91,7 +91,7 @@ const WHAT_IS_GLOBALIZATION_NARRATIONS = [
     image: "assets/images/characters/jaymark-vicente.png",
     showPartIndicator: true,
     parts: [
-      { audio: "assets/audio/what-is-globalization/what-is-globalization-why-is-it-globalization-jaymark-vicente.mp3", transcript: "Globalisasyon ito dahil lumampas na sa hangganan ng Pilipinas ang negosyo ng Jollibee. Hindi lang dito sa atin nakakaabot ang produkto nito, kundi pati sa ibang bansa.\n\nNgayon, alam na natin kung ano ang globalisasyon at kung paano ito nangyayari sa totoong buhay. Sa susunod na bahagi, tuklasin naman natin ang iba pang koneksyon ng Pilipinas sa mundo." }
+      { audio: "assets/audio/01-what-is-globalization/what-is-globalization-why-is-it-globalization-jaymark-vicente.mp3", transcript: "Globalisasyon ito dahil lumampas na sa hangganan ng Pilipinas ang negosyo ng Jollibee. Hindi lang dito sa atin nakakaabot ang produkto nito, kundi pati sa ibang bansa.\n\nNgayon, alam na natin kung ano ang globalisasyon at kung paano ito nangyayari sa totoong buhay. Sa susunod na bahagi, tuklasin naman natin ang iba pang koneksyon ng Pilipinas sa mundo." }
     ]
   }
 ];
