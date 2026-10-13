@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../../shared/css/global.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="../../shared/css/narration.css?v=narration6" />
+  <link rel="stylesheet" href="css/style.css?v=narration6" />
 </head>
 <body>
   <!-- CULTURE GOES GLOBAL -->
@@ -32,11 +33,17 @@
       <section class="split" aria-label="Introduction to K-pop">
         <div class="stack">
           <article class="part">
-          <p class="part__label"><span class="part__num">01</span> What is K-pop?</p>
+          <div class="narr-title-row">
+            <p class="part__label"><span class="part__num">01</span> What is K-pop?</p>
+            <div class="narr-title-row__btn" id="whatKpopNarrationMount"></div>
+          </div>
           <p class="part__value">K-pop is popular music from South Korea.</p>
         </article>
           <article class="part">
-          <p class="part__label"><span class="part__num">02</span> Where did it start?</p>
+          <div class="narr-title-row">
+            <p class="part__label"><span class="part__num">02</span> Where did it start?</p>
+            <div class="narr-title-row__btn" id="startNarrationMount"></div>
+          </div>
           <p class="part__value">K-pop&rsquo;s early groups emerged in South Korea in the 1990s.</p>
         </article>
         </div>
@@ -62,11 +69,17 @@
       <!-- 2. HOW IT SPREAD -->
       <section class="duo" aria-label="How K-pop spread">
         <article class="part">
-          <p class="part__label"><span class="part__num">03</span> How did it spread?</p>
+          <div class="narr-title-row">
+            <p class="part__label"><span class="part__num">03</span> How did it spread?</p>
+            <div class="narr-title-row__btn" id="spreadNarrationMount"></div>
+          </div>
           <p class="part__value">Digital music and platforms such as YouTube helped K-pop reach audiences worldwide.</p>
         </article>
         <article class="part">
-          <p class="part__label"><span class="part__num">04</span> How did it reach Filipinos?</p>
+          <div class="narr-title-row">
+            <p class="part__label"><span class="part__num">04</span> How did it reach Filipinos?</p>
+            <div class="narr-title-row__btn" id="reachFilipinosNarrationMount"></div>
+          </div>
           <p class="part__value">Korean popular culture became influential in the Philippines through media and entertainment.</p>
         </article>
       </section>
@@ -110,7 +123,15 @@
           <div class="flow__panel" id="flowPanel" hidden>
             <span class="flow__pointer" aria-hidden="true"></span>
             <div class="flow__panel-body">
-              <h3 class="flow__panel-title" id="flowPanelTitle"></h3>
+              <!-- Narration buttons for stages 1-5 (configs 5-9 in js/script.js). Only the selected stage's button is shown. -->
+              <div class="narr-title-row">
+                <h3 class="flow__panel-title" id="flowPanelTitle"></h3>
+                <div class="narr-title-row__btn" id="mapSouthKoreaNarrationMount"></div>
+                <div class="narr-title-row__btn" id="mapMusicDanceNarrationMount"></div>
+                <div class="narr-title-row__btn" id="mapInternetNarrationMount"></div>
+                <div class="narr-title-row__btn" id="mapFilipinoFansNarrationMount"></div>
+                <div class="narr-title-row__btn" id="mapFanEventsNarrationMount"></div>
+              </div>
               <p class="flow__panel-text" id="flowPanelText"></p>
             </div>
             <figure class="shot flow__shot">
@@ -139,7 +160,10 @@
       <!-- 3. HOW FILIPINOS ADOPTED IT + PHOTO 2 -->
       <section class="split" aria-label="How Filipinos adopted K-pop">
         <article class="part">
-          <p class="part__label"><span class="part__num">05</span> How did Filipinos adopt it?</p>
+          <div class="narr-title-row">
+            <p class="part__label"><span class="part__num">05</span> How did Filipinos adopt it?</p>
+            <div class="narr-title-row__btn" id="adaptNarrationMount"></div>
+          </div>
           <p class="part__value">Filipino fans joined K-pop communities, attended events, and performed dance covers.</p>
         </article>
         <!-- PHOTO: save the file as ../../assets/images/culture-goes-global/filipino-kpop-fans.jpg (search: "Filipino K-pop fans fan event Philippines") -->
@@ -163,14 +187,20 @@
 
       <!-- 4. SIMILAR, DIVERSE, OR BOTH -->
       <section class="answer" aria-label="Similar, diverse, or both">
-        <p class="answer__q"><span class="part__num">06</span> Does globalization make cultures more similar, more diverse, or both?</p>
+        <div class="narr-title-row">
+          <p class="answer__q"><span class="part__num">06</span> Does globalization make cultures more similar, more diverse, or both?</p>
+          <div class="narr-title-row__btn" id="similarDiverseNarrationMount"></div>
+        </div>
         <p class="answer__a"><span class="answer__tag">Both.</span> Filipinos enjoy Korean pop culture and adapt it through local fan activities and performances.</p>
       </section>
 
       <!-- 5. EVIDENCE + PHOTO 3 -->
       <section class="split" aria-label="Evidence">
         <article class="part">
-          <p class="part__label"><span class="part__num">07</span> What is the evidence?</p>
+          <div class="narr-title-row">
+            <p class="part__label"><span class="part__num">07</span> What is the evidence?</p>
+            <div class="narr-title-row__btn" id="evidenceNarrationMount"></div>
+          </div>
           <p class="part__value">In 2023, 13 Filipino dance groups competed in a K-pop cover-dance festival in Manila. One team represented the Philippines in the international final in South Korea.</p>
         </article>
         <!-- PHOTO: save the file as ../../assets/images/culture-goes-global/kpop-dance-competition.jpg (search: "Philippines K-pop cover dance competition 2023 Manila") -->
@@ -199,6 +229,7 @@
   </main>
 
   <script src="../../shared/js/nav.js"></script>
-  <script src="js/script.js"></script>
+  <script src="../../shared/js/narration.js?v=narration6"></script>
+  <script src="js/script.js?v=narration6"></script>
 </body>
 </html>

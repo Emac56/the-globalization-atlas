@@ -153,6 +153,17 @@
   margin-bottom: 20px;
 }
 
+/* Title + narration button (row layout comes from shared/css/narration.css).
+   Desktop: the button stays beside the title (the title and the button label wrap inside their own space). Mobile: it wraps under the title. */
+.narr-title-row { margin-bottom: 20px; }
+.narr-title-row .panel__title { margin: 0; }
+@media (min-width: 761px) {
+  .panel .narr-title-row { flex-wrap: nowrap; align-items: center; }
+  .panel .narr-title-row > :first-child { flex: 1 1 auto; }
+  .panel .narr-title-row__btn { flex: 0 1 auto; max-width: 44%; }
+  .panel .narr-title-row .narr-trigger { font-size: 10px; padding: 9px 14px; }
+}
+
 /* the three parts */
 .part {
   padding: 14px 16px;

@@ -382,6 +382,16 @@
 
 /* ---------- Bottom navigation: now shared (shared/css/global.css + shared/js/nav.js) ---------- */
 
+/* ---------- Titles with a narration button beside them (row layout lives in shared/css/narration.css) ---------- */
+.narr-title-row .part__label,
+.narr-title-row .answer__q,
+.narr-title-row .flow__panel-title { margin: 0; }
+.part > .narr-title-row,
+.flow__panel-body > .narr-title-row { margin-bottom: 8px; }
+.answer > .narr-title-row { margin-bottom: 12px; }
+.narr-title-row .narr-trigger { font-size: 9px; padding: 8px 12px; }   /* cards are narrow: smaller button, wraps under the title if needed */
+.narr-title-row__btn[hidden] { display: none; }                         /* map: only the selected stage's button shows */
+
 /* ---------- Load / leave ---------- */
 .sec__header, .sec__content > * { animation: rise 0.35s steps(5) both; }
 @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }

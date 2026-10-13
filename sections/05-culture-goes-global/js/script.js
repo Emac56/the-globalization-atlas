@@ -1,6 +1,7 @@
 // CULTURE GOES GLOBAL — script for this page only.
 // Bottom navigation is built by shared/js/nav.js.
-// This file handles (1) the interactive Culture Connection Map and (2) missing photos.
+// This file handles (1) the interactive Culture Connection Map, (2) missing photos, and
+// (3) the 12 narration buttons (configs: CULTURE_NARRATIONS at the bottom of this file).
 
 // ---------------------------------------------------------------------------
 // CULTURE CONNECTION MAP — interactive journey
@@ -57,6 +58,16 @@
   const shotFile = map.querySelector("#flowShotFile");
   const shotLink = map.querySelector("#flowShotLink");
   const sourceLink = map.querySelector("#flowSourceLink");
+  // Narration buttons for stages 1-5 sit beside the panel title; only the selected stage's button is visible.
+  const narrMounts = Array.from(map.querySelectorAll(".flow__panel-body .narr-title-row__btn"));
+
+  // The shared narration panel belongs to the stage it was opened from: close it when the map moves to another stage.
+  function closeMapNarration() {
+    const open = document.querySelector('.narr-trigger[aria-expanded="true"]');
+    if (!open || !map.contains(open) || !window.AtlasNarration) return false;
+    AtlasNarration.close();
+    return true;
+  }
 
   const mobileMQ = window.matchMedia("(max-width: 860px)");
   const motionMQ = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -94,6 +105,7 @@
   function showPanel(i) {
     const first = shown === -1;
     shown = i;
+    narrMounts.forEach((m, k) => { m.hidden = k !== i; });
     panelTitle.textContent = titles[i];
     panelText.textContent = STAGES[i].text;
     setPhoto(STAGES[i], titles[i]);
@@ -184,6 +196,7 @@
   }
 
   function start() {
+    closeMapNarration();
     cancelAnimationFrame(raf);
     elapsed = 0;
     map.classList.remove("is-complete");
@@ -202,6 +215,7 @@
 
   // A tap/click on a stop takes over from the animation.
   function select(i) {
+    if (i !== current && closeMapNarration()) buttons[i].focus({ preventScroll: true });
     cancelAnimationFrame(raf);
     setMode("idle");
     map.classList.remove("is-complete");
@@ -213,6 +227,8 @@
     b.setAttribute("aria-label", "Stage " + (i + 1) + " of " + total + ": " + titles[i]);
     b.addEventListener("click", () => select(i));
   });
+  // Opening a stage's narration also takes over from a running animation, so the map stays on that stage.
+  narrMounts.forEach((m) => m.addEventListener("click", () => { if (mode === "playing") select(current); }));
   // One button: starts the animation, and restarts it from stage 1 if it is already running.
   exploreBtn.addEventListener("click", start);
   mobileMQ.addEventListener("change", placePanel);
@@ -240,3 +256,189 @@ function checkImage(img) {
   img.addEventListener("load", () => frame.classList.remove("is-missing"));
 }
 document.querySelectorAll(".shot__frame img").forEach(checkImage);
+
+
+// =====================================================================================
+// NARRATION CONFIGS — the 12 buttons beside the titles on this page. EDIT THE VALUES HERE.
+// All 12 open the SAME shared panel (shared/js/narration.js); only these values change.
+//   label             -> text on the button beside the title
+//   title             -> NARRATION TITLE shown at the top of the panel
+//   image             -> CHARACTER IMAGE PATH (relative to project root), e.g. "assets/images/characters/jaymark-vicente.png"
+//   showPartIndicator -> PART INDICATOR: true shows "Part 1 of N" (N = number of items in parts below); false hides it for a single clip
+//   parts[].audio     -> AUDIO FILE PATH (relative to project root), e.g. "assets/audio/culture-goes-global/clip.mp3"
+//   parts[].transcript-> TRANSCRIPT text shown in the panel (blank line = new paragraph)
+// Empty values are fine: the panel opens with placeholders ("Audio not added yet", etc.) and never autoplays.
+// Need more clips for one narration? Add more { audio, transcript } objects to its parts array
+// and the panel shows "Part 1 of 2", "Part 2 of 2", and so on.
+// Entries 1-4 and 10-12 are beside the lesson cards. Entries 5-9 are the Culture Connection Map stages, in map order;
+// each one appears beside the explanation panel's title when that stage is selected.
+// =====================================================================================
+const CULTURE_NARRATIONS = [
+
+  // ---------- K-POP DISCUSSION ----------
+
+  // ---------- 1. WHAT IS K-POP? ----------
+  {
+    mountId: "whatKpopNarrationMount",
+    label: "Listen to What Is K-pop?",
+    title: "What Is K-pop?",                    // NARRATION TITLE
+    image: "",                                  // CHARACTER IMAGE PATH
+    showPartIndicator: true,                    // PART INDICATOR
+    parts: [
+      { audio: "",                              // AUDIO FILE PATH
+        transcript: "" }                        // TRANSCRIPT
+    ]
+  },
+
+  // ---------- 2. WHERE DID IT START? ----------
+  {
+    mountId: "startNarrationMount",
+    label: "Listen to Where Did It Start?",
+    title: "Where Did It Start?",               // NARRATION TITLE
+    image: "",                                  // CHARACTER IMAGE PATH
+    showPartIndicator: true,                    // PART INDICATOR
+    parts: [
+      { audio: "",                              // AUDIO FILE PATH
+        transcript: "" }                        // TRANSCRIPT
+    ]
+  },
+
+  // ---------- 3. HOW DID IT SPREAD? ----------
+  {
+    mountId: "spreadNarrationMount",
+    label: "Listen to How Did It Spread?",
+    title: "How Did It Spread?",                // NARRATION TITLE
+    image: "",                                  // CHARACTER IMAGE PATH
+    showPartIndicator: true,                    // PART INDICATOR
+    parts: [
+      { audio: "",                              // AUDIO FILE PATH
+        transcript: "" }                        // TRANSCRIPT
+    ]
+  },
+
+  // ---------- 4. HOW DID IT REACH FILIPINOS? ----------
+  {
+    mountId: "reachFilipinosNarrationMount",
+    label: "Listen to How Did It Reach Filipinos?",
+    title: "How Did It Reach Filipinos?",       // NARRATION TITLE
+    image: "",                                  // CHARACTER IMAGE PATH
+    showPartIndicator: true,                    // PART INDICATOR
+    parts: [
+      { audio: "",                              // AUDIO FILE PATH
+        transcript: "" }                        // TRANSCRIPT
+    ]
+  },
+
+  // ---------- CULTURE CONNECTION MAP (stages 1-5) ----------
+
+  // ---------- 5. MAP STAGE 1: SOUTH KOREA ----------
+  {
+    mountId: "mapSouthKoreaNarrationMount",
+    label: "Listen to South Korea",
+    title: "South Korea",                       // NARRATION TITLE
+    image: "",                                  // CHARACTER IMAGE PATH
+    showPartIndicator: true,                    // PART INDICATOR
+    parts: [
+      { audio: "",                              // AUDIO FILE PATH
+        transcript: "" }                        // TRANSCRIPT
+    ]
+  },
+
+  // ---------- 6. MAP STAGE 2: K-POP MUSIC AND DANCE ----------
+  {
+    mountId: "mapMusicDanceNarrationMount",
+    label: "Listen to K-pop Music and Dance",
+    title: "K-pop Music and Dance",             // NARRATION TITLE
+    image: "",                                  // CHARACTER IMAGE PATH
+    showPartIndicator: true,                    // PART INDICATOR
+    parts: [
+      { audio: "",                              // AUDIO FILE PATH
+        transcript: "" }                        // TRANSCRIPT
+    ]
+  },
+
+  // ---------- 7. MAP STAGE 3: INTERNET, YOUTUBE, AND SOCIAL MEDIA ----------
+  {
+    mountId: "mapInternetNarrationMount",
+    label: "Listen to Internet, YouTube, and Social Media",
+    title: "Internet, YouTube, and Social Media",   // NARRATION TITLE
+    image: "",                                  // CHARACTER IMAGE PATH
+    showPartIndicator: true,                    // PART INDICATOR
+    parts: [
+      { audio: "",                              // AUDIO FILE PATH
+        transcript: "" }                        // TRANSCRIPT
+    ]
+  },
+
+  // ---------- 8. MAP STAGE 4: FILIPINO FANS ----------
+  {
+    mountId: "mapFilipinoFansNarrationMount",
+    label: "Listen to Filipino Fans",
+    title: "Filipino Fans",                     // NARRATION TITLE
+    image: "",                                  // CHARACTER IMAGE PATH
+    showPartIndicator: true,                    // PART INDICATOR
+    parts: [
+      { audio: "",                              // AUDIO FILE PATH
+        transcript: "" }                        // TRANSCRIPT
+    ]
+  },
+
+  // ---------- 9. MAP STAGE 5: FAN COMMUNITIES, DANCE COVERS, AND LOCAL EVENTS ----------
+  {
+    mountId: "mapFanEventsNarrationMount",
+    label: "Listen to Fan Communities, Dance Covers, and Local Events",
+    title: "Fan Communities, Dance Covers, and Local Events",   // NARRATION TITLE
+    image: "",                                  // CHARACTER IMAGE PATH
+    showPartIndicator: true,                    // PART INDICATOR
+    parts: [
+      { audio: "",                              // AUDIO FILE PATH
+        transcript: "" }                        // TRANSCRIPT
+    ]
+  },
+
+  // ---------- CULTURE AND EVIDENCE ----------
+
+  // ---------- 10. HOW DID FILIPINOS ADAPT IT? ----------
+  {
+    mountId: "adaptNarrationMount",
+    label: "Listen to How Did Filipinos Adapt It?",
+    title: "How Did Filipinos Adapt It?",       // NARRATION TITLE
+    image: "",                                  // CHARACTER IMAGE PATH
+    showPartIndicator: true,                    // PART INDICATOR
+    parts: [
+      { audio: "",                              // AUDIO FILE PATH
+        transcript: "" }                        // TRANSCRIPT
+    ]
+  },
+
+  // ---------- 11. DOES GLOBALIZATION MAKE CULTURES MORE SIMILAR, MORE DIVERSE, OR BOTH? ----------
+  {
+    mountId: "similarDiverseNarrationMount",
+    label: "Listen to Does Globalization Make Cultures More Similar, More Diverse, or Both?",
+    title: "Does Globalization Make Cultures More Similar, More Diverse, or Both?",   // NARRATION TITLE
+    image: "",                                  // CHARACTER IMAGE PATH
+    showPartIndicator: true,                    // PART INDICATOR
+    parts: [
+      { audio: "",                              // AUDIO FILE PATH
+        transcript: "" }                        // TRANSCRIPT
+    ]
+  },
+
+  // ---------- 12. WHAT IS THE EVIDENCE? ----------
+  {
+    mountId: "evidenceNarrationMount",
+    label: "Listen to What Is the Evidence?",
+    title: "What Is the Evidence?",             // NARRATION TITLE
+    image: "",                                  // CHARACTER IMAGE PATH
+    showPartIndicator: true,                    // PART INDICATOR
+    parts: [
+      { audio: "",                              // AUDIO FILE PATH
+        transcript: "" }                        // TRANSCRIPT
+    ]
+  }
+];
+
+// Builds the 12 buttons. Nothing to edit below this line.
+CULTURE_NARRATIONS.forEach(function (n) {
+  AtlasNarration.create(Object.assign({}, n, { mount: document.getElementById(n.mountId) }));
+});
