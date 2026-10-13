@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../../shared/css/global.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="../../shared/css/narration.css?v=narration6" />
+  <link rel="stylesheet" href="css/style.css?v=narration6" />
 </head>
 <body>
   <!-- MY GLOBALIZATION MAP — interactive map of the Philippines' connections.
@@ -97,7 +98,16 @@
 
         <!-- Selected country -->
         <div class="detail__body" id="detailBody" hidden>
-          <h3 class="detail__route"><span class="flag-slot" id="detailFlag" aria-hidden="true"></span><span id="detailName">Country</span> &harr; Philippines</h3>
+          <!-- Title row: the country title + its narration button. One button per country (configs in js/script.js);
+               script.js shows only the selected country's button. -->
+          <div class="narr-title-row">
+            <h3 class="detail__route"><span class="flag-slot" id="detailFlag" aria-hidden="true"></span><span id="detailName">Country</span> &harr; Philippines</h3>
+            <div class="narr-title-row__btn" id="chinaNarrationMount" data-country="china"></div>
+            <div class="narr-title-row__btn" id="southKoreaNarrationMount" data-country="south-korea"></div>
+            <div class="narr-title-row__btn" id="japanNarrationMount" data-country="japan"></div>
+            <div class="narr-title-row__btn" id="unitedStatesNarrationMount" data-country="united-states"></div>
+            <div class="narr-title-row__btn" id="singaporeNarrationMount" data-country="singapore"></div>
+          </div>
           <p class="detail__cat"><span class="detail__catlabel">Connection</span> <span class="chip" id="detailCat">Category</span></p>
           <div class="detail__box">
             <p class="detail__label">Explanation</p>
@@ -116,7 +126,8 @@
   </main>
 
   <script src="../../shared/js/nav.js"></script>
-  <script src="js/script.js"></script>
+  <script src="../../shared/js/narration.js?v=narration6"></script>
+  <script src="js/script.js?v=narration6"></script>
 </body>
 </html>
 

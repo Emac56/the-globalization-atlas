@@ -2,6 +2,8 @@
 // Draws a simplified pixel map, the connection lines, and the detail panel.
 // Navigation uses plain HTML links (shared/js/nav.js).
 //
+// NARRATION: the five country narration buttons are configured in MAP_NARRATIONS at the bottom of this file.
+//
 // SOURCES: not shown on this page. They are listed only on the References page
 // (category "My Globalization Map"), so this file holds the short explanations only.
 
@@ -60,6 +62,8 @@
   var keysEl = document.getElementById("detailKeys");
   var countEl = document.getElementById("detailCount");
   var resetBtn = document.getElementById("resetBtn");
+  // narration buttons beside the country title: one per country, only the selected country's is shown
+  var narrMounts = Array.prototype.slice.call(document.querySelectorAll(".narr-title-row__btn[data-country]"));
 
   var SVGNS = "http://www.w3.org/2000/svg";
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -200,7 +204,23 @@
     countEl.textContent = "Explored " + Object.keys(seen).length + " / " + ORDER.length;
   }
 
+  // The shared narration panel belongs to the country it was opened from: close it when the map moves to
+  // another country or back to the overview. Returns where focus should go back to (or false if nothing was open).
+  function closeNarration() {
+    var open = document.querySelector(".detail .narr-trigger[aria-expanded='true']");
+    if (!open || !window.AtlasNarration) return false;
+    var prev = document.activeElement;
+    AtlasNarration.close();
+    return { back: prev && prev !== document.body && !prev.closest(".narr-panel") ? prev : null };
+  }
+  function restoreFocus(closed) {
+    if (!closed) return;
+    var back = closed.back && closed.back.offsetParent !== null ? closed.back : (current ? picker.querySelector(".is-active") : hub);
+    if (back) back.focus({ preventScroll: true });
+  }
+
   function showOverview() {
+    var closed = closeNarration();
     current = null;
     nodes.forEach(function (n) { n.classList.remove("is-active"); n.setAttribute("aria-pressed", "false"); });
     Array.prototype.forEach.call(picker.children, function (b) { b.setAttribute("aria-pressed", "false"); b.classList.remove("is-active"); });
@@ -209,11 +229,13 @@
     body.hidden = true;
     overview.hidden = false;
     resetBtn.hidden = true;
+    restoreFocus(closed);
   }
 
   function selectCountry(id, opts) {
     var data = COUNTRIES[id];
     if (!data) return;
+    var closed = id !== current ? closeNarration() : false;
     current = id;
     seen[id] = true;
 
@@ -232,6 +254,7 @@
     linesSvg.appendChild(lineEls[id]);
     map.classList.add("has-active");
 
+    narrMounts.forEach(function (m) { m.hidden = m.dataset.country !== id; });
     flagSlot.innerHTML = flagHTML(id);
     nameEl.textContent = data.name;
     catEl.textContent = data.category;
@@ -248,6 +271,7 @@
     overview.hidden = true;
     body.hidden = false;
     resetBtn.hidden = false;
+    restoreFocus(closed);
 
     // On phones the panel sits below the map: scroll just enough to show it
     if (isMobile.matches && !(opts && opts.noScroll)) {
@@ -289,3 +313,86 @@
   var hash = decodeURIComponent(location.hash.slice(1));
   if (COUNTRIES[hash]) selectCountry(hash, { noScroll: true });
 })();
+
+
+// =====================================================================================
+// NARRATION CONFIGS — the five buttons beside the country title. EDIT THE VALUES HERE.
+// All five open the SAME shared panel (shared/js/narration.js); only these values change.
+//   label             -> text on the button beside the title
+//   title             -> NARRATION TITLE shown at the top of the panel
+//   image             -> CHARACTER IMAGE PATH (relative to project root), e.g. "assets/images/characters/jaymark-vicente.png"
+//   showPartIndicator -> PART INDICATOR: true shows "Part 1 of N" (N = number of items in parts below); false hides it for a single clip
+//   parts[].audio     -> AUDIO FILE PATH (relative to project root), e.g. "assets/audio/my-globalization-map/clip.mp3"
+//   parts[].transcript-> TRANSCRIPT text shown in the panel (blank line = new paragraph)
+// Empty values are fine: the panel opens with placeholders ("Audio not added yet", etc.) and never autoplays.
+// Need more clips for one narration? Add more { audio, transcript } objects to its parts array
+// and the panel shows "Part 1 of 2", "Part 2 of 2", and so on.
+// A country's button shows beside the title once that country is selected on the map (or in the country switcher).
+// =====================================================================================
+const MAP_NARRATIONS = [
+
+  // ---------- 1. CHINA: TRADE AND PRODUCTS ----------
+  {
+    mountId: "chinaNarrationMount",
+    label: "Listen to China",
+    title: "China — Trade and Products",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 2. SOUTH KOREA: ENTERTAINMENT AND CULTURE ----------
+  {
+    mountId: "southKoreaNarrationMount",
+    label: "Listen to South Korea",
+    title: "South Korea — Entertainment and Culture",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 3. JAPAN: INFRASTRUCTURE AND TECHNOLOGY ----------
+  {
+    mountId: "japanNarrationMount",
+    label: "Listen to Japan",
+    title: "Japan — Infrastructure and Technology",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 4. UNITED STATES: BUSINESS, EDUCATION, AND TECHNOLOGY ----------
+  {
+    mountId: "unitedStatesNarrationMount",
+    label: "Listen to the United States",
+    title: "United States — Business, Education, and Technology",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 5. SINGAPORE: JOBS, INVESTMENT, AND BUSINESS ----------
+  {
+    mountId: "singaporeNarrationMount",
+    label: "Listen to Singapore",
+    title: "Singapore — Jobs, Investment, and Business",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  }
+];
+
+// Builds the five buttons. Nothing to edit below this line.
+MAP_NARRATIONS.forEach(function (n) {
+  AtlasNarration.create(Object.assign({}, n, { mount: document.getElementById(n.mountId) }));
+});
