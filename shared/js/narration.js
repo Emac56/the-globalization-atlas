@@ -3,7 +3,8 @@
 //
 //   AtlasNarration.create({
 //     mount:    document.getElementById("narrationMount"),   // where the button goes
-//     narrator: "jaymark-vicente",                           // key of CHARACTERS below
+//     narrator: "jaymark-vicente",                           // key of CHARACTERS below (optional)
+//     image:    "assets/images/characters/some-character.png", // optional: explicit character image path (wins over narrator's image)
 //     label:    "Listen to Introduction",                    // optional button text
 //     title:    "Introduction",                              // section title, shown in every part
 //     parts: [                                               // one or more clips
@@ -14,6 +15,7 @@
 //   });
 //
 // Audio paths are relative to the project root. A single clip may use { audio, transcript } instead of parts.
+// Every value is optional: an empty image / title / audio / transcript still opens the panel and shows a placeholder.
 // Narration never autoplays: the user always presses Play.
 (function () {
   "use strict";
@@ -42,6 +44,15 @@
   var audio = null;       // the ONE current Audio object (never more than one)
   var state = "idle";     // idle | playing | paused | finished | missing
 
+  // Paths in configs are relative to the project root; full URLs and /absolute paths are left alone.
+  function resolvePath(p) {
+    return /^(https?:)?\/\//.test(p) || p.charAt(0) === "/" ? p : ROOT + p;
+  }
+
+  var PLACEHOLDER_TRANSCRIPT = "Transcript not added yet.";
+  var PLACEHOLDER_TITLE = "Section title";
+  var PLACEHOLDER_IMAGE = "Character image goes here";
+
   function el(tag, cls, text) {
     var n = document.createElement(tag);
     if (cls) n.className = cls;
@@ -68,13 +79,13 @@
   function loadClip() {
     stopAudio();
     var part = parts[index];
-    if (!part || !part.audio) { setState("missing"); return; }
+    if (!part || !part.audio) { setState("noaudio"); return; }   // no audio path configured yet: placeholder state, no error
     var a = new Audio();
     audio = a;
     a.preload = "metadata";
     a.onended = function () { if (a === audio) setState("finished"); };
     a.onerror = function () { if (a === audio) setState("missing"); };
-    a.src = ROOT + part.audio;
+    a.src = resolvePath(part.audio);
     setState("idle");
   }
 
@@ -103,7 +114,8 @@
     playing: "Playing…",
     paused: "Paused.",
     finished: "Audio finished.",
-    missing: "Audio file not found. You can still read the transcript."
+    missing: "Audio file not found. You can still read the transcript.",
+    noaudio: "Audio not added yet"
   };
 
   function setState(s) {
@@ -111,15 +123,17 @@
     if (!ui) return;
     ui.status.textContent = STATUS[s];
     ui.playBtn.textContent = s === "playing" ? "Pause" : (s === "paused" ? "Resume" : "Play");
-    ui.playBtn.disabled = s === "missing";
-    ui.replayBtn.disabled = s === "missing";
+    ui.playBtn.disabled = s === "missing" || s === "noaudio";
+    ui.replayBtn.disabled = s === "missing" || s === "noaudio";
   }
 
   function showPart(i) {
     index = i;
     var last = index === parts.length - 1;
-    ui.text.textContent = "\u201C" + (parts[index].transcript || "") + "\u201D";
-    ui.text.style.whiteSpace = /\n/.test(parts[index].transcript || "") ? "pre-line" : "";   // blank line in a transcript = paragraph break
+    var transcript = parts[index].transcript || "";
+    ui.text.textContent = transcript ? "\u201C" + transcript + "\u201D" : PLACEHOLDER_TRANSCRIPT;
+    ui.text.classList.toggle("narr-panel__text--empty", !transcript);
+    ui.text.style.whiteSpace = /\n/.test(transcript) ? "pre-line" : "";   // blank line in a transcript = paragraph break
     ui.progress.textContent = (parts.length > 1 || cfg.showPartIndicator) ? "Part " + (index + 1) + " of " + parts.length : "";   // total = number of parts in the config
     ui.nextRow.hidden = last || parts.length < 2;
     ui.finalBtn.hidden = !(last && cfg.finalAction);
@@ -205,33 +219,36 @@
       stopAudio();
       if (action && action.onClick) action.onClick();
     });
+    // Capture phase + stopPropagation: Esc closes the panel only, without also triggering nav.js's Esc-to-menu shortcut.
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && !panel.hidden) closePanel();
-    });
+      if (e.key === "Escape" && !panel.hidden) { e.stopPropagation(); closePanel(); }
+    }, true);
     window.addEventListener("pagehide", stopAudio);
   }
 
   function openPanel(config, trigger) {
     if (!panel) buildPanel();
     cfg = config;
-    parts = config.parts || (config.transcript ? [{ audio: config.audio, transcript: config.transcript }] : []);
-    if (!parts.length) return;
+    // Empty config is fine: fall back to one empty part so the panel still opens with placeholders.
+    parts = config.parts && config.parts.length ? config.parts : [{ audio: config.audio, transcript: config.transcript }];
 
     var ch = CHARACTERS[config.narrator];
+    var imagePath = config.image || (ch ? IMAGE_DIR + ch.file : "");   // explicit image path wins over the narrator's image
     var displayName = ch ? ch.name : "Narrator";
-    ui.heading.textContent = config.title || displayName;   // section title; narrator name if none given
-    ui.fallback.textContent = displayName;
+    ui.heading.textContent = config.title || (ch ? ch.name : PLACEHOLDER_TITLE);   // section title; narrator name, then placeholder
+    ui.fallback.textContent = ch ? ch.name : (config.image ? "Character image not found" : PLACEHOLDER_IMAGE);
     ui.img.alt = displayName;
     ui.fallback.hidden = true;
     ui.img.hidden = false;
-    if (ch) {
-      ui.img.src = ROOT + IMAGE_DIR + ch.file;   // missing file -> error handler shows the name instead
+    if (imagePath) {
+      ui.img.src = resolvePath(imagePath);   // missing file -> error handler shows the fallback text instead
     } else {
       ui.img.removeAttribute("src");
       ui.img.hidden = true;
       ui.fallback.hidden = false;
     }
 
+    if (openTrigger && openTrigger !== trigger) openTrigger.setAttribute("aria-expanded", "false");   // another button was open: same panel, new config
     openTrigger = trigger;
     trigger.setAttribute("aria-expanded", "true");
     panel.hidden = false;

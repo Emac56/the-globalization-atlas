@@ -72,6 +72,7 @@
 .narr-panel__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
 .narr-panel__name { font-family: var(--font-title); font-size: 11px; line-height: 1.5; text-transform: uppercase; color: var(--navy); }
 .narr-panel__text { font-size: clamp(22px, 3vw, 28px); line-height: 1.15; max-height: 38vh; overflow-y: auto; }
+.narr-panel__text--empty { color: #6b7385; }   /* "Transcript not added yet." placeholder */
 .narr-panel__title { display: flex; flex-direction: column; gap: 6px; }
 .narr-panel__progress { font-family: var(--font-title); font-size: 10px; line-height: 1.4; color: #555; }
 .narr-panel__progress:empty { display: none; }
@@ -98,3 +99,9 @@
 
 .narr-panel__img[hidden],
 .narr-panel__fallback[hidden] { display: none; }
+
+/* Title + narration button on one row (shared). Wraps the button under the title when there is no room. */
+.narr-title-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; width: 100%; min-width: 0; }
+.narr-title-row > :first-child { flex: 0 1 auto; min-width: 0; }
+.narr-title-row__btn { flex: 0 0 auto; max-width: 100%; }
+.narr-title-row__btn .narr-trigger { max-width: 100%; text-align: left; }

@@ -120,6 +120,14 @@
 .trait__name { font-family: var(--font-title); font-size: 13px; line-height: 1.5; }
 .trait__desc { font-size: 24px; line-height: 1.1; color: #222; }
 
+/* Titles with a narration button beside them (row layout lives in shared/css/narration.css) */
+.narr-title-row .card__title,
+.narr-title-row .why__title { margin: 0; }
+#example .narr-title-row { margin-bottom: 22px; }
+.why .narr-title-row { margin: 0 0 18px 12px; width: calc(100% - 12px); }
+.trait .narr-title-row { padding-bottom: 8px; }   /* room for the button's drop shadow */
+.trait .narr-title-row .narr-trigger { font-size: 9px; padding: 8px 12px; }   /* trait cards are narrow: smaller button */
+
 /* ---------- 3. Everyday example + JOLLIBEE GOES GLOBAL feature ---------- */
 .feature {
   margin-top: 24px;
