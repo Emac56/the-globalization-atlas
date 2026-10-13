@@ -271,6 +271,15 @@
 .note .bullets li { font-size: 24px; }
 .note-line { margin-top: 18px; padding-top: 12px; border-top: 4px dashed #9db7e6; font-size: 22px; line-height: 1.15; color: #444; }
 
+/* ---------- Titles with a narration button beside them (row layout lives in shared/css/narration.css) ---------- */
+.narr-title-row .info__title,
+.narr-title-row .notes__title,
+.narr-title-row .note__label { margin: 0; }
+.notes > .narr-title-row { margin-bottom: 22px; }          /* What Is It? */
+.stage__text .narr-title-row { margin-bottom: 18px; }      /* the six stage titles */
+.note .narr-title-row { margin-bottom: 12px; }             /* the four Connection Notes labels */
+.note .narr-title-row .narr-trigger { font-size: 9px; padding: 8px 12px; }   /* notes are narrow: smaller button */
+
 /* ---------- Bottom navigation: now shared (shared/css/global.css + shared/js/nav.js) ---------- */
 
 /* ---------- Load / leave ---------- */

@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../../shared/css/global.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="../../shared/css/narration.css?v=narration6" />
+  <link rel="stylesheet" href="css/style.css?v=narration6" />
 </head>
 <body>
   <!-- FOLLOW THE CONNECTION — product: Chocolate -->
@@ -29,7 +30,10 @@
 
       <!-- WHAT IS IT? -->
       <section class="card notes" aria-labelledby="whatTitle">
-        <h2 class="notes__title" id="whatTitle">What Is It?</h2>
+        <div class="narr-title-row">
+          <h2 class="notes__title" id="whatTitle">What Is It?</h2>
+          <div class="narr-title-row__btn" id="whatNarrationMount"></div>
+        </div>
         <ul class="bullets">
           <li>Chocolate is made from cocoa beans, often mixed with sugar or milk.</li>
         </ul>
@@ -87,7 +91,10 @@
 
           <article class="stage" data-stage="0">
             <div class="stage__text">
-              <h2 class="info__title">Raw Materials</h2>
+              <div class="narr-title-row">
+                <h2 class="info__title">Raw Materials</h2>
+                <div class="narr-title-row__btn" id="rawNarrationMount"></div>
+              </div>
               <p class="stage__place">Côte d’Ivoire</p>
               <ul class="bullets">
                 <li>Cocoa beans are grown and exported to Malaysia.</li>
@@ -109,7 +116,10 @@
 
           <article class="stage" data-stage="1" hidden>
             <div class="stage__text">
-              <h2 class="info__title">Production</h2>
+              <div class="narr-title-row">
+                <h2 class="info__title">Production</h2>
+                <div class="narr-title-row__btn" id="productionNarrationMount"></div>
+              </div>
               <p class="stage__place">Malaysia</p>
               <ul class="bullets">
                 <li>Cocoa beans are processed and ground.</li>
@@ -131,7 +141,10 @@
 
           <article class="stage" data-stage="2" hidden>
             <div class="stage__text">
-              <h2 class="info__title">Manufacturing</h2>
+              <div class="narr-title-row">
+                <h2 class="info__title">Manufacturing</h2>
+                <div class="narr-title-row__btn" id="manufacturingNarrationMount"></div>
+              </div>
               <p class="stage__place">Malaysia</p>
               <ul class="bullets">
                 <li>Cocoa ingredients are made into chocolate products.</li>
@@ -153,7 +166,10 @@
 
           <article class="stage" data-stage="3" hidden>
             <div class="stage__text">
-              <h2 class="info__title">Transportation</h2>
+              <div class="narr-title-row">
+                <h2 class="info__title">Transportation</h2>
+                <div class="narr-title-row__btn" id="transportationNarrationMount"></div>
+              </div>
               <ul class="bullets">
                 <li>Cocoa and chocolate products are shipped between countries.</li>
               </ul>
@@ -174,7 +190,10 @@
 
           <article class="stage" data-stage="4" hidden>
             <div class="stage__text">
-              <h2 class="info__title">Market</h2>
+              <div class="narr-title-row">
+                <h2 class="info__title">Market</h2>
+                <div class="narr-title-row__btn" id="marketNarrationMount"></div>
+              </div>
               <p class="stage__place">Philippines</p>
               <ul class="bullets">
                 <li>The Philippines imports cocoa-containing products from Malaysia.</li>
@@ -196,7 +215,10 @@
 
           <article class="stage" data-stage="5" hidden>
             <div class="stage__text">
-              <h2 class="info__title">Filipino Consumer</h2>
+              <div class="narr-title-row">
+                <h2 class="info__title">Filipino Consumer</h2>
+                <div class="narr-title-row__btn" id="consumerNarrationMount"></div>
+              </div>
               <ul class="bullets">
                 <li>Filipino consumers buy chocolate products from local stores.</li>
               </ul>
@@ -226,7 +248,10 @@
         <h2 class="notes__title" id="notesTitle">Connection Notes</h2>
         <div class="notes__grid">
           <div class="note">
-            <p class="note__label">Countries Involved</p>
+            <div class="narr-title-row">
+              <p class="note__label">Countries Involved</p>
+              <div class="narr-title-row__btn" id="countriesNarrationMount"></div>
+            </div>
             <ul class="bullets">
               <li><strong>Côte d’Ivoire:</strong> Exports cocoa beans.</li>
               <li><strong>Malaysia:</strong> Processes cocoa and makes chocolate products.</li>
@@ -234,7 +259,10 @@
             </ul>
           </div>
           <div class="note">
-            <p class="note__label">Who Benefits?</p>
+            <div class="narr-title-row">
+              <p class="note__label">Who Benefits?</p>
+              <div class="narr-title-row__btn" id="benefitsNarrationMount"></div>
+            </div>
             <ul class="bullets">
               <li>Cocoa farmers earn income.</li>
               <li>Malaysian processors make cocoa products.</li>
@@ -243,7 +271,10 @@
             </ul>
           </div>
           <div class="note">
-            <p class="note__label">Problems</p>
+            <div class="narr-title-row">
+              <p class="note__label">Problems</p>
+              <div class="narr-title-row__btn" id="problemsNarrationMount"></div>
+            </div>
             <ul class="bullets">
               <li><strong>Child Labor:</strong> Reported in cocoa farming in Côte d’Ivoire and Ghana.</li>
               <li><strong>Supply Issues:</strong> Weather and crop problems can affect cocoa production.</li>
@@ -251,7 +282,10 @@
             </ul>
           </div>
           <div class="note">
-            <p class="note__label">How Are They Connected?</p>
+            <div class="narr-title-row">
+              <p class="note__label">How Are They Connected?</p>
+              <div class="narr-title-row__btn" id="connectedNarrationMount"></div>
+            </div>
             <ul class="bullets">
               <li>Côte d’Ivoire exports cocoa beans to Malaysia.</li>
               <li>Malaysia processes cocoa and makes chocolate products.</li>
@@ -270,7 +304,8 @@
   </main>
 
   <script src="../../shared/js/nav.js"></script>
-  <script src="js/script.js"></script>
+  <script src="../../shared/js/narration.js?v=narration6"></script>
+  <script src="js/script.js?v=narration6"></script>
 </body>
 </html>
 

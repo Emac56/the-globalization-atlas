@@ -83,4 +83,153 @@ document.querySelectorAll(".shot__frame img").forEach(checkImage);
 selectStage(0);
 
 
+// =====================================================================================
+// NARRATION CONFIGS — the 11 buttons beside the titles on this page. EDIT THE VALUES HERE.
+// All 11 open the SAME shared panel (shared/js/narration.js); only these values change.
+//   image      -> character image path (relative to project root), e.g. "assets/images/characters/name.png"
+//   audio      -> audio file path (relative to project root), e.g. "assets/audio/follow-the-connection/clip.mp3"
+//   transcript -> text shown in the panel (blank line = new paragraph)
+//   title      -> title shown at the top of the panel
+// Empty values are fine: the panel opens with placeholders ("Audio not added yet", etc.).
+// Need more clips for one narration? Add more { audio, transcript } objects to its parts array
+// and the panel shows "Part 1 of 2", "Part 2 of 2", and so on.
+// =====================================================================================
+const FOLLOW_THE_CONNECTION_NARRATIONS = [
 
+  // ---------- 1. WHAT IS IT ----------
+  {
+    mountId: "whatNarrationMount",
+    label: "Listen to What Is It",
+    title: "What Is It?",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 2. RAW MATERIALS (stage 01) ----------
+  {
+    mountId: "rawNarrationMount",
+    label: "Listen to Raw Materials",
+    title: "Raw Materials",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 3. PRODUCTION (stage 02) ----------
+  {
+    mountId: "productionNarrationMount",
+    label: "Listen to Production",
+    title: "Production",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 4. MANUFACTURING (stage 03) ----------
+  {
+    mountId: "manufacturingNarrationMount",
+    label: "Listen to Manufacturing",
+    title: "Manufacturing",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 5. TRANSPORTATION (stage 04) ----------
+  {
+    mountId: "transportationNarrationMount",
+    label: "Listen to Transportation",
+    title: "Transportation",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 6. MARKET (stage 05) ----------
+  {
+    mountId: "marketNarrationMount",
+    label: "Listen to Market",
+    title: "Market",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 7. FILIPINO CONSUMER (stage 06) ----------
+  {
+    mountId: "consumerNarrationMount",
+    label: "Listen to Filipino Consumer",
+    title: "Filipino Consumer",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 8. CONNECTION NOTES: COUNTRIES INVOLVED ----------
+  {
+    mountId: "countriesNarrationMount",
+    label: "Listen to Countries Involved",
+    title: "Countries Involved",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 9. CONNECTION NOTES: WHO BENEFITS ----------
+  {
+    mountId: "benefitsNarrationMount",
+    label: "Listen to Who Benefits",
+    title: "Who Benefits?",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 10. CONNECTION NOTES: PROBLEMS ----------
+  {
+    mountId: "problemsNarrationMount",
+    label: "Listen to Problems",
+    title: "Problems",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  },
+
+  // ---------- 11. CONNECTION NOTES: HOW ARE THEY CONNECTED? ----------
+  {
+    mountId: "connectedNarrationMount",
+    label: "Listen to How Are They Connected?",
+    title: "How Are They Connected?",
+    image: "",
+    showPartIndicator: true,
+    parts: [
+      { audio: "", transcript: "" }
+    ]
+  }
+];
+
+// Builds the 11 buttons. Nothing to edit below this line.
+FOLLOW_THE_CONNECTION_NARRATIONS.forEach(function (n) {
+  AtlasNarration.create(Object.assign({}, n, { mount: document.getElementById(n.mountId) }));
+});
