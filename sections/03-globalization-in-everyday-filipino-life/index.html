@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../../shared/css/global.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="../../shared/css/narration.css?v=narration6" />
+  <link rel="stylesheet" href="css/style.css?v=narration6" />
 </head>
 <body>
   <!-- GLOBALIZATION IN EVERYDAY FILIPINO LIFE -->
@@ -31,15 +32,19 @@
 
       <!-- EXAMPLE 01: FOOD -->
       <article class="card ex" data-key="1">
+        <!-- Title row: the accordion header button + its narration button (a button cannot sit inside another button) -->
+        <div class="ex__bar">
         <button class="ex__head" type="button" aria-expanded="false" aria-controls="ex1">
           <span class="ex__num">01</span>
           <span class="ex__name">Food</span>
           <span class="ex__toggle" aria-hidden="true">+</span>
         </button>
+        </div>
         <div class="ex__panel" id="ex1">
           <div class="ex__inner">
             <p class="ex__example">Example: McDonald’s in the Philippines</p>
             <div class="ex__layout">
+              <div class="ex__narr" id="foodNarrationMount"></div>
               <div class="ex__points">
                 <div class="point">
                   <p class="point__label">Global Connection</p>
@@ -70,15 +75,20 @@
 
       <!-- EXAMPLE 02: CLOTHING -->
       <article class="card ex" data-key="2">
+        <!-- Title row: the accordion header button + its narration button (a button cannot sit inside another button) -->
+        <div class="ex__bar">
         <button class="ex__head" type="button" aria-expanded="false" aria-controls="ex2">
           <span class="ex__num">02</span>
           <span class="ex__name">Clothing</span>
           <span class="ex__toggle" aria-hidden="true">+</span>
         </button>
+        
+        </div>
         <div class="ex__panel" id="ex2">
           <div class="ex__inner">
             <p class="ex__example">Example: UNIQLO in the Philippines</p>
             <div class="ex__layout">
+              <div class="ex__narr" id="clothingNarrationMount"></div>
               <div class="ex__points">
                 <div class="point">
                   <p class="point__label">Global Connection</p>
@@ -109,15 +119,20 @@
 
       <!-- EXAMPLE 03: ENTERTAINMENT -->
       <article class="card ex" data-key="3">
+        <!-- Title row: the accordion header button + its narration button (a button cannot sit inside another button) -->
+        <div class="ex__bar">
         <button class="ex__head" type="button" aria-expanded="false" aria-controls="ex3">
           <span class="ex__num">03</span>
           <span class="ex__name">Entertainment</span>
           <span class="ex__toggle" aria-hidden="true">+</span>
         </button>
+        
+        </div>
         <div class="ex__panel" id="ex3">
           <div class="ex__inner">
             <p class="ex__example">Example: Korean dramas and popular culture</p>
             <div class="ex__layout">
+              <div class="ex__narr" id="entertainmentNarrationMount"></div>
               <div class="ex__points">
                 <div class="point">
                   <p class="point__label">Global Connection</p>
@@ -148,15 +163,20 @@
 
       <!-- EXAMPLE 04: TECHNOLOGY -->
       <article class="card ex" data-key="4">
+        <!-- Title row: the accordion header button + its narration button (a button cannot sit inside another button) -->
+        <div class="ex__bar">
         <button class="ex__head" type="button" aria-expanded="false" aria-controls="ex4">
           <span class="ex__num">04</span>
           <span class="ex__name">Technology</span>
           <span class="ex__toggle" aria-hidden="true">+</span>
         </button>
+        
+        </div>
         <div class="ex__panel" id="ex4">
           <div class="ex__inner">
             <p class="ex__example">Example: Internet and digital services</p>
             <div class="ex__layout">
+              <div class="ex__narr" id="technologyNarrationMount"></div>
               <div class="ex__points">
                 <div class="point">
                   <p class="point__label">Global Connection</p>
@@ -187,15 +207,20 @@
 
       <!-- EXAMPLE 05: WORK -->
       <article class="card ex" data-key="5">
+        <!-- Title row: the accordion header button + its narration button (a button cannot sit inside another button) -->
+        <div class="ex__bar">
         <button class="ex__head" type="button" aria-expanded="false" aria-controls="ex5">
           <span class="ex__num">05</span>
           <span class="ex__name">Work</span>
           <span class="ex__toggle" aria-hidden="true">+</span>
         </button>
+        
+        </div>
         <div class="ex__panel" id="ex5">
           <div class="ex__inner">
             <p class="ex__example">Example: Filipinos working abroad</p>
             <div class="ex__layout">
+              <div class="ex__narr" id="workNarrationMount"></div>
               <div class="ex__points">
                 <div class="point">
                   <p class="point__label">Global Connection</p>
@@ -231,7 +256,8 @@
   </main>
 
   <script src="../../shared/js/nav.js"></script>
-  <script src="js/script.js"></script>
+  <script src="../../shared/js/narration.js?v=narration6"></script>
+  <script src="js/script.js?v=narration6"></script>
 </body>
 </html>
 

@@ -210,6 +210,18 @@
 .shot__credit a:hover { color: #000; }
 .shot__credit a:focus-visible { outline: 3px dashed var(--navy); outline-offset: 3px; }
 
+/* ---------- Title row: accordion header + narration button (button builds from shared/js/narration.js) ---------- */
+.ex__bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; padding-right: 20px; }
+.ex__bar .ex__head { flex: 1 1 280px; width: auto; min-width: 0; }
+.ex__narr { flex: 0 0 236px; max-width: 100%; }            /* same width for all five, so the + toggles line up */
+.ex__narr .narr-trigger { width: 100%; max-width: 100%; justify-content: center; text-align: left; }
+@media (max-width: 600px) {
+  .ex__bar { padding-right: 0; }
+  .ex__bar .ex__head { padding-bottom: 8px; }
+  .ex__narr { flex: 0 0 auto; padding: 0 14px 16px; }      /* button wraps under the title */
+  .ex__narr .narr-trigger { width: auto; justify-content: flex-start; }
+}
+
 /* ---------- Bottom navigation: now shared (shared/css/global.css + shared/js/nav.js) ---------- */
 
 /* ---------- Load / leave ---------- */
