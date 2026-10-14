@@ -1,4 +1,4 @@
-g// GLOBALIZATION AND THE PHILIPPINES — script for this page only.
+// GLOBALIZATION AND THE PHILIPPINES — script for this page only.
 // Navigation uses plain HTML links. JS handles the area selection.
 
 const areas = document.querySelectorAll(".area");
@@ -106,7 +106,11 @@ const PHILIPPINES_NARRATIONS = [
 
 // Builds the three buttons. Nothing to edit below this line.
 PHILIPPINES_NARRATIONS.forEach(function (n) {
-  AtlasNarration.create(Object.assign({}, n, { mount: document.getElementById(n.mountId) }));
+  const mount = document.getElementById(n.mountId);
+  if (!mount) return;
+  // A click on a narration button stays on the button: it must never reach any area / card click handler.
+  mount.addEventListener("click", (e) => e.stopPropagation());
+  AtlasNarration.create(Object.assign({}, n, { mount }));
 });
 
 selectArea(0);
