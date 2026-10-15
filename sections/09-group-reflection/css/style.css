@@ -92,49 +92,15 @@
 .card__q { flex: 1; min-width: 0; padding: 16px 0; font-size: 28px; line-height: 1.1; }
 .card__sign { flex: none; padding-right: 18px; font-family: var(--font-title); font-size: 16px; color: var(--cyan); }
 
-/* ---------- Opened card: avatar + dialogue ---------- */
+/* ---------- Opened card: dialogue ---------- */
 .card__panel { padding: 8px 20px 22px; border-top: 4px solid var(--ink); }
 .card__panel:not([hidden]) { animation: open 0.22s steps(4) both; }
 @keyframes open { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
-
-/* member switcher: only shown when a question has more than one answer */
-.members { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 6px; }
-.member-btn {
-  font-family: var(--font-title);
-  font-size: 9px;
-  line-height: 1.5;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.08);
-  border: 3px solid var(--cyan);
-  padding: 10px 12px;
-  min-height: 44px;
-  cursor: pointer;
-}
-.member-btn.is-active { background: var(--gold); color: var(--ink); border-color: #fff; }
-.member-btn:focus-visible { outline: 3px dashed var(--gold); outline-offset: 3px; }
 
 .scene { display: flex; align-items: flex-start; gap: 22px; margin-top: 18px; }
 .scene > * { animation: pop 0.25s steps(4) both; }
 .scene .dialogue { animation-delay: 0.12s; }
 @keyframes pop { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-
-.speaker { flex: none; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
-.avatar {
-  position: relative;
-  width: 96px; height: 96px;
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
-  background: #17357a;
-  border: 4px solid var(--ink);
-  box-shadow: 0 0 0 4px var(--cyan);
-}
-.avatar img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; }
-/* placeholder pixel figure — hidden once a real avatar image is set */
-.avatar__ph { position: absolute; inset: 0; }
-.avatar__ph::before, .avatar__ph::after { content: ""; position: absolute; left: 50%; transform: translateX(-50%); background: var(--cyan); border: 4px solid var(--ink); }
-.avatar__ph::before { top: 16px; width: 36px; height: 36px; }
-.avatar__ph::after { bottom: -4px; width: 64px; height: 30px; }
-.speaker__name { font-family: var(--font-title); font-size: 9px; line-height: 1.6; text-transform: uppercase; color: var(--gold); overflow-wrap: anywhere; }
 
 .dialogue {
   position: relative;
@@ -146,30 +112,10 @@
   border: 4px solid var(--ink);
   box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.35);
 }
-/* little pointer toward the avatar */
-.dialogue::before { content: ""; position: absolute; left: -12px; top: 26px; width: 16px; height: 16px; background: #fff; border-left: 4px solid var(--ink); border-bottom: 4px solid var(--ink); transform: rotate(45deg); }
-.dialogue__label { font-family: var(--font-title); font-size: 9px; line-height: 1.6; text-transform: uppercase; color: #12306e; margin-bottom: 8px; }
-.dialogue__text { font-size: 28px; line-height: 1.15; }
-.dialogue__msg { margin-top: 10px; padding-top: 10px; border-top: 2px dashed #9bb3d9; font-size: 24px; line-height: 1.15; color: #333; }
-.is-placeholder { color: #5a6b8c; }
 
-/* voice-over hook: only appears when an answer has an audio file */
-.voice { margin-top: 12px; font-size: 11px; padding: 12px 16px; }
-
-/* ---------- Takeaway ---------- */
-.takeaway {
-  padding: 22px 24px 26px;
-  text-align: center;
-  color: #fff;
-  background: var(--deep);
-  border: 4px solid var(--cyan);
-  border-top: 12px solid var(--gold);
-  box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.35);
-  transition: border-color 0.3s;
-}
-.takeaway.is-complete { border-color: var(--gold); }
-.takeaway__title { font-family: var(--font-title); font-size: clamp(14px, 2.6vw, 20px); line-height: 1.5; text-transform: uppercase; color: var(--gold); text-shadow: 3px 3px 0 #000; margin-bottom: 16px; }
-.takeaway__value { max-width: 28em; margin: 0 auto; padding: 18px 14px; font-size: 30px; line-height: 1.15; background: rgba(255, 255, 255, 0.08); border: 2px dashed var(--cyan); }
+/* "Listen to Question X" button: shared narration button (shared/css/narration.css), placed where the old "MEMBER XX says" label was */
+.voice-row { margin: 0; max-width: 100%; }
+.voice-row .narr-trigger { max-width: 100%; min-height: 44px; text-align: left; }
 
 /* ---------- Bottom navigation: now shared (shared/css/global.css + shared/js/nav.js) ---------- */
 .sec.is-leaving { opacity: 0; transition: opacity 0.2s linear; }
@@ -185,19 +131,8 @@
   .card__head { gap: 12px; }
   .card__panel { padding: 6px 14px 18px; }
 
-  /* avatar on top, dialogue underneath */
   .scene { flex-direction: column; align-items: stretch; gap: 20px; }
-  .speaker { width: auto; flex-direction: row; justify-content: flex-start; text-align: left; }
-  .avatar { width: 72px; height: 72px; }
-  .avatar__ph::before { top: 10px; width: 28px; height: 28px; }
-  .avatar__ph::after { width: 48px; height: 22px; }
-  .dialogue::before { left: 26px; top: -12px; border-bottom: 0; border-top: 4px solid var(--ink); }
-  .dialogue__text { font-size: 26px; }
-
-  .takeaway { padding: 18px 14px 22px; }
-  .takeaway__value { font-size: 26px; }
-
-}
+  }
 
 
 

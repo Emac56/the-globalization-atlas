@@ -1,129 +1,10 @@
 // GROUP REFLECTION — script for this page only.
-// Navigation uses plain HTML links. JS handles the cards and the avatar dialogue.
+// Navigation uses plain HTML links. JS handles the question cards and the voice-over buttons.
 
-// ---------------------------------------------------------------
-// 1) MEMBERS — keep only the members that really exist.
-//    avatar: path to the member's pixel-art image (leave "" to show the placeholder)
-// ---------------------------------------------------------------
-const MEMBERS = {
-  m1: { name: "MEMBER 01", avatar: "" },
-  m2: { name: "MEMBER 02", avatar: "" },
-  m3: { name: "MEMBER 03", avatar: "" },
-  m4: { name: "MEMBER 04", avatar: "" },
-  m5: { name: "MEMBER 05", avatar: "" }
-};
-
-// ---------------------------------------------------------------
-// 2) ANSWERS — one entry per question, in the same order as the cards.
-//    Each answer: { member, text, message (optional), audio (optional) }
-//    Add more answers to a question to let several members respond;
-//    a switcher appears automatically when there is more than one.
-//    audio: path to the voice-over file, e.g. "audio/member01-q1.mp3"
-// ---------------------------------------------------------------
-const PLACEHOLDER = "[Answer goes here]";
-
-const QUESTIONS = [
-  [{ member: "m1", text: PLACEHOLDER, message: "", audio: "" }],
-  [{ member: "m2", text: PLACEHOLDER, message: "", audio: "" }],
-  [{ member: "m3", text: PLACEHOLDER, message: "", audio: "" }],
-  [{ member: "m4", text: PLACEHOLDER, message: "", audio: "" }],
-  [{ member: "m5", text: PLACEHOLDER, message: "", audio: "" }]
-];
-
-// ---------------------------------------------------------------
 const cards = document.querySelectorAll(".card");
-const takeaway = document.getElementById("takeaway");
-const seen = new Set();
-let voice = null; // current voice-over player (if any)
 
-function stopVoice() {
-  if (voice) { voice.pause(); voice = null; }
-}
-
-// Build the avatar + dialogue for one answer
-function renderScene(answer) {
-  const member = MEMBERS[answer.member] || { name: "MEMBER", avatar: "" };
-  const scene = document.createElement("div");
-  scene.className = "scene";
-
-  const speaker = document.createElement("div");
-  speaker.className = "speaker";
-  const avatar = document.createElement("div");
-  avatar.className = "avatar";
-  if (member.avatar) {
-    const img = document.createElement("img");
-    img.src = member.avatar;
-    img.alt = member.name + " avatar";
-    avatar.appendChild(img);
-  } else {
-    const ph = document.createElement("span");
-    ph.className = "avatar__ph";
-    ph.setAttribute("aria-hidden", "true");
-    avatar.appendChild(ph);
-  }
-  const name = document.createElement("p");
-  name.className = "speaker__name";
-  name.textContent = member.name;
-  speaker.append(avatar, name);
-
-  const box = document.createElement("div");
-  box.className = "dialogue";
-  const label = document.createElement("p");
-  label.className = "dialogue__label";
-  label.textContent = member.name + " says";
-  const text = document.createElement("p");
-  text.className = "dialogue__text" + (answer.text === PLACEHOLDER ? " is-placeholder" : "");
-  text.textContent = answer.text;
-  box.append(label, text);
-
-  if (answer.message) {
-    const msg = document.createElement("p");
-    msg.className = "dialogue__msg";
-    msg.textContent = answer.message;
-    box.appendChild(msg);
-  }
-
-  // Voice-over hook: the button only appears if an audio file is set
-  if (answer.audio) {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "pixel-btn voice";
-    btn.textContent = "▶ Play voice";
-    btn.addEventListener("click", () => {
-      stopVoice();
-      voice = new Audio(answer.audio);
-      voice.play();
-    });
-    box.appendChild(btn);
-  }
-
-  scene.append(speaker, box);
-  return scene;
-}
-
-// Fill a card's panel: optional member switcher + the scene
-function renderPanel(qIndex, answerIndex) {
-  const panel = document.getElementById("panel" + qIndex);
-  const answers = QUESTIONS[qIndex];
-  panel.replaceChildren();
-
-  if (answers.length > 1) {
-    const row = document.createElement("div");
-    row.className = "members";
-    answers.forEach((a, i) => {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "member-btn" + (i === answerIndex ? " is-active" : "");
-      b.textContent = (MEMBERS[a.member] || { name: "MEMBER" }).name;
-      b.setAttribute("aria-pressed", String(i === answerIndex));
-      b.addEventListener("click", () => { stopVoice(); renderPanel(qIndex, i); });
-      row.appendChild(b);
-    });
-    panel.appendChild(row);
-  }
-  panel.appendChild(renderScene(answers[answerIndex]));
-}
-
+// Open one card at a time. The shared narration panel belongs to the card it was opened from:
+// close it whenever another card is opened or the card is closed.
 function setOpen(card, open) {
   const head = card.querySelector(".card__head");
   const panel = card.querySelector(".card__panel");
@@ -135,22 +16,84 @@ function setOpen(card, open) {
 }
 
 cards.forEach((card) => {
-  const q = Number(card.dataset.q);
-  card.querySelector(".card__head").addEventListener("click", () => {
+  const head = card.querySelector(".card__head");
+  head.addEventListener("click", () => {
     const willOpen = !card.classList.contains("is-open");
-    stopVoice();
+    const narrationWasOpen = !!document.querySelector(".narr-panel:not([hidden])");
+    if (narrationWasOpen) AtlasNarration.close();
     cards.forEach((c) => setOpen(c, false)); // one open at a time
     if (willOpen) {
-      renderPanel(q, 0);
       setOpen(card, true);
       card.classList.add("is-seen");
-      seen.add(q);
-      if (seen.size === cards.length) takeaway.classList.add("is-complete");
     }
+    if (narrationWasOpen) head.focus({ preventScroll: true });
   });
 });
 
+const NARRATIONS = [
 
+  // ---------- QUESTION 1 ----------
+  {
+    mountId: "q1NarrationMount",
+    label: "Listen to Question 1",
+    title: "What surprised you most about globalization?",
+    image: "assets/images/characters/jaymark-catinggan.png",
+    showPartIndicator: true,
+    parts: [
+      { audio: "assets/audio/09-group-reflection/group-reflection-question-1-jaymark-catinggan.mp3", transcript: "Ang pinaka-nagulat kami ay kahit ang mga simpleng bagay sa araw-araw ay may koneksyon pala sa ibang bansa. Halimbawa, ang chocolate ay may prosesong kinasasangkutan ng iba't ibang lugar, habang ang K-dramas at K-pop ay nagbibigay sa atin ng ideya tungkol sa kultura ng South Korea." }
+    ]
+  },
 
+  // ---------- QUESTION 2 ----------
+  {
+    mountId: "q2NarrationMount",
+    label: "Listen to Question 2",
+    title: "Which example best shows how connected the Philippines is to the world?",
+    image: "assets/images/characters/kayzer-leopando.png",
+    showPartIndicator: true,
+    parts: [
+      { audio: "assets/audio/09-group-reflection/group-reflection-question-2-kayzer-leopando.mp3", transcript: "Para sa amin, magandang halimbawa ang chocolate dahil hindi lang ito basta pagkain. Sa likod nito ay ang mga taong nagtatanim, gumagawa, nagdadala, at nagbebenta nito bago makarating sa mamimili." }
+    ]
+  },
 
+  // ---------- QUESTION 3 ----------
+  {
+    mountId: "q3NarrationMount",
+    label: "Listen to Question 3",
+    title: "What is one major opportunity globalization gives the Philippines?",
+    image: "assets/images/characters/richard-mayundang.png",
+    showPartIndicator: true,
+    parts: [
+      { audio: "assets/audio/09-group-reflection/group-reflection-question-3-richard-mayundang.mp3", transcript: "Dahil sa koneksyon sa ibang bansa, mas marami tayong mapagkukunan ng kaalaman, produkto, at oportunidad sa trabaho at negosyo." }
+    ]
+  },
 
+  // ---------- QUESTION 4 ----------
+  {
+    mountId: "q4NarrationMount",
+    label: "Listen to Question 4",
+    title: "What is one major challenge globalization creates for the Philippines?",
+    image: "assets/images/characters/rey-dela-cruz.png",
+    showPartIndicator: true,
+    parts: [
+      { audio: "assets/audio/09-group-reflection/group-reflection-question-4-rey-dela-cruz.mp3", transcript: "Isang hamon ang plastic pollution dahil ang basurang napupunta sa mga ilog ay maaaring makarating sa karagatan. Ipinapakita nito na kailangan ang responsableng pagkilos at pagtutulungan." }
+    ]
+  },
+
+  // ---------- QUESTION 5 ----------
+  {
+    mountId: "q5NarrationMount",
+    label: "Listen to Question 5",
+    title: "How did your understanding of globalization change after exploring this atlas?",
+    image: "assets/images/characters/jaymark-vicente.png",
+    showPartIndicator: true,
+    parts: [
+      { audio: "assets/audio/09-group-reflection/group-reflection-question-5-jaymark-vicente.mp3", transcript: "Mas naunawaan namin na ang globalization ay hindi lang tungkol sa pagpasok ng mga produkto sa bansa. Kasama rin dito ang pagkalat ng kultura, pag-usbong ng oportunidad, at mga problemang nangangailangan ng sama-samang pagkilos." }
+    ]
+  }
+];
+
+// Builds the five buttons. Nothing to edit below this line.
+NARRATIONS.forEach(function (n) {
+  AtlasNarration.create(Object.assign({}, n, { mount: document.getElementById(n.mountId) }));
+});

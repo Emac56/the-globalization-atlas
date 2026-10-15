@@ -97,7 +97,7 @@ const NARRATIONS = [
     image: "assets/images/characters/richard-mayundang.png",
     showPartIndicator: true,
     parts: [
-      { audio: "assets/audio/06-benefits-and-challenges/benefits-and-challenges-benefit-1-richard-mayundang.mp3", transcript: "" }
+      { audio: "assets/audio/06-benefits-and-challenges/benefits-and-challenges-benefit-3-richard-mayundang.mp3", transcript: "Bakit Ito Nangyayari?:\nNangyayari ito dahil sa globalization, mas nagkakaroon ng pagkakataon ang mga negosyong Pilipino na makapagbenta ng kanilang mga produkto at serbisyo sa ibang bansa. Dahil dito, mas lumalawak ang kanilang merkado at mas marami silang puwedeng maging customer.\n\nSino ang Nakikinabang?:\nAng nakikinabang dito ay ang mga negosyanteng Pilipino, mga exporter, mga manggagawa, at mga mamimili. Halimbawa, kapag lumawak ang negosyo, puwedeng dumami ang trabaho at magkaroon ng mas maraming pagpipilian ang mga mamimili.\n\nSino ang Naaapektuhan?:\nAng maaaring maapektuhan ay ang mga lokal na negosyong nahihirapang makipagkompetensya sa mga produktong galing sa ibang bansa. Halimbawa, kung mas mura ang imported na produkto, maaaring mas piliin ito ng mga mamimili kaysa sa produktong gawa ng mga lokal na negosyo.\n\nKonkretong Halimbawa:\nAyon sa World Bank, ang mas malawak na pakikilahok ng Pilipinas sa pandaigdigang supply chain ay maaaring makatulong para maging mas kompetitibo ang ekonomiya ng bansa. Ibig sabihin, kapag nakikipag-ugnayan ang mga negosyong Pilipino sa mga negosyo mula sa ibang bansa, maaari silang magkaroon ng mas maraming oportunidad na mapalago ang kanilang negosyo at makapagbenta sa mas malawak na merkado."}
     ]
   },
 
@@ -106,10 +106,10 @@ const NARRATIONS = [
     mountId: "culturalExchangeNarrationMount",
     label: "Listen to Cultural Exchange",
     title: "Cultural Exchange",
-    image: "assets/images/characters/richard-mayundang.png",
+    image: "assets/images/characters/jaymark-catinggan.png",
     showPartIndicator: true,
     parts: [
-      { audio: "assets/audio/06-benefits-and-challenges/benefits-and-challenges-benefit-1-richard-mayundang.mp3", transcript: "" }
+      { audio: "assets/audio/06-benefits-and-challenges/benefits-and-challenges-benefit-4-jaymark-catinggan.mp3", transcript: "Bakit Ito Nangyayari?:\nNangyayari ito dahil sa globalization, mas madali na nating nakikilala ang kultura ng ibang bansa sa pamamagitan ng social media, musika, pagkain, at paglalakbay. Dahil dito, mas lumalawak ang ating kaalaman at pang-unawa sa mga taong may ibang kultura.\n\nSino ang Nakikinabang?:\nAng nakikinabang dito ay ang mga estudyante, fans, artists, at iba't ibang komunidad. Nagkakaroon sila ng pagkakataong matuto ng mga bagong bagay, makakuha ng inspirasyon, at makakilala ng mga taong may parehong interes kahit magkaiba ang kanilang bansa at kultura.\n\nSino ang Naaapektuhan?:\nAng mga Pilipino at ang ating mga lokal na komunidad ay naaapektuhan din dahil sa pagpasok ng mga banyagang kultura. Maaari itong magbigay sa atin ng bagong kaalaman at ideya, pero mahalaga ring patuloy nating pahalagahan ang sariling kultura at mga tradisyon.\n\nKonkretong Halimbawa:\nNoong 2023, may 13 dance groups mula sa iba't ibang bahagi ng Pilipinas na lumahok sa K-pop Cover Dance Festival sa Pasig. Ipinapakita nito na sa pamamagitan ng musika at sayaw, naipapahayag ng mga Pilipino ang kanilang talento habang natututo at nakikibahagi sa kulturang Koreano. Isa itong halimbawa kung paano nakatutulong ang globalization sa pagpapalitan ng kultura at pagbubuo ng koneksyon sa pagitan ng mga tao mula sa magkaibang bansa."}
     ]
   },
 
@@ -121,7 +121,7 @@ const NARRATIONS = [
     image: "assets/images/characters/jaymark-vicente.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/06-benefits-and-challenges/benefits-and-challenges-challenges-1-jaymark-vicente.mp3", transcript: "Bakit ito nangyayari?:\nNangyayari ito dahil sa globalization, mas nagkakaroon ng pagkakataon ang mga Pilipino na makipagtrabaho sa mga kompanya na may koneksyon sa ibang bansa. Dahil dito, mas nagiging mahalaga ang pagkakaroon ng updated na kaalaman at kasanayan para makasabay sa mga pangangailangan ng trabaho.\n\nSino ang Nakikinabang?:\nAng nakikinabang dito ay ang mga manggagawang may sapat na kasanayan at ang mga kompanyang kayang sumabay sa pagbabago. Mas nagkakaroon ng oportunidad ang mga empleyadong marunong gumamit ng bagong teknolohiya at kayang matuto ng mga bagong paraan ng pagtatrabaho.\n\nSino ang Naaapektuhan?:\nAng maaaring mahirapan ay ang mga manggagawang kulang sa digital o teknikal na kasanayan. Kapag hindi sila nakakasabay sa mga bagong pangangailangan ng trabaho, maaaring mas mahirapan silang makahanap ng trabaho o makipagkompetensya sa ibang aplikante.\n\nKonkretong Halimbawa:\nAyon sa World Bank, may mga kompanya sa Pilipinas na nahihirapang makahanap ng manggagawang may tamang kasanayan para sa mga bakanteng posisyon. Ipinapakita nito na mahalagang pagbutihin ang ating kaalaman at kakayahan sa pamamagitan ng pag-aaral at pagsasanay upang mas maging handa tayo sa mga oportunidad sa trabaho." }
     ]
   },
 
@@ -133,7 +133,7 @@ const NARRATIONS = [
     image: "assets/images/characters/jaymark-vicente.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/06-benefits-and-challenges/benefits-and-challenges-challenges-2-jaymark-vicente.mp3", transcript: "Bakit Ito Nangyayari?:\nNangyayari ito dahil habang dumarami ang produksyon at kalakalan ng mga produkto, mas maraming sasakyan at barko ang ginagamit sa pagdadala ng mga ito. Maaari itong magdulot ng polusyon sa hangin at tubig, at makasira sa likas na yaman ng Pilipinas.\n\nSino ang Nakikinabang?:\nAng nakikinabang dito ay ang mga negosyong kumikita sa mas maraming produksyon at kalakalan. Kapag mas marami silang produktong naibebenta, maaari ring tumaas ang kanilang kita.\n\nSino ang Naaapektuhan?:\nAng naaapektuhan ay ang mga Pilipinong nakatira malapit sa mga pabrika, pantalan, at mataong kalsada. Maaari silang makaranas ng maruming hangin, maingay na kapaligiran, at polusyon na maaaring makaapekto sa kanilang kalusugan at pang-araw-araw na buhay.\n\nKonkretong Halimbawa:\nSa pagsusuri ng World Bank tungkol sa kapaligiran ng Pilipinas, tinalakay ang mga suliranin tulad ng polusyon sa hangin at tubig, pati na rin ang pangangalaga sa likas na yaman. Ipinapakita nito na habang umuunlad ang ekonomiya at dumarami ang mga gawaing pangkalakalan, mahalaga ring pangalagaan ang kapaligiran upang hindi mapahamak ang mga tao at kalikasan." }
     ]
   },
 
@@ -145,7 +145,7 @@ const NARRATIONS = [
     image: "assets/images/characters/jaymark-vicente.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/06-benefits-and-challenges/benefits-and-challenges-challenges-3-jaymark-vicente.mp3", transcript: "Bakit Ito Nangyayari?:\nNangyayari ito dahil nakikipagkalakalan ang Pilipinas sa ibang bansa, umaangkat ng mga produkto, at tumatanggap ng puhunan mula sa mga dayuhang investor. Dahil dito, maaari tayong maapektuhan kapag nagkaroon ng problema sa ibang bansa.\n\nSino ang Nakikinabang?:\nAng nakikinabang ay ang mga negosyong nakikipagkalakalan sa ibang bansa dahil lumalawak ang kanilang merkado at nagkakaroon sila ng mas maraming pagkakataong kumita.\n\nSino ang Naaapektuhan?:\nNaaapektuhan ang mga manggagawa, negosyo, at mamimili kapag nagkaroon ng krisis sa ibang bansa. Maaari itong magdulot ng pagkaantala sa produksyon at pagtaas ng presyo ng mga bilihin.\n\nKonkretong Halimbawa:\nAyon sa World Bank, konektado ang Pilipinas sa ibang bansa sa paggawa at pagkuha ng mga produkto. Halimbawa, kapag naantala ang pagdating ng mga piyesang galing sa ibang bansa, maaaring bumagal ang produksyon sa Pilipinas. Ipinapakita nito na kailangan nating maging handa sa mga problemang maaaring makaapekto sa ating kalakalan."}
     ]
   },
 
@@ -157,7 +157,7 @@ const NARRATIONS = [
     image: "assets/images/characters/jaymark-vicente.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/06-benefits-and-challenges/benefits-and-challenges-challenges-4-jaymark-vicente.mp3", transcript: "Bakit Ito Nangyayari?:\nNangyayari ito dahil sa globalization, mas nakikilala natin ang kultura ng ibang bansa sa pamamagitan ng social media, musika, pelikula, at mga banyagang produkto. Maaari nitong maimpluwensiyahan ang ating mga nakasanayan.\n\nSino ang Nakikinabang?:\nAng nakikinabang ay ang mga taong nagkakaroon ng bagong kaalaman, inspirasyon, at mas maraming pagpipilian mula sa iba't ibang kultura.\n\nSino ang Naaapektuhan?:\nMaaaring maapektuhan ang mga lokal na komunidad, katutubo, at gumagamit ng mga wikang Pilipino kapag nababawasan ang pagpapahalaga sa kanilang sariling wika at tradisyon.\n\nKonkretong Halimbawa:\nBinibigyang-diin ng United Nations ang kahalagahan ng pagprotekta sa iba't ibang kultura at wika. Kaya habang natututo tayo sa ibang bansa, mahalaga ring panatilihin at pahalagahan ang kulturang Pilipino."}
     ]
   }
 ];

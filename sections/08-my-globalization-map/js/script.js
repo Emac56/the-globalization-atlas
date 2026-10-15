@@ -332,14 +332,25 @@
 const MAP_NARRATIONS = [
 
   // ---------- 1. CHINA: TRADE AND PRODUCTS ----------
+{
+    mountId: "introductionNarrationMount",
+    label: "Listen to Introduction",
+    title: "Introduction",
+    image: "assets/images/characters/jaymark-vicente.png",
+    showPartIndicator: true,
+    parts: [
+      { audio: "assets/audio/08-my-globalization-map/my-globalization-map-introduction-jaymark-vicente.mp3", transcript: "Sa Globalization Map, makikita natin na may koneksyon ang Pilipinas sa mga bansang nasa iba’t ibang bahagi ng mundo. Piliin ang isang bansa para malaman kung paano ito nagiging bahagi ng ating buhay—sa mga gamit natin, kulturang sinusubaybayan, imprastraktura, at mga oportunidad sa trabaho." }
+    ]
+  },
+
   {
     mountId: "chinaNarrationMount",
     label: "Listen to China",
     title: "China — Trade and Products",
-    image: "",
+    image: "assets/images/characters/kayzer-leopando.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/08-my-globalization-map/my-globalization-map-china-kayzer-leopando.mp3", transcript: "Kapag gumagamit tayo ng electronics o nakakakita ng makinaryang galing sa ibang bansa, isa sa mga koneksyong maaari nating tingnan ay ang China. Ipinapakita nito kung paano nakararating sa Pilipinas ang mga produktong ginagawa sa ibang lugar." }
     ]
   },
 
@@ -348,10 +359,10 @@ const MAP_NARRATIONS = [
     mountId: "southKoreaNarrationMount",
     label: "Listen to South Korea",
     title: "South Korea — Entertainment and Culture",
-    image: "",
+    image: "assets/images/characters/rey-dela-cruz.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/08-my-globalization-map/my-globalization-map-south-korea-rey-dela-cruz.mp3", transcript: "Minsan, hindi natin namamalayang may impluwensiya na pala sa atin ang ibang bansa—gaya ng South Korea. Mula sa mga kantang pinapakinggan hanggang sa mga palabas na sinusubaybayan, nakararating sa Pilipinas ang kultura nito kasabay ng ugnayang pangkalakalan." }
     ]
   },
 
@@ -360,10 +371,10 @@ const MAP_NARRATIONS = [
     mountId: "japanNarrationMount",
     label: "Listen to Japan",
     title: "Japan — Infrastructure and Technology",
-    image: "",
+    image: "assets/images/characters/jaymark-catinggan.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/08-my-globalization-map/my-globalization-map-japan-jaymark-catinggan.mp3", transcript: "Ang koneksyon sa Japan ay makikita rin sa mga proyektong tumutulong sa paggalaw ng mga tao at produkto. Sa pamamagitan ng kooperasyon sa imprastraktura at teknolohiya, nagkakaroon ng pagkakataong mapabuti ang transportasyon sa Pilipinas." }
     ]
   },
 
@@ -372,10 +383,10 @@ const MAP_NARRATIONS = [
     mountId: "unitedStatesNarrationMount",
     label: "Listen to the United States",
     title: "United States — Business, Education, and Technology",
-    image: "",
+    image: "assets/images/characters/richard-mayundang.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/08-my-globalization-map/my-globalization-map-united-states-richard-mayundang.mp3", transcript: "Hindi lang produkto ang naglalakbay sa pagitan ng Pilipinas at United States kasama rin dito ang serbisyo, kaalaman, at negosyo. Ang ganitong ugnayan ay maaaring magbigay ng trabaho at pagkakataong matuto ng bagong kasanayan ang mga Pilipino." }
     ]
   },
 
@@ -384,10 +395,10 @@ const MAP_NARRATIONS = [
     mountId: "singaporeNarrationMount",
     label: "Listen to Singapore",
     title: "Singapore — Jobs, Investment, and Business",
-    image: "",
+    image: "assets/images/characters/jaymark-vicente.png",
     showPartIndicator: true,
     parts: [
-      { audio: "", transcript: "" }
+      { audio: "assets/audio/08-my-globalization-map/my-globalization-map-singapore-jaymark-vicente.mp3", transcript: "Malapit man sa atin ang Singapore, bahagi rin ito ng mas malawak na ugnayang pang-ekonomiya. May mga Pilipinong naghahanap ng trabaho roon, at may mga negosyong Singaporean na namumuhunan sa Pilipinas.\n\nSa pagtingin sa bawat bansa, makikita nating hindi lang linya sa mapa ang mga koneksyong ito. May epekto ang mga ito sa mga bagay na ginagamit natin, sa kulturang nakikilala natin, at sa mga oportunidad na maaari nating makuha. Iyan ang isang paraan kung paano nagiging bahagi ng ating araw-araw na buhay ang globalization." }
     ]
   }
 ];

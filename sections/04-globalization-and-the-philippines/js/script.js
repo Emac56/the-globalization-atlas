@@ -69,11 +69,11 @@ const PHILIPPINES_NARRATIONS = [
     mountId: "tradeNarrationMount",
     label: "Listen to International Trade and Farmers",
     title: "International Trade and Farmers",   // NARRATION TITLE
-    image: "",                                  // CHARACTER IMAGE PATH
+    image: "assets/images/characters/kayzer-leopando.png",                                  // CHARACTER IMAGE PATH
     showPartIndicator: true,                    // PART INDICATOR
     parts: [
-      { audio: "",                              // AUDIO FILE PATH
-        transcript: "" }                        // TRANSCRIPT
+      { audio: "assets/audio/04-globalization-and-the-philippines/globalization-and-the-philippines-area-1-kayzer-leopando.mp3",                            // AUDIO FILE PATH
+        transcript: "Introduksyon:\nSa bahaging ito, tatalakayin natin ang tatlong paraan kung paano nakakaapekto ang globalisasyon sa buhay ng mga Pilipino, kasama ang mga benepisyo at hamon na dulot nito.\n\nAno ang nangyayari?:\nAng mga magsasaka ay maaaring makipagkasundo sa mga buyer para maibenta ang kanilang mga ani at maabot ang mas maraming mamimili.\n\nPosibleng Benepisyo:\nMakakatulong ito para mas lumaki ang kanilang kita dahil mas marami silang mapagbebentahan.\n\nPosibleng Hamon:\nPero maaaring mahirapan ang maliliit na magsasaka dahil sa mahal na transportasyon at kakulangan ng access sa mga market."}
     ]
   },
 
@@ -82,11 +82,11 @@ const PHILIPPINES_NARRATIONS = [
     mountId: "ofwNarrationMount",
     label: "Listen to OFW Labor Migration",
     title: "OFW Labor Migration",               // NARRATION TITLE
-    image: "",                                  // CHARACTER IMAGE PATH
+    image: "assets/images/characters/rey-dela-cruz.png",                                  // CHARACTER IMAGE PATH
     showPartIndicator: true,                    // PART INDICATOR
     parts: [
-      { audio: "",                              // AUDIO FILE PATH
-        transcript: "" }                        // TRANSCRIPT
+      { audio: "assets/audio/04-globalization-and-the-philippines/globalization-and-the-philippines-area-2-rey-dela-cruz.mp3",                             // AUDIO FILE PATH
+        transcript: "Ano ang nangyayari?:\nMaraming Pilipino ang nagtatrabaho sa ibang bansa at nagpapadala ng pera sa kanilang pamilya sa Pilipinas.\n\nPosibleng Benepisyo:\nAng perang ipinapadala nila ay nakakatulong sa mga gastusin ng pamilya, tulad ng pagkain, bayarin, at pag-aaral.\n\nPosibleng Hamon:\nPero dahil malayo sila sa kanilang pamilya, maaari silang makaramdam ng lungkot at mahirapang makasama ang kanilang mga mahal sa buhay."}                        // TRANSCRIPT
     ]
   },
 
@@ -95,11 +95,11 @@ const PHILIPPINES_NARRATIONS = [
     mountId: "digitalNarrationMount",
     label: "Listen to Technology and Digital Economy",
     title: "Technology and Digital Economy",    // NARRATION TITLE
-    image: "",                                  // CHARACTER IMAGE PATH
+    image: "assets/images/characters/richard-mayundang.png",                                  // CHARACTER IMAGE PATH
     showPartIndicator: true,                    // PART INDICATOR
     parts: [
-      { audio: "",                              // AUDIO FILE PATH
-        transcript: "" }                        // TRANSCRIPT
+      { audio: "assets/audio/04-globalization-and-the-philippines/globalization-and-the-philippines-area-3-richard-mayundang.mp3",                              // AUDIO FILE PATH
+        transcript: "Ano ang nangyayari?:\nDahil sa internet, mas madaling makapag-aral online, gumamit ng digital services, at makapagsimula ng negosyo.\n\nPosibleng Benepisyo:\nMas nagkakaroon ng oportunidad ang mga Pilipino na kumita sa online jobs at magbenta ng produkto sa internet.\n\nPosibleng Hamon:\nPero hindi lahat ay may mabilis at maayos na internet, kaya may mga taong hindi gaanong nakikinabang sa mga oportunidad na ito."}
     ]
   }
 ];

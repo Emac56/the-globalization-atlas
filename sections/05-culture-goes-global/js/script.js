@@ -282,11 +282,11 @@ const CULTURE_NARRATIONS = [
     mountId: "whatKpopNarrationMount",
     label: "Listen to What Is K-pop?",
     title: "What Is K-pop?",                    // NARRATION TITLE
-    image: "",                                  // CHARACTER IMAGE PATH
+    image: "assets/images/characters/jaymark-catinggan.png",                                // CHARACTER IMAGE PATH
     showPartIndicator: true,                    // PART INDICATOR
     parts: [
-      { audio: "",                              // AUDIO FILE PATH
-        transcript: "" }                        // TRANSCRIPT
+      { audio: "assets/audio/05-culture-goes-global/culture-goes-global-what-is-kpop-jaymark-catinggan.mp3",                              // AUDIO FILE PATH
+        transcript: "Introduksyon:\nSa section na ito, susundan natin kung paano nakararating ang isang kultura sa ibang bansa. Gagamitin natin ang K-pop bilang halimbawa upang makita kung paano ito nakikilala, tinatangkilik, at binibigyan ng sariling estilo ng mga pilipino.\n\nAng K-pop ay isang uri ng popular na musika mula sa South Korea. Nakikilala ito hindi lang sa mga kanta, kundi pati sa mga sayaw at performances na nagiging inspirasyon ng maraming fans." }                        // TRANSCRIPT
     ]
   },
 
@@ -295,11 +295,11 @@ const CULTURE_NARRATIONS = [
     mountId: "startNarrationMount",
     label: "Listen to Where Did It Start?",
     title: "Where Did It Start?",               // NARRATION TITLE
-    image: "",                                  // CHARACTER IMAGE PATH
+    image: "assets/images/characters/jaymark-catinggan.png",                                // CHARACTER IMAGE PATH
     showPartIndicator: true,                    // PART INDICATOR
     parts: [
-      { audio: "",                              // AUDIO FILE PATH
-        transcript: "" }                        // TRANSCRIPT
+      { audio: "assets/audio/05-culture-goes-global/culture-goes-global-where-did-it-start-jaymark-catinggan.mp3",                              // AUDIO FILE PATH
+        transcript: "Sa South Korea nagsimula ang modernong K-pop industry. Habang umuunlad ang mga grupo at performances doon, unti-unti rin itong nakilala ng mga tagapakinig sa ibang bansa."} 
     ]
   },
 
@@ -308,11 +308,11 @@ const CULTURE_NARRATIONS = [
     mountId: "spreadNarrationMount",
     label: "Listen to How Did It Spread?",
     title: "How Did It Spread?",                // NARRATION TITLE
-    image: "",                                  // CHARACTER IMAGE PATH
+    image: "assets/images/characters/jaymark-catinggan.png",                                 // CHARACTER IMAGE PATH
     showPartIndicator: true,                    // PART INDICATOR
     parts: [
-      { audio: "",                              // AUDIO FILE PATH
-        transcript: "" }                        // TRANSCRIPT
+      { audio: "assets/audio/05-culture-goes-global/culture-goes-global-how-did-it-spread-jaymark-catinggan.mp3",                            // AUDIO FILE PATH
+        transcript: "Malaking tulong ang internet sa pagkalat ng K-pop. Isang music video lang ay maaari nang mapanood ng milyun-milyong tao sa iba't ibang panig ng mundo."}                        // TRANSCRIPT
     ]
   },
 
@@ -321,11 +321,11 @@ const CULTURE_NARRATIONS = [
     mountId: "reachFilipinosNarrationMount",
     label: "Listen to How Did It Reach Filipinos?",
     title: "How Did It Reach Filipinos?",       // NARRATION TITLE
-    image: "",                                  // CHARACTER IMAGE PATH
+    image: "assets/images/characters/jaymark-catinggan.png",                                  // CHARACTER IMAGE PATH
     showPartIndicator: true,                    // PART INDICATOR
     parts: [
-      { audio: "",                              // AUDIO FILE PATH
-        transcript: "" }                        // TRANSCRIPT
+      { audio: "assets/audio/05-culture-goes-global/culture-goes-global-how-did-it-reach-filipinos-jaymark-catinggan.mp3",                           // AUDIO FILE PATH
+        transcript: "Nakilala ito ng maraming pilipino sa pamamagitan ng online videos, television programs, at social media. Dahil dito, naging madali para sa mga fans na subaybayan ang kanilang mga paboritong Korean artists."}                        // TRANSCRIPT
     ]
   },
 
@@ -336,11 +336,11 @@ const CULTURE_NARRATIONS = [
     mountId: "mapSouthKoreaNarrationMount",
     label: "Listen to South Korea",
     title: "South Korea",                       // NARRATION TITLE
-    image: "",                                  // CHARACTER IMAGE PATH
+    image: "assets/images/characters/kayzer-leopando.png",                                  // CHARACTER IMAGE PATH
     showPartIndicator: true,                    // PART INDICATOR
     parts: [
-      { audio: "",                              // AUDIO FILE PATH
-        transcript: "" }                        // TRANSCRIPT
+      { audio: "assets/audio/05-culture-goes-global/culture-goes-global-south-korea-kayzer-leopando.mp3",                           // AUDIO FILE PATH
+        transcript: "Dito nagsisimula ang ating connection map. Ang South Korea ang pinagmulan ng mga artist at grupong gumagawa ng K-pop na kalaunan ay nakilala rin sa Pilipinas." }                        // TRANSCRIPT
     ]
   },
 
@@ -349,11 +349,11 @@ const CULTURE_NARRATIONS = [
     mountId: "mapMusicDanceNarrationMount",
     label: "Listen to K-pop Music and Dance",
     title: "K-pop Music and Dance",             // NARRATION TITLE
-    image: "",                                  // CHARACTER IMAGE PATH
-    showPartIndicator: true,                    // PART INDICATOR
+    image: "assets/images/characters/rey-dela-cruz.png",                                  // CHARACTER IMAGE PATH
+    showPartIndicator: true,                // PART INDICATOR
     parts: [
-      { audio: "",                              // AUDIO FILE PATH
-        transcript: "" }                        // TRANSCRIPT
+      { audio: "assets/audio/05-culture-goes-global/culture-goes-global-kpop-music-and-dance-rey-dela-cruz.mp3",                             // AUDIO FILE PATH
+        transcript: "Isa sa mga dahilan kung bakit naaakit ang fans ay ang pagsasama ng kanta at sayaw. May mga Pilipinong hindi lamang nanonood, kundi nagsisikap ding matutuhan ang mga galaw ng kanilang paboritong performers." }                        // TRANSCRIPT
     ]
   },
 
@@ -362,11 +362,11 @@ const CULTURE_NARRATIONS = [
     mountId: "mapInternetNarrationMount",
     label: "Listen to Internet, YouTube, and Social Media",
     title: "Internet, YouTube, and Social Media",   // NARRATION TITLE
-    image: "",                                  // CHARACTER IMAGE PATH
+    image: "assets/images/characters/richard-mayundang.png",                                  // CHARACTER IMAGE PATH
     showPartIndicator: true,                    // PART INDICATOR
     parts: [
-      { audio: "",                              // AUDIO FILE PATH
-        transcript: "" }                        // TRANSCRIPT
+      { audio: "assets/audio/05-culture-goes-global/culture-goes-global-internet-youtube-and-social-media-richard-mayundang.mp3",                              // AUDIO FILE PATH
+        transcript: "Sa tulong ng mga online platform, hindi na kailangang pumunta sa South Korea para makapanood ng K-pop. Puwedeng manood, magbahagi ng videos, at makipag-usap sa ibang fans gamit ang internet." }                        // TRANSCRIPT
     ]
   },
 
@@ -375,11 +375,11 @@ const CULTURE_NARRATIONS = [
     mountId: "mapFilipinoFansNarrationMount",
     label: "Listen to Filipino Fans",
     title: "Filipino Fans",                     // NARRATION TITLE
-    image: "",                                  // CHARACTER IMAGE PATH
+    image: "assets/images/characters/jaymark-catinggan.png",                                 // CHARACTER IMAGE PATH
     showPartIndicator: true,                    // PART INDICATOR
     parts: [
-      { audio: "",                              // AUDIO FILE PATH
-        transcript: "" }                        // TRANSCRIPT
+      { audio: "assets/audio/05-culture-goes-global/culture-goes-global-filipino-fans-jaymark-catinggan.mp3",                              // AUDIO FILE PATH
+        transcript: "Sa Pilipinas, nagiging paraan ang K-pop upang makahanap ang mga tao ng kapareho nilang interes. Maaari silang makipagkaibigan, sumali sa fan groups, at magbahagi ng kanilang suporta sa paboritong artists." }                        // TRANSCRIPT
     ]
   },
 
@@ -388,11 +388,11 @@ const CULTURE_NARRATIONS = [
     mountId: "mapFanEventsNarrationMount",
     label: "Listen to Fan Communities, Dance Covers, and Local Events",
     title: "Fan Communities, Dance Covers, and Local Events",   // NARRATION TITLE
-    image: "",                                  // CHARACTER IMAGE PATH
+    image: "assets/images/characters/jaymark-catinggan.png",                                    // CHARACTER IMAGE PATH
     showPartIndicator: true,                    // PART INDICATOR
     parts: [
-      { audio: "",                              // AUDIO FILE PATH
-        transcript: "" }                        // TRANSCRIPT
+      { audio: "assets/audio/05-culture-goes-global/culture-goes-global-fans-communities-dance-covers-and-local-events-jaymark-catinggan.mp3",                              // AUDIO FILE PATH
+        transcript: "Hindi natatapos sa panonood ang pagiging fan. May mga Pilipinong bumubuo ng dance groups at sumasali sa mga event upang ipakita ang kanilang natutuhan at talento." }                        // TRANSCRIPT
     ]
   },
 
@@ -403,11 +403,11 @@ const CULTURE_NARRATIONS = [
     mountId: "adaptNarrationMount",
     label: "Listen to How Did Filipinos Adapt It?",
     title: "How Did Filipinos Adapt It?",       // NARRATION TITLE
-    image: "",                                  // CHARACTER IMAGE PATH
+    image: "assets/images/characters/jaymark-vicente.png",                               // CHARACTER IMAGE PATH
     showPartIndicator: true,                    // PART INDICATOR
     parts: [
-      { audio: "",                              // AUDIO FILE PATH
-        transcript: "" }                        // TRANSCRIPT
+      { audio: "assets/audio/05-culture-goes-global/culture-goes-global-how-did-filipinos-adapt-it-jaymark-vicente.mp3",                              // AUDIO FILE PATH
+        transcript: "May sariling paraan ang mga Pilipino ng pagpapakita ng kanilang pagkahilig sa K-pop. Sa pamamagitan ng local performances at dance covers, naisasama nila ang impluwensiyang ito sa mga aktibidad ng kanilang sariling komunidad." }                        // TRANSCRIPT
     ]
   },
 
@@ -416,11 +416,11 @@ const CULTURE_NARRATIONS = [
     mountId: "similarDiverseNarrationMount",
     label: "Listen to Does Globalization Make Cultures More Similar, More Diverse, or Both?",
     title: "Does Globalization Make Cultures More Similar, More Diverse, or Both?",   // NARRATION TITLE
-    image: "",                                  // CHARACTER IMAGE PATH
+    image: "assets/images/characters/jaymark-vicente.png",                                // CHARACTER IMAGE PATH
     showPartIndicator: true,                    // PART INDICATOR
     parts: [
-      { audio: "",                              // AUDIO FILE PATH
-        transcript: "" }                        // TRANSCRIPT
+      { audio: "assets/audio/05-culture-goes-global/culture-goes-global-more-similar-diverse-or-both-jaymark-vicente.mp3",                              // AUDIO FILE PATH
+        transcript: "Pareho itong nangyayari. Maaaring magkapareho ang interes ng mga tao sa iba't ibang bansa, pero iba-iba pa rin ang paraan nila ng pagpapakita nito batay sa kanilang sariling karanasan at komunidad." }                        // TRANSCRIPT
     ]
   },
 
@@ -429,11 +429,11 @@ const CULTURE_NARRATIONS = [
     mountId: "evidenceNarrationMount",
     label: "Listen to What Is the Evidence?",
     title: "What Is the Evidence?",             // NARRATION TITLE
-    image: "",                                  // CHARACTER IMAGE PATH
+    image: "assets/images/characters/jaymark-vicente.png",                                // CHARACTER IMAGE PATH
     showPartIndicator: true,                    // PART INDICATOR
     parts: [
-      { audio: "",                              // AUDIO FILE PATH
-        transcript: "" }                        // TRANSCRIPT
+      { audio: "assets/audio/05-culture-goes-global/culture-goes-global-what-is-evidence-jaymark-vicente.mp3",                              // AUDIO FILE PATH
+        transcript: "Isang halimbawa ang K-pop Cover Dance Festival sa Pilipinas noong 2023, kung saan 13 grupo ang lumahok. Ipinapakita nito na ang impluwensiya ng K-pop ay makikita hindi lamang online, kundi pati sa mga aktuwal na pagtatanghal sa Pilipinas.\n\nSa kabuuan, ipinapakita ng K-pop na ang kultura ay maaaring magsimula sa isang lugar at maging bahagi ng buhay ng mga tao sa ibang bansa. Habang tinatangkilik ito ng mga Pilipino, nagkakaroon din sila ng sariling paraan ng pagpapahayag nito." }                        // TRANSCRIPT
     ]
   }
 ];
