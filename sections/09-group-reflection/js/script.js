@@ -30,6 +30,10 @@ cards.forEach((card) => {
   });
 });
 
+// OUR GROUP TAKEAWAY — the voice-over transcript. It must match the recorded audio word for word.
+// It is only shown inside the Listen panel, not on the page.
+const FINAL_TAKEAWAY = "Habang ginagawa ang atlas na ito, paulit-ulit naming nakita na may kapalit ang bawat koneksyon ng Pilipinas sa mundo. Sa halimbawa naming tsokolate, nagsimula ang cocoa sa Côte d’Ivoire, pinroseso sa Malaysia, at inangkat ng Pilipinas. May kita ito para sa mga magsasaka at negosyo, pero may isyu rin ng child labor. Ganito rin ang mga OFW na nakakatulong sa pamilya sa pamamagitan ng remittances pero nalalayo sa kanila, at ang internet na nagbubukas ng oportunidad pero hindi pantay ang access. Kaya para sa amin, hindi sapat na basta makinabang tayo. Kailangan din ng kasanayan, malasakit sa kalikasan at kultura, at pakikipagtulungan, tulad ng plastic pollution na hindi kayang lutasin ng iisang bansa.";
+
 const NARRATIONS = [
 
   // ---------- QUESTION 1 ----------
@@ -90,10 +94,23 @@ const NARRATIONS = [
     parts: [
       { audio: "assets/audio/09-group-reflection/group-reflection-question-5-jaymark-vicente.mp3", transcript: "Mas naunawaan namin na ang globalization ay hindi lang tungkol sa pagpasok ng mga produkto sa bansa. Kasama rin dito ang pagkalat ng kultura, pag-usbong ng oportunidad, at mga problemang nangangailangan ng sama-samang pagkilos." }
     ]
+  },
+
+  // ---------- OUR GROUP TAKEAWAY (final) ----------
+  // Save the recording with exactly this file name, in this folder, so the Play button can find it.
+  {
+    mountId: "finalNarrationMount",
+    label: "Listen to Our Group Final Takeaway",
+    title: "Our Group Takeaway",
+    image: "assets/images/characters/jaymark-vicente.png",
+    showPartIndicator: true,
+    parts: [
+      { audio: "assets/audio/09-group-reflection/group-reflection-final-take-away-jaymark-vicente.mp3", transcript: FINAL_TAKEAWAY }
+    ]
   }
 ];
 
-// Builds the five buttons. Nothing to edit below this line.
+// Builds all the Listen buttons (five questions + the final takeaway). Nothing to edit below this line.
 NARRATIONS.forEach(function (n) {
   AtlasNarration.create(Object.assign({}, n, { mount: document.getElementById(n.mountId) }));
 });
