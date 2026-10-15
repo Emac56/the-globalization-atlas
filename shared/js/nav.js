@@ -24,7 +24,8 @@
     "07-global-problem-global-response",
     "08-my-globalization-map",
     "09-group-reflection",
-    "10-references"
+    "10-references",
+    "meet-our-team"
   ];
 
   var LABELS = {

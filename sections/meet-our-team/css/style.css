@@ -1,0 +1,210 @@
+/* MEET OUR TEAM — styles for this page only.
+   Shared colors, fonts, buttons and navigation come from shared/css/global.css */
+
+:root { --deep: #0b1f4d; }
+
+[hidden] { display: none !important; }
+
+.sec { display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 40px 16px 48px; }
+
+/* ---------- Header (same look as the other section pages) ---------- */
+.sec__header { width: min(100%, 960px); text-align: center; color: #fff; }
+.sec__kicker { font-family: var(--font-title); font-size: clamp(9px, 1.8vw, 12px); color: var(--gold); margin-bottom: 14px; }
+.sec__title {
+  font-family: var(--font-title);
+  font-size: clamp(22px, 5vw, 40px);
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 0 #000;
+  margin-bottom: 14px;
+  overflow-wrap: anywhere;
+}
+.sec__counter {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: 10px;
+  background: rgba(18, 48, 110, 0.9);
+  border: 2px solid var(--cyan);
+  padding: 8px 10px;
+  margin-bottom: 16px;
+}
+.sec__subtitle {
+  font-family: var(--font-title);
+  font-size: clamp(10px, 2vw, 13px);
+  line-height: 1.7;
+  color: var(--cyan);
+  text-shadow: 2px 2px 0 #000;
+  margin-bottom: 14px;
+}
+.sec__quote { max-width: 30em; margin: 0 auto; font-size: clamp(22px, 3vw, 28px); line-height: 1.2; text-shadow: 2px 2px 0 #000; }
+
+/* ---------- Layout ---------- */
+.sec__content { width: min(100%, 960px); }
+
+/* 3 cards per row on desktop; the last row is centered. */
+.team {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 28px 24px;
+}
+.member {
+  flex: 0 1 calc((100% - 48px) / 3);
+  min-width: 0;
+  animation: rise 0.35s steps(5) both;
+}
+.member:nth-child(2) { animation-delay: 0.05s; }
+.member:nth-child(3) { animation-delay: 0.10s; }
+.member:nth-child(4) { animation-delay: 0.15s; }
+.member:nth-child(5) { animation-delay: 0.20s; }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Profile card (same navy / cyan pixel card as the Group Reflection cards) ---------- */
+.member__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 18px 22px;
+  color: #fff;
+  background: var(--deep);
+  border: 4px solid var(--cyan);
+  box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.35);
+}
+
+/* small gold corner accent, like the menu cards */
+.member__card::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  box-shadow: -14px 0 0 0 rgba(255, 210, 74, 0.5);
+}
+.member__num {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--font-title);
+  font-size: 11px;
+  color: var(--ink);
+  background: var(--gold);
+  padding: 7px 8px;
+}
+
+/* ---------- Portrait frame (identical size for all five) ---------- */
+.portrait {
+  position: relative;
+  flex: none;
+  width: 150px;
+  height: 165px;
+  margin-top: 8px;
+  overflow: hidden;
+  background: linear-gradient(#1a46a0, #0d2b66);
+  border: 4px solid var(--ink);
+  box-shadow: 0 0 0 4px var(--gold), 0 6px 0 4px rgba(0, 0, 0, 0.35);
+}
+.portrait__img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;          /* scaled, never stretched */
+  object-position: center bottom;
+  image-rendering: pixelated;
+}
+.portrait.has-photo .portrait__ph { display: none; }
+
+/* CSS-drawn pixel silhouette placeholder (no image file needed) */
+.portrait__ph { position: absolute; inset: 0; }
+.ph__head,
+.ph__body {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.ph__head {
+  top: 22px;
+  width: 48px;
+  height: 48px;
+  background: #9dbcff;
+  clip-path: polygon(8px 0, calc(100% - 8px) 0, calc(100% - 8px) 8px, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 8px calc(100% - 8px), 0 calc(100% - 8px), 0 8px, 8px 8px);
+}
+.ph__body {
+  top: 78px;
+  width: 96px;
+  height: 52px;
+  background: #6f97e8;
+  clip-path: polygon(16px 0, calc(100% - 16px) 0, calc(100% - 16px) 8px, calc(100% - 8px) 8px, calc(100% - 8px) 16px, 100% 16px, 100% 100%, 0 100%, 0 16px, 8px 16px, 8px 8px, 16px 8px);
+}
+.ph__label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 7px 2px 6px;
+  text-align: center;
+  font-family: var(--font-title);
+  font-size: 8px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(0, 0, 0, 0.78);
+}
+
+/* ---------- Name, roles, description ---------- */
+.member__name {
+  font-family: var(--font-title);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+  text-shadow: 2px 2px 0 #000;
+  overflow-wrap: anywhere;
+}
+.roles {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.roles li {
+  font-family: var(--font-title);
+  font-size: 8px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: rgba(79, 216, 255, 0.12);
+  border: 2px solid var(--cyan);
+  padding: 6px 7px;
+}
+.member__desc {
+  width: 100%;
+  font-size: 24px;
+  line-height: 1.1;
+  color: #dbe9ff;
+}
+
+.sec.is-leaving { opacity: 0; transition: opacity 0.2s linear; }
+
+/* ---------- Tablet: 2 per row ---------- */
+@media (max-width: 860px) {
+  .member { flex-basis: calc((100% - 24px) / 2); }
+}
+
+/* ---------- Mobile: one column ---------- */
+@media (max-width: 640px) {
+  .sec { padding: 28px 16px 40px; gap: 24px; }
+  .team { gap: 26px; }
+  .member { flex-basis: 100%; }
+  .member__card { padding: 22px 14px 20px; }
+}

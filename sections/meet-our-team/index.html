@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meet Our Team | My Globalization Atlas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../shared/css/global.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- MEET OUR TEAM — the five members behind the atlas.
+       PORTRAITS: each .portrait has a data-portrait path. If that image exists, it replaces the
+       "PROFILE PHOTO" placeholder automatically; if not, the placeholder stays (no broken images).
+       To use a different picture, change that member's data-portrait (see js/script.js). -->
+  <main class="page atlas-bg sec" id="secPage">
+
+    <header class="sec__header">
+      <p class="sec__kicker">My Globalization Atlas</p>
+      <h1 class="sec__title">Meet Our Team</h1>
+      <p class="sec__counter">12 / 12</p>
+      <p class="sec__subtitle">The people behind My Globalization Atlas</p>
+      <p class="sec__quote">Meet the team members who researched, developed, and brought this interactive atlas to life through collaboration, creativity, and teamwork.</p>
+    </header>
+
+    <div class="sec__content">
+      <ul class="team" id="team">
+
+        <!-- MEMBER 1 -->
+        <li class="member" id="member-1">
+          <article class="member__card">
+            <span class="member__num" aria-hidden="true">01</span>
+            <div class="portrait" data-portrait="assets/images/characters/jaymark-vicente.png" data-alt="Portrait of Jaymark Vicente">
+              <div class="portrait__ph" aria-hidden="true">
+                <span class="ph__head"></span><span class="ph__body"></span>
+                <span class="ph__label">Profile Photo</span>
+              </div>
+            </div>
+            <h2 class="member__name">Jaymark Vicente</h2>
+            <ul class="roles" aria-label="Roles">
+              <li>Atlas Developer</li>
+              <li>Research Coordinator</li>
+              <li>Technical Coordinator</li>
+            </ul>
+            <p class="member__desc">Develops and maintains the website, coordinates research across multiple atlas sections, gathers and checks supporting sources, and manages the voice-over audio files.</p>
+          </article>
+        </li>
+
+        <!-- MEMBER 2 -->
+        <li class="member" id="member-2">
+          <article class="member__card">
+            <span class="member__num" aria-hidden="true">02</span>
+            <div class="portrait" data-portrait="assets/images/characters/rey-dela-cruz.png" data-alt="Portrait of Rey Dela Cruz">
+              <div class="portrait__ph" aria-hidden="true">
+                <span class="ph__head"></span><span class="ph__body"></span>
+                <span class="ph__label">Profile Photo</span>
+              </div>
+            </div>
+            <h2 class="member__name">Rey Dela Cruz</h2>
+            <ul class="roles" aria-label="Roles">
+              <li>Data and Sources Researcher</li>
+              <li>Technical Coordinator</li>
+            </ul>
+            <p class="member__desc">Helps research the &ldquo;Globalization in Everyday Filipino Life&rdquo; section and assists in recording the project's voice-over narration.</p>
+          </article>
+        </li>
+
+        <!-- MEMBER 3 -->
+        <li class="member" id="member-3">
+          <article class="member__card">
+            <span class="member__num" aria-hidden="true">03</span>
+            <div class="portrait" data-portrait="assets/images/characters/jaymark-catinggan.png" data-alt="Portrait of Jaymark Catinggan">
+              <div class="portrait__ph" aria-hidden="true">
+                <span class="ph__head"></span><span class="ph__body"></span>
+                <span class="ph__label">Profile Photo</span>
+              </div>
+            </div>
+            <h2 class="member__name">Jaymark Catinggan</h2>
+            <ul class="roles" aria-label="Roles">
+              <li>Data and Sources Researcher</li>
+              <li>Technical Coordinator</li>
+            </ul>
+            <p class="member__desc">Helps research the &ldquo;What Is Globalization?&rdquo; section, assists in recording the voice-over narration, and coordinates the audio files used in the project.</p>
+          </article>
+        </li>
+
+        <!-- MEMBER 4 -->
+        <li class="member" id="member-4">
+          <article class="member__card">
+            <span class="member__num" aria-hidden="true">04</span>
+            <div class="portrait" data-portrait="assets/images/characters/richard-mayundang.png" data-alt="Portrait of Richard Mayundang">
+              <div class="portrait__ph" aria-hidden="true">
+                <span class="ph__head"></span><span class="ph__body"></span>
+                <span class="ph__label">Profile Photo</span>
+              </div>
+            </div>
+            <h2 class="member__name">Richard Mayundang</h2>
+            <ul class="roles" aria-label="Role">
+              <li>Data and Sources Researcher</li>
+            </ul>
+            <p class="member__desc">Researches the benefits and challenges of globalization, helping provide relevant information for the corresponding section of the atlas.</p>
+          </article>
+        </li>
+
+        <!-- MEMBER 5 -->
+        <li class="member" id="member-5">
+          <article class="member__card">
+            <span class="member__num" aria-hidden="true">05</span>
+            <div class="portrait" data-portrait="assets/images/characters/kayzer-leopando.png" data-alt="Portrait of Kayzer Leopando">
+              <div class="portrait__ph" aria-hidden="true">
+                <span class="ph__head"></span><span class="ph__body"></span>
+                <span class="ph__label">Profile Photo</span>
+              </div>
+            </div>
+            <h2 class="member__name">Kayzer Leopando</h2>
+            <ul class="roles" aria-label="Role">
+              <li>Data and Sources Researcher</li>
+            </ul>
+            <p class="member__desc">Helps gather credible sources and research information for the &ldquo;Follow the Connection&rdquo; section of the atlas.</p>
+          </article>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- Shared navigation (built by shared/js/nav.js): PREVIOUS / ATLAS MENU / FINISH ATLAS + BACK TO COVER -->
+    <div data-atlas-nav="meet-our-team"></div>
+  </main>
+
+  <script src="../../shared/js/nav.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
